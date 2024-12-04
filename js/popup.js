@@ -217,14 +217,16 @@ function createAccordionList(cks, callback, callbackArguments) {
     let createAccordionCallback = callback;
     let createAccordionCallbackArguments = callbackArguments;
 
-    try {
-        $("#cookiesList").accordion("destroy");
-    } catch (e) {
-        console.warn(e.message)
+    // Check if the accordion is initialized before attempting to destroy it
+    if ($("#cookiesList").hasClass("ui-accordion")) {
+        try {
+            $("#cookiesList").accordion("destroy");
+        } catch (e) {
+            console.warn(e.message);
+        }
     }
 
-    if (cks === null)
-        cks = cookieList;
+    if (cks === null) cks = cookieList;
     for (var i = 0; i < cks.length; i++) {
         currentC = cks[i];
 
@@ -304,6 +306,7 @@ function createAccordionList(cks, callback, callbackArguments) {
         }
     });
 }
+
 
 function importCookies() {
     var nCookiesImportedThisTime = 0;

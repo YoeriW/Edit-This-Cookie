@@ -1,3 +1,5 @@
+importScripts('../js/utils.js');
+
 $(document).ready(function () {
     $("input:checkbox, input:text, select").uniform();
     setOptions();

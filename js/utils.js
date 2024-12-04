@@ -137,23 +137,24 @@ function showPopup(info, tab) {
     var tabID = encodeURI(tab.id);
     var tabIncognito = encodeURI(tab.incognito);
 
-    var urlToOpen = chrome.extension.getURL("popup.html") + "?url=" + tabUrl + "&id=" + tabID + "&incognito=" + tabIncognito;
+    var urlToOpen = chrome.runtime.getURL("popup.html") + "?url=" + tabUrl + "&id=" + tabID + "&incognito=" + tabIncognito;
 
     chrome.tabs.query({ 'windowId': chrome.windows.WINDOW_ID_CURRENT }, function (tabList) {
         for (var x = 0; x < tabList.length; x++) {
             var cTab = tabList[x];
             if (cTab.url.indexOf(urlToOpen) === 0) {
                 chrome.tabs.update(cTab.id, {
-                    'selected': true
+                    'active': true // Updated from 'selected' to 'active'
                 });
-                return
+                return;
             }
         }
         chrome.tabs.create({
             'url': urlToOpen
-        })
-    })
+        });
+    });
 }
+
 
 function copyToClipboard(text) {
     if (text === undefined)

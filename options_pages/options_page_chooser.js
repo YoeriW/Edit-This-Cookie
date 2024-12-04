@@ -1,26 +1,39 @@
 jQuery(document).ready(function () {
-    setPageCooserEvents();
+    setPageChooserEvents();
 });
 
-//Set Events
-function setPageCooserEvents() {
+// Set Events
+function setPageChooserEvents() {
     $(".chooser").click(function () {
         var panel = $(this).attr("id");
+
         if ($(this).hasClass("selected"))
             return;
+
         var id = $(this).attr("id");
-        if (id == "getting_started") {
+
+        // Handle external page redirections
+        if (id === "getting_started") {
             openExtPage("http://www.editthiscookie.com/start/");
             return;
-        } else if (id == "help") {
+        } else if (id === "help") {
             openExtPage("http://www.editthiscookie.com/faq/");
             return;
         }
-        ls.set("option_panel", panel);
-        location.href = "/options_pages/" + id + ".html";
+
+        // Save the selected panel to chrome.storage
+        chrome.storage.local.set({ option_panel: panel }, function () {
+            if (chrome.runtime.lastError) {
+                console.error("Error setting option_panel: ", chrome.runtime.lastError);
+            } else {
+                // Redirect to the appropriate options page
+                location.href = "/options_pages/" + id + ".html";
+            }
+        });
     });
 }
 
+// Open an external page in a new tab
 function openExtPage(url) {
     chrome.tabs.getCurrent(function (tab) {
         chrome.tabs.create({
@@ -29,5 +42,5 @@ function openExtPage(url) {
             active: true,
             openerTabId: tab.id
         });
-    })
+    });
 }
