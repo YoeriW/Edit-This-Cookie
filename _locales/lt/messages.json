@@ -374,7 +374,7 @@
         "message": "Išeities kodas"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "Koduoti slapukų reikšmę (pagal <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>) (rekomenduojama)"
+        "message": "Koduoti slapukų reikšmę (pagal <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>) (rekomenduojama)"
     },
     "editThis_helpIntro": {
         "message": "Čia rasi šio plėtinio pagrindinių funkcijų paaiškinimus"

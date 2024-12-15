@@ -374,7 +374,7 @@
         "message": "كود المصدر"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "ترميز قيمة الكوكيز ( as per <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a> ) ( مستحسن )"
+        "message": "ترميز قيمة الكوكيز ( as per <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a> ) ( مستحسن )"
     },
     "editThis_helpIntro": {
         "message": "ستجد هنا بعض التعليمات عن كيفية استخدام الوظائف الأساسية للإضافة"

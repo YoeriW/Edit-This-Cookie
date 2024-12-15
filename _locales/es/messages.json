@@ -374,7 +374,7 @@
         "message": "Código fuente"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "Codificar el valor de las cookies (por persistencia <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>) (Recomendado)"
+        "message": "Codificar el valor de las cookies (por persistencia <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>) (Recomendado)"
     },
     "editThis_helpIntro": {
         "message": "Aquí encontrarás explicaciones sobre algunas funciones básicas de esta extensión"

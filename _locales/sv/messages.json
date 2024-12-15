@@ -374,7 +374,7 @@
         "message": "Källkod"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "Koda av värdet av cookie (enligt <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>) (Rekommenderat)"
+        "message": "Koda av värdet av cookie (enligt <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>) (Rekommenderat)"
     },
     "editThis_helpIntro": {
         "message": "Här hittar du förklaringar till några grundfunktioner av det här tillägget"

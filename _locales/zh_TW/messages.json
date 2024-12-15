@@ -374,7 +374,7 @@
         "message": "原始碼"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "Encode the value of the cookies (as per <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>) (Recommended)"
+        "message": "Encode the value of the cookies (as per <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>) (Recommended)"
     },
     "editThis_helpIntro": {
         "message": "Here you will find explanations for some basic functions of this extension"

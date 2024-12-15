@@ -374,7 +374,7 @@
         "message": "Sumber kode"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "Sandikan nilai kuki (sesuai <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>) (Disarankan)"
+        "message": "Sandikan nilai kuki (sesuai <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>) (Disarankan)"
     },
     "editThis_helpIntro": {
         "message": "Di sini Anda akan menemukan penjelasan beberapa fungsi dasar dari ekstensi ini"

@@ -374,7 +374,7 @@
         "message": "Code source"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "Encoder la valeur des cookies (en suivant le modèle de <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>) (Recommandé)"
+        "message": "Encoder la valeur des cookies (en suivant le modèle de <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>) (Recommandé)"
     },
     "editThis_helpIntro": {
         "message": "Vous trouverez ici des explications sur quelques fonctions simples de l'extension"

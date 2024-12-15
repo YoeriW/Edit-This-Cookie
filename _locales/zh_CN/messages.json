@@ -374,7 +374,7 @@
         "message": "源码"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "建议依照 <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>编辑cookies的值"
+        "message": "建议依照 <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>编辑cookies的值"
     },
     "editThis_helpIntro": {
         "message": "在这里您会找到针对本插件基本功能的说明"

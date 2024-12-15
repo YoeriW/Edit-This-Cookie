@@ -374,7 +374,7 @@
         "message": "Mã nguồn"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "Mã hóa giá trị cookie (như là  <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>)  (Được đề nghị)"
+        "message": "Mã hóa giá trị cookie (như là  <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>)  (Được đề nghị)"
     },
     "editThis_helpIntro": {
         "message": "Tại đây bạn sẽ tìm thấy lời giải thích cho một số chức năng cơ bản của tiện ích này"

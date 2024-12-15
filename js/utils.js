@@ -14,7 +14,7 @@ Array.prototype.toTop = function (a) {
 };
 
 function getHost(url) {
-    return (url.match(/:\/\/(.[^:/]+)/)[1]).replace("www.", "")
+    return (url.match(/:\/\/(.[^:/]+)/)[1]).replace(/^www\./, "")
 }
 
 function addBlockRule(rule) {
@@ -61,7 +61,7 @@ function addBlockRule(rule) {
         for (var x = 0; x < cookieL.length; x++) {
             var cCookie = cookieL[x];
             if (filterMatchesCookie(filterURL, cCookie.name, cCookie.domain, cCookie.value)) {
-                var cUrl = (cCookie.secure) ? "https://" : "http://" + cCookie.domain + cCookie.path;
+                var cUrl = (cCookie.secure) ? "https://" : "https://" + cCookie.domain + cCookie.path;
                 deleteCookie(cUrl, cCookie.name, cCookie.storeId, cCookie)
             }
         }
