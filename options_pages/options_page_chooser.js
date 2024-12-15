@@ -14,10 +14,10 @@ function setPageChooserEvents() {
 
         // Handle external page redirections
         if (id === "getting_started") {
-            openExtPage("http://www.editthiscookie.com/start/");
+            openExtPage("https://www.editthiscookie.com/start/");
             return;
         } else if (id === "help") {
-            openExtPage("http://www.editthiscookie.com/faq/");
+            openExtPage("https://www.editthiscookie.com/faq/");
             return;
         }
 

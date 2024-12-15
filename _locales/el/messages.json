@@ -374,7 +374,7 @@
         "message": "Πηγαίος Κώδικας"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "Κωδικοποίησε την τιμή του cookie (όπως στο <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>) (Προτεινόμενο)"
+        "message": "Κωδικοποίησε την τιμή του cookie (όπως στο <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>) (Προτεινόμενο)"
     },
     "editThis_helpIntro": {
         "message": "Εδώ μπορείς να βρεις εξηγήσεις για μερικές βασικές λειτουργίες αυτής της επέκτασης"

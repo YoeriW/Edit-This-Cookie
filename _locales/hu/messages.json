@@ -374,7 +374,7 @@
         "message": "Forráskód"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "Sütik értékének kódolása (<a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a> alapján) (Ajánlott)"
+        "message": "Sütik értékének kódolása (<a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a> alapján) (Ajánlott)"
     },
     "editThis_helpIntro": {
         "message": "Itt találsz egy kis magyarázatot a kiegészítő alap funkcióiról"

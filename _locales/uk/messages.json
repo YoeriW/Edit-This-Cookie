@@ -374,7 +374,7 @@
         "message": "Вихідний код"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "Кодувати значення кукі (згідно з <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>) (Рекомендується)"
+        "message": "Кодувати значення кукі (згідно з <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>) (Рекомендується)"
     },
     "editThis_helpIntro": {
         "message": "Тут ти отримаєш пояснення до деяких функцій цього розширення"

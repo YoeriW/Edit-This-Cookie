@@ -374,7 +374,7 @@
         "message": "Kod sumber"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "Enkod nilai cookie (seperti <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>) (Disyorkan)"
+        "message": "Enkod nilai cookie (seperti <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>) (Disyorkan)"
     },
     "editThis_helpIntro": {
         "message": "Disini ada boleh mendapat penjelasan untuk beberapa fungsi asas extension ini"

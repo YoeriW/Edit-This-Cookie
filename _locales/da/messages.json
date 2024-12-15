@@ -374,7 +374,7 @@
         "message": "Kildekode"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "Indkod værdien af cookies (i henhold til <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>) (Anbefales)"
+        "message": "Indkod værdien af cookies (i henhold til <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>) (Anbefales)"
     },
     "editThis_helpIntro": {
         "message": "Her kan du finde forklaringer af nogle af de fundamentale funktioner i denne udvidelse"

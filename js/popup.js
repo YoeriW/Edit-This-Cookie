@@ -120,6 +120,7 @@ function submitNew() {
             }
         }
 
+        cCookie = cookieForCreationFromFullCookie(cCookie);
         deleteCookie(cCookie.url, cCookie.name, cCookie.storeId, function () {
             chrome.cookies.set(cCookie, doSearch);
             ++data.nCookiesCreated;
@@ -314,7 +315,7 @@ function importCookies() {
     var error = $(".error", "#pasteCookie");
     error.hide();
     error.text("For format reference export cookies in JSON");
-    error.html(error.html() + "<br> Also check&nbsp;<a href='http://developer.chrome.com/extensions/cookies.html#type-Cookie' target='_blank'>Developer Chrome Cookie</a><br>Error:");
+    error.html(error.html() + "<br> Also check&nbsp;<a href='https://developer.chrome.com/extensions/cookies.html#type-Cookie' target='_blank'>Developer Chrome Cookie</a><br>Error:");
 
     try {
         var cookieArray = $.parseJSON(text);
@@ -324,7 +325,14 @@ function importCookies() {
             try {
                 var cJSON = cookieArray[i];
                 var cookie = cookieForCreationFromFullCookie(cJSON);
-                chrome.cookies.set(cookie);
+                chrome.cookies.set(cookie, (cookieResponse) => {
+                    let error = chrome.runtime.lastError;
+                    if (!cookieResponse || error) {
+                        let errorMessage = (error ? error.message : '') || 'Unknown error';
+                        console.error( "EditThisCookie::importCookies: " + errorMessage );
+                        }
+                    }
+                );
                 nCookiesImportedThisTime++;
             } catch (e) {
                 error.html(error.html() + "<br>" + $('<div/>').text("Cookie number " + i).html() + "<br>" + $('<div/>').text(e.message).html());
@@ -453,7 +461,7 @@ function setEvents() {
     });
 
     $("#optionsButton").unbind().click(function () {
-        var urlToOpen = chrome.extension.getURL('options_main_page.html');
+        var urlToOpen = chrome.runtime.getURL('options_main_page.html');
         chrome.tabs.create({
             url: urlToOpen
         });
@@ -793,6 +801,22 @@ function formCookieData(form) {
             $(".expiration", form).removeClass("error");
         }
     }
+
+    /*
+     * New Chrome restrictions do not allow SameSite=None without Secure being
+     * marked as true.
+     */
+    if (sameSite === 'no_restriction' && !secure) {
+        $(".sameSite", form).addClass("error");
+        $(".sameSite", form).focus();
+        $(".error-message").html("'No Restriction' requires that Secure be checked.");
+        $(".error-message").show();
+        return undefined;
+    } else {
+        $(".sameSite", form).removeClass("error");
+        $(".error-message").hide();
+    }
+    
     newCookie.secure = secure;
     newCookie.httpOnly = httpOnly;
     newCookie.sameSite = sameSite;

@@ -20,7 +20,7 @@ Inspired by the lack of good cookie managers in Google Chrome, I developed this 
 
 Contributing
 --------------
-- Improve the translations or add new languages [here](http://www.getlocalization.com/editthiscookie/)
+- Improve the translations or add new languages [here](https://www.getlocalization.com/editthiscookie/)
 
 
 How to Install

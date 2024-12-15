@@ -1,5 +1,5 @@
 EditThisCookie is a Chrome extension made by Francesco Capano
-http://editthiscookie.com/
+https://editthiscookie.com/
 
 
 This file is part of "EditThisCookie".
@@ -15,4 +15,4 @@ This file is part of "EditThisCookie".
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with "EditThisCookie". If not, see <http://www.gnu.org/licenses/>.
+    along with "EditThisCookie". If not, see <https://www.gnu.org/licenses/>.

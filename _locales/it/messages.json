@@ -374,7 +374,7 @@
         "message": "Codice Sorgente"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "Codifica il valore dei cookie (come <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>) (Raccomandato)"
+        "message": "Codifica il valore dei cookie (come <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>) (Raccomandato)"
     },
     "editThis_helpIntro": {
         "message": "Qui troverai delle spiegazioni riguardati alcune delle funzioni base di questa estensione"

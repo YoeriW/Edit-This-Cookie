@@ -1,6 +1,6 @@
 {
     "name": "EditThisCookie - Updated for Manifest V3",
-    "version": "1.6.0",
+    "version": "1.7.0",
     "description": "__MSG_editThis_description__",
     "icons": {
       "16": "img/icon_16x16.png",
@@ -8,7 +8,7 @@
       "128": "img/icon_128x128.png"
     },
     "default_locale": "en",
-    "homepage_url": "http://www.editthiscookie.com/",
+    "homepage_url": "https://www.editthiscookie.com/",
     "action": {
       "default_icon": {
         "19": "img/icon_19x19.png",
@@ -36,5 +36,5 @@
     },
     "minimum_chrome_version": "88",
     "manifest_version": 3,
-    "update_url": "http://clients2.google.com/service/update2/crx"
+    "update_url": "https://clients2.google.com/service/update2/crx"
 }

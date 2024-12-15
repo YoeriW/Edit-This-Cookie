@@ -374,7 +374,7 @@
         "message": "קוד מקור"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "הצפן את ערך העוגיות (בצורה הבאה: <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>) (מומלץ)"
+        "message": "הצפן את ערך העוגיות (בצורה הבאה: <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>) (מומלץ)"
     },
     "editThis_helpIntro": {
         "message": "כאן תוכל למצוא הסברים לפונקציות הבסיסיות של הרחבה זו"

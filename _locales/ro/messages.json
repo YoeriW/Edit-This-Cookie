@@ -374,7 +374,7 @@
         "message": "Codul Sursa"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "Exprimă valoarea cookie-urilor (ca în <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>) (Recomandat)"
+        "message": "Exprimă valoarea cookie-urilor (ca în <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>) (Recomandat)"
     },
     "editThis_helpIntro": {
         "message": "Aici vei găsi explicaţii pentru funcţiile de bază ale extensiei"

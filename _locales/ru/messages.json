@@ -374,7 +374,7 @@
         "message": "Исходный код"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "Кодировать значения cookie (в соответствии с <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>) (рекомендуется)"
+        "message": "Кодировать значения cookie (в соответствии с <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>) (рекомендуется)"
     },
     "editThis_helpIntro": {
         "message": "Тут объяснения некоторых основных функций этого расширения"

@@ -374,7 +374,7 @@
         "message": "Изворни код"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "Шифруј вредност колачића (по <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>) (препоручено)"
+        "message": "Шифруј вредност колачића (по <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>) (препоручено)"
     },
     "editThis_helpIntro": {
         "message": "Овде ћете пронаћи објашњења за неке основне функције проширења"

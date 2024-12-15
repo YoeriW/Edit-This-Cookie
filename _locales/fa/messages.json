@@ -374,7 +374,7 @@
         "message": "منبع"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "مقادیر کوکی ها رو انکود گذاری کن ( همانند <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\"><a href=\"http://curl.haxx.se/rfc/cookie_spec.html\"></a> ) (پیشنهاد شده )"
+        "message": "مقادیر کوکی ها رو انکود گذاری کن ( همانند <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\"><a href=\"https://curl.haxx.se/rfc/cookie_spec.html\"></a> ) (پیشنهاد شده )"
     },
     "editThis_helpIntro": {
         "message": "اینجا شما توضیحاتی در باره ی کاراییه اولیه ی این افزونه پیدا میکنید"

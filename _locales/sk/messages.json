@@ -374,7 +374,7 @@
         "message": "Zdrojový kód"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "Zašifrujte hodnotu cookies (ako popísané na  <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>) (Odporúčané)"
+        "message": "Zašifrujte hodnotu cookies (ako popísané na  <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>) (Odporúčané)"
     },
     "editThis_helpIntro": {
         "message": "Tu nájdete vysvetlenie niektorých základných funkcií tohto rozšírenia"

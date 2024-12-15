@@ -374,7 +374,7 @@
         "message": "Kaynak Kodu"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "(Çerezleri değeri <her biri için a href=\"http://curl.haxx.se/rfc/cookie_spec.html\"> http://curl.haxx.se/rfc/cookie_spec.html olarak </a> ) olarak kodla (Önerilen)"
+        "message": "(Çerezleri değeri <her biri için a href=\"https://curl.haxx.se/rfc/cookie_spec.html\"> https://curl.haxx.se/rfc/cookie_spec.html olarak </a> ) olarak kodla (Önerilen)"
     },
     "editThis_helpIntro": {
         "message": "Burada bu eklentinin bazı temel fonksiyonları hakkında açıklamalar bulacaksınız"

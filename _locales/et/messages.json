@@ -374,7 +374,7 @@
         "message": "Lähtekood"
     },
     "editThis_Encode_Cookie_Value": {
-        "message": "Kodeeri küpsiste väärtus (näide asub leheküljel <a href=\"http://curl.haxx.se/rfc/cookie_spec.html\">http://curl.haxx.se/rfc/cookie_spec.html</a>) (Soovitatav)"
+        "message": "Kodeeri küpsiste väärtus (näide asub leheküljel <a href=\"https://curl.haxx.se/rfc/cookie_spec.html\">https://curl.haxx.se/rfc/cookie_spec.html</a>) (Soovitatav)"
     },
     "editThis_helpIntro": {
         "message": "Siit leiate laienduse peamiste funktsioonide selgitused"
