@@ -1,6 +1,6 @@
 {
     "name": "EditThisCookie - Updated for Manifest V3",
-    "version": "1.7.0",
+    "version": "1.7.1",
     "description": "__MSG_editThis_description__",
     "icons": {
       "16": "img/icon_16x16.png",

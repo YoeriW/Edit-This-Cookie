@@ -10,7 +10,7 @@ updateCallback = function () {
 
 function setOptions() {
     $("#saveMaxDateButton").button().hide();
-    $("#maxDateType").buttonset();
+    $("#maxDateType").controlgroup();
     $(':checkbox', '#options-box').removeAttr('checked');
     $("#justDelete").prop('checked', preferences.justDelete);
     $("#showAlerts").prop('checked', preferences.showAlerts);
@@ -47,17 +47,17 @@ function setOptions() {
     $("#maxDate").prop("disabled", !preferences.useMaxCookieAge);
     if (!preferences.useMaxCookieAge) {
         $("#maxDateLabel").addClass("disabled");
-        $("#maxDateType").buttonset("disable");
+        $("#maxDateType").controlgroup("disable");
         $("#saveMaxDateButton").button("disable");
     } else {
         $("#maxDateLabel").removeClass("disabled");
-        $("#maxDateType").buttonset("enable");
+        $("#maxDateType").controlgroup("enable");
         $("#saveMaxDateButton").button("enable");
     }
     $("#maxDate").val(preferences.maxCookieAge);
     $("input:radio", ".radioMaxDate").prop('checked', false);
     $("input:radio[value='" + preferences.maxCookieAgeType + "']").prop('checked', true);
-    $("#maxDateType").buttonset("refresh");
+    $("#maxDateType").controlgroup("refresh");
 
     $("option[value='" + preferences.copyCookiesType + "']").prop("selected", true);
 
@@ -193,12 +193,12 @@ function updateMaxDate(filterAllCookies) {
 
     if (!tmp_useMaxCookieAge) {
         $("#maxDateLabel").addClass("disabled");
-        $("#maxDateType").buttonset("disable");
+        $("#maxDateType").controlgroup("disable");
         $("#saveMaxDateButton").button("disable").fadeOut();
         $("#saveMaxDateButton:visible").fadeOut();
     } else {
         $("#maxDateLabel").removeClass("disabled");
-        $("#maxDateType").buttonset("enable");
+        $("#maxDateType").controlgroup("enable");
         $("#saveMaxDateButton").button("enable");
         if (!filterAllCookies)
             $("#saveMaxDateButton:hidden").fadeIn();
