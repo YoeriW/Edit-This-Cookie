@@ -10,6 +10,10 @@ body {
     font-size: .7em;
 }
 
+.fa {
+    font-size: 20px;
+}
+
 #wrapper {
     width: 100%;
     padding: 0 0 40px 0;
@@ -325,7 +329,7 @@ body {
 
 .commands-row a {
     text-align: center;
-    padding: 5px 10px;
+    padding: 10px;
     border-right: 1px solid #A1A1A1;
     cursor: pointer;
 }
