@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Tampilkan \"Edit Cookies\" pada menu konteks"
     },
+    "editThis_ThemeColor": {
+        "message": "Tema gelap"
+    },
     "editThis_Show_Alerts": {
         "message": "Selalu konfirmasi"
     },

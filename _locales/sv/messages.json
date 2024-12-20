@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Visa \"Ändra Cookies\" i kontextmenyn"
     },
+    "editThis_ThemeColor": {
+        "message": "Mörkt tema"
+    },
     "editThis_Show_Alerts": {
         "message": "Fråga alltid efter bekräftelse"
     },

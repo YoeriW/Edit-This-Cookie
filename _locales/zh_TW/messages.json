@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Show \"Edit Cookies\" in contextual menu"
     },
+    "editThis_ThemeColor": {
+        "message": "深色主題"
+    },
     "editThis_Show_Alerts": {
         "message": "Always ask for confirmation"
     },

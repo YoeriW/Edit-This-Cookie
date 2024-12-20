@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Показывать в контексном меню пункт \"Изменить Cookies\""
     },
+    "editThis_ThemeColor": {
+        "message": "Темная тема"
+    },
     "editThis_Show_Alerts": {
         "message": "Всегда спрашивать подтверждения"
     },

@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Afiseaza Iconita \"EditThisCookie\" "
     },
+    "editThis_ThemeColor": {
+        "message": "Tema întunecată"
+    },
     "editThis_Show_Alerts": {
         "message": "Cere confirmare pentru fiecare modificare"
     },

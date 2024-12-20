@@ -1,0 +1,49 @@
+:root {
+    --body-bg: #454545;
+    --body-color: #fff;
+    --h1-color: #f1f1f1;
+    --nav-bg: #3d3d3d;
+    --nav-border-right-color: #4f4f4f;
+    --nav-list-color: #f1f1f1;
+    --nav-list-color-hover: #bababa;
+    --nav-list-selected-color: #fff;
+    --box-h1-color: #fff;
+    --hr-border-top-color: #2f2f2f;
+    --helper-border-bottom: 1px dotted #f1f1f1;
+    --helper-color: #f7f7f7;
+    --active-bg-color: #3d3d3d;
+
+    --popup-body-bg: #363636;
+    --popup-body-color: #fff;
+    --popup-commands-table-color: #ededed;
+    --popup-commands-table-border-bottom: 1px solid #000;
+    --popup-submitdiv-bg: #363636;
+    --popup-submitdiv-border-top: 1px solid #171717;
+    --popup-helpbtn-color: #fff;
+    
+    --popup-searchcondition-bg: #1e1e1e;
+    --popup-searchcondition-border: 1px solid #000;
+    --popup-searchcondition-color: #fff;
+
+    --popup-commandrow-link-border-right: 1px solid #000;
+
+    --popup-textarea-placeholder: #fff;
+
+    --popup-cookie-table-label-color: #ededed;
+    --popup-cookie-table-input-bg: #171717;
+    --popup-cookie-table-input-color: #fff;
+    --popup-cookie-table-input-border: 1px solid #454545;
+
+    --popup-wrapper-color: #fff;
+
+    --ui-accordion-cookieslist-header-bg: #363636;
+    --ui-accordion-header-bg: #363636;
+    --ui-accordion-header-border: 1px solid #454545;
+    --ui-accordion-header-color: #f1f1f1;
+
+    --ui-widget-content-border: 1px solid #454545;
+    --ui-widget-content-bg: #333;
+    --ui-widget-content-color: #fff;
+    
+    --ui-icon-set: url('../lib/jquery-ui-1.14.1.custom/images/ui-icons_ffffff_256x240.png');
+}

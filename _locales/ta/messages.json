@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "சூழல் மெனுவில் \"குக்கிகளை திருத்து\" காட்டு"
     },
+    "editThis_ThemeColor": {
+        "message": "இருண்ட தீம்"
+    },
     "editThis_Show_Alerts": {
         "message": "எப்போதும் உறுதிப்படுத்தவும்"
     },

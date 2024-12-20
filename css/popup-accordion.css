@@ -1,15 +1,53 @@
+:root {
+    --ui-accordion-cookieslist-header-bg: #eee;
+    --ui-accordion-header-bg: #ccc;
+    --ui-accordion-header-border: 1px solid #c5c5c5;
+    --ui-accordion-header-color: #454545;
+
+    --ui-widget-content-border: 1px solid #ddd;
+    --ui-widget-content-bg: #fff;
+    --ui-widget-content-color: #333;
+
+    --ui-icon-set: url('../lib/jquery-ui-1.14.1.custom/images/ui-icons_444444_256x240.png');
+}
+
 #cookiesList .ui-accordion-header {
-    background-image: linear-gradient(to bottom, #eee 0%, #eee 100%);
+    background: var(--ui-accordion-cookieslist-header-bg);
 }
 
 .ui-accordion-header {
-    background-color: #ccc;
+    background-color: var(--ui-accordion-header-bg);
     margin: 0 !important;
     border-radius: 0 !important;
+}
+
+.ui-accordion-header.ui-state-default a:link {
+    color: var(--ui-accordion-header-color);
 }
 
 .ui-accordion-content {
     border-radius: 0 !important;
     padding-left: 0!important;
     padding-right: 0!important;
+}
+
+.ui-icon, .ui-widget-content .ui-icon ,
+.ui-state-hover .ui-icon, .ui-widget-content .ui-state-hover .ui-icon {
+    background-image: var(--ui-icon-set) !important;
+}
+
+.ui-state-hover .ui-icon {
+    opacity: 0.5 !important;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    border: var(--ui-accordion-header-border) !important;
+    background: var(--ui-accordion-header-bg) !important;
+    color: var(--ui-accordion-header-color) !important;
+}
+
+.ui-widget-content {
+    border: var(--ui-widget-content-border);
+    background: var(--ui-widget-content-bg);
+    color: var(--ui-widget-content-color);
 }

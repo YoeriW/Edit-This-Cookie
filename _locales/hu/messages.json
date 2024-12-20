@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "\"Sütik Szerkesztése\" gomb a helyi menüben"
     },
+    "editThis_ThemeColor": {
+        "message": "Sötét téma"
+    },
     "editThis_Show_Alerts": {
         "message": "Mindig kérjen megerősítést"
     },

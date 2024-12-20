@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Ukazovať \"Edit Cookies\" v kontextovom menu"
     },
+    "editThis_ThemeColor": {
+        "message": "Tmavá téma"
+    },
     "editThis_Show_Alerts": {
         "message": "Vždy sa pýtať na potvrdenie"
     },

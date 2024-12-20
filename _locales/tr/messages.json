@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "\"Cookieleri Düzenle\" yi içerik menüsünde göster"
     },
+    "editThis_ThemeColor": {
+        "message": "Koyu tema"
+    },
     "editThis_Show_Alerts": {
         "message": "Her zaman doğrulama sor"
     },
