@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Vis \"Rediger informasjonskapsler\" i kontekstmenyen"
     },
+    "editThis_ThemeColor": {
+        "message": "Dark Theme"
+    },
     "editThis_Show_Alerts": {
         "message": "Alltid spør om bekreftelse"
     },

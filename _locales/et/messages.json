@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Kuva kontekstmenüüd \"Muuda küpsiseid\""
     },
+    "editThis_ThemeColor": {
+        "message": "Dark Theme"
+    },
     "editThis_Show_Alerts": {
         "message": "Alati küsi kinnitust"
     },

@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Rodyti \"Keisti slapukus\" konteksto meniu"
     },
+    "editThis_ThemeColor": {
+        "message": "Dark Theme"
+    },
     "editThis_Show_Alerts": {
         "message": "Visada prašyti patvirtinimo"
     },

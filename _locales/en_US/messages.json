@@ -107,6 +107,9 @@
     "editThis_Flag_New_Cookie": {
         "message": "Block new cookie"
     },
+    "editThis_ThemeColor": {
+        "message": "Dark Theme"
+    },
     "editThis_Show_Alerts": {
         "message": "Always ask for confirmation"
     },

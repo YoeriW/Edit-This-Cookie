@@ -1,6 +1,7 @@
 $(document).ready(function () {
     setBlockRules();
     setEvents();
+    applyTheme();
 });
 
 var forceHideOperations = false;
@@ -176,4 +177,17 @@ function submitRule() {
     hideEditCommands();
 
     location.reload(true);
+}
+
+function applyTheme() {
+    const themePreference = preferences.themeColor;
+    const darkThemeStylesheet = document.getElementById('dark-theme-stylesheet');
+
+    if (themePreference) {
+        // Apply dark theme
+        darkThemeStylesheet.href = '/css/dark_theme.css';
+    } else {
+        // Remove dark theme
+        darkThemeStylesheet.href = '';
+    }
 }

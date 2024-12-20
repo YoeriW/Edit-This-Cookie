@@ -2,6 +2,10 @@
  * User preferences with default values
  */
 var preferences_template = {
+    // Use a dark theme
+    "themeColor": {
+        "default_value": false
+    },
     // Show alerts when the user performs some operations such as deleting a cookie
     "showAlerts": {
         "default_value": false
