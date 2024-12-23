@@ -21,6 +21,8 @@ jQuery(document).ready(function () {
     setTimeout(() => {
         body.css('display', '');
     }, 100);
+
+    applyTheme();
 });
 
 function start() {
@@ -822,4 +824,17 @@ function formCookieData(form) {
     newCookie.sameSite = sameSite;
 
     return newCookie;
+}
+
+function applyTheme() {
+    const themePreference = preferences.themeColor;
+    const darkThemeStylesheet = document.getElementById('dark-theme-stylesheet');
+
+    if (themePreference) {
+        // Apply dark theme
+        darkThemeStylesheet.href = '/css/dark_theme.css';
+    } else {
+        // Remove dark theme
+        darkThemeStylesheet.href = '';
+    }
 }

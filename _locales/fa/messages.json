@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "در منوی کلیک راست کروم \"ویرایش کوکی\" را نمایش بده"
     },
+    "editThis_ThemeColor": {
+        "message": "تم تاریک"
+    },
     "editThis_Show_Alerts": {
         "message": "همیشه تقاضای تاییدیه کن"
     },

@@ -1,8 +1,23 @@
+:root {
+    --body-bg: #fff;
+    --body-color: #000;
+    --h1-color: rgb(92, 97, 102);
+    --nav-bg: #F7F7F7;
+    --nav-border-right-color: #E3E3E3;
+    --nav-list-color: #999;
+    --nav-list-color-hover: #777;
+    --nav-list-selected-color: rgb(70, 78, 90);
+    --box-h1-color: #000;
+    --hr-border-top-color: #E3E3E3;
+    --helper-border-bottom: 1px dotted #9e9e9e;
+    --helper-color: #9e9e9e;
+}
+
 body {
     margin: 0;
     padding: 0;
-    background-color: #FFF;
-    font-size: 0.9em;
+    background-color: var(--body-bg);
+    color: var(--body-color);
     font-family: 'Open Sans', sans-serif;
     font-size: 75%;
     cursor: default;
@@ -10,7 +25,7 @@ body {
 }
 
 h1 {
-    color: rgb(92, 97, 102);
+    color: var(--h1-color);
     font-size: 150%;
     font-weight: normal;
     line-height: 1;
@@ -22,11 +37,10 @@ h1 {
     width: 160px;
     height: 100%;
     padding-top: 15px;
-    background-color: #FFF;
-    background-color: #F7F7F7;
+    background-color: var(--nav-bg);
     border-right-width: 1px;
     border-right-style: solid;
-    border-right-color: #E3E3E3;
+    border-right-color: var(--nav-border-right-color);
     z-index: 1;
 }
 
@@ -44,23 +58,23 @@ h1 {
     -webkit-border-start: 6px solid transparent;
     -webkit-padding-start: 18px;
     user-select: none;
-    color: #999;
+    color: var(--nav-list-color);
     cursor: pointer;
     line-height: 17px;
     margin: 5px 0;
 }
 
 #navigation li:hover {
-    color: #777;
+    color: var(--nav-list-color-hover);
 }
 
 #navigation li.selected {
-    -webkit-border-start-color: rgb(78, 87, 100);
-    color: rgb(70, 78, 90);
+    -webkit-border-start-color: var(--nav-list-selected-color);
+    color: var(--nav-list-selected-color);
     font-weight: bold;
 }
 
-#maincontent {
+/* #maincontent {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -68,7 +82,7 @@ h1 {
     padding: 0;
     background-color: #F7F7F7;
     border: none;
-}
+} */
 
 .box {
     margin-left: 180px;
@@ -77,7 +91,7 @@ h1 {
 }
 
 .box h1 {
-    color: #000;
+    color: var(--box-h1-color);
     margin-top: 10px;
     margin-left: -10px;
     font-size: 200%;
@@ -123,15 +137,15 @@ A:link, A:visited, A:active, .link_like {
 }
 
 .helper {
-    border-bottom: 1px dotted #9e9e9e !important;
-    color: #9e9e9e !important;
+    border-bottom: var(--helper-border-bottom) !important;
+    color: var(--helper-border-bottom) !important;
     cursor: pointer !important;
     text-decoration: none !important;
 }
 
 hr {
     margin: 10px 0 10px -15px;
-    border-top-color: #E3E3E3;
+    border-top-color: var(--hr-border-top-color);
     border-top-style: solid;
     border-width: 1px 0 0 0;
 }

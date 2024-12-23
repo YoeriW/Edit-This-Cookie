@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Mostra \"Modifica Cookie\" nel menu contestuale"
     },
+    "editThis_ThemeColor": {
+        "message": "Tema scuro"
+    },
     "editThis_Show_Alerts": {
         "message": "Chiedere sempre conferma"
     },

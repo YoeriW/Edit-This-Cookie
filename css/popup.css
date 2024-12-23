@@ -1,5 +1,31 @@
+:root {
+    --popup-body-bg: #ededed;
+    --popup-body-color: #000;
+    --popup-commands-table-color: #363636;
+    --popup-commands-table-border-bottom: 1px solid #525252;
+    
+    --popup-submitdiv-bg: #ededed;
+    --popup-submitdiv-border-top: 1px solid #525252;
+    --popup-helpbtn-color: #000;
+
+    --popup-searchcondition-bg: #fff;
+    --popup-searchcondition-border: 1px solid #fff;
+    --popup-searchcondition-color: #000;
+
+    --popup-commandrow-link-border-right: 1px solid #A1A1A1;
+
+    --popup-textarea-placeholder: #383838;
+
+    --popup-cookie-table-label-color: #383838;
+    --popup-cookie-table-input-bg: #fff;
+    --popup-cookie-table-input-color: #000;
+    --popup-cookie-table-input-border: 1px solid #ccc;
+
+    --popup-wrapper-color: #000;
+}
+
 body {
-    background-color: #ededed;
+    background-color: var(--popup-body-bg);
     width: 550px;
     height: 100.1%;
     margin: 0 auto;
@@ -17,6 +43,7 @@ body {
 #wrapper {
     width: 100%;
     padding: 0 0 40px 0;
+    color: var(--popup-wrapper-color);
 }
 
 #labelChooserBanner {
@@ -95,6 +122,10 @@ body {
     margin: 0px 0 0px 0;
     text-overflow: ellipsis;
     font-weight: bold;
+
+    background: var(--popup-searchcondition-bg);
+    border: var(--popup-searchcondition-border);
+    color: var(--popup-searchcondition-color);
 }
 
 #searchBox {
@@ -131,8 +162,8 @@ body {
     width: 100%;
     height: 35px;
     text-align: center;
-    background-color: #ededed;
-    border-top: 1px solid #525252;
+    background-color: var(--popup-submitdiv-bg);
+    border-top: var(--popup-submitdiv-border-top);
 }
 
 .submitDivSepWindow {
@@ -146,7 +177,7 @@ body {
     margin: 10px 0 0 -55px;
     right: 10px;
     text-align: right;
-    color: #000;
+    color: var(--popup-helpbtn-color);
 }
 
 #helpButton:hover {
@@ -290,8 +321,21 @@ body {
 
 .cookie-table>label {
     font-size: 1em;
-    color: #383838;
+    color: var(--popup-cookie-table-label-color);
 }
+
+.cookie-table input[type="text"] ,
+.cookie-table textarea,
+.cookie-table select,
+#pasteCookie textarea {
+    background: var(--popup-cookie-table-input-bg);
+    color: var(--popup-cookie-table-input-color);
+    border: var(--popup-cookie-table-input-border);
+}
+
+textarea::placeholder {
+    color: var(--popup-textarea-placeholder);
+}  
 
 .cookie-row {
     display: table;
@@ -309,8 +353,8 @@ body {
     display: table;
     z-index: 10;
     width: 100%;
-    border-bottom: 1px solid #525252;
-    color: #363636;
+    border-bottom: var(--popup-commands-table-border-bottom);
+    color: var(--popup-commands-table-color);
     table-layout: fixed;
 }
 
@@ -330,7 +374,7 @@ body {
 .commands-row a {
     text-align: center;
     padding: 10px;
-    border-right: 1px solid #A1A1A1;
+    border-right: var(--popup-commandrow-link-border-right);
     cursor: pointer;
 }
 

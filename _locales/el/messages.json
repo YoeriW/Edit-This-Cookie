@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Show \"Edit Cookies\" in contextual menu"
     },
+    "editThis_ThemeColor": {
+        "message": "Σκοτεινό θέμα"
+    },
     "editThis_Show_Alerts": {
         "message": "Να ζητείται πάντα επιβεβαίωση"
     },

@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "\"Cookie Ändern\" im Kontextmenü anzeigen"
     },
+    "editThis_ThemeColor": {
+        "message": "Dunkles Design"
+    },
     "editThis_Show_Alerts": {
         "message": "Immer nach Bestätigung fragen"
     },

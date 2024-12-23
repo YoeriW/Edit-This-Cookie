@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Tunjukkan \"Sunting Cookie\" di konteks menu"
     },
+    "editThis_ThemeColor": {
+        "message": "Tema gelap"
+    },
     "editThis_Show_Alerts": {
         "message": "Sentiasa minta pengesahan"
     },

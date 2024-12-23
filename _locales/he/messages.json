@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "הצג את \"ערוך עוגיות״ בתפריט"
     },
+    "editThis_ThemeColor": {
+        "message": "נושא אפל"
+    },
     "editThis_Show_Alerts": {
         "message": "תמיד תבקש אישור "
     },

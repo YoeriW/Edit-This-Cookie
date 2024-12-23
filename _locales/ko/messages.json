@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "\"쿠키 편집하기\" 메뉴를 컨텍스트 메뉴에서 보이게 하기"
     },
+    "editThis_ThemeColor": {
+        "message": "다크 테마"
+    },
     "editThis_Show_Alerts": {
         "message": "항상 변경 사항을 확인하기"
     },

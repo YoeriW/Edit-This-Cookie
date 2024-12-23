@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "コンテキストメニューに \"Edit Cookies\" を表示"
     },
+    "editThis_ThemeColor": {
+        "message": "ダークテーマ"
+    },
     "editThis_Show_Alerts": {
         "message": "常に確認する"
     },

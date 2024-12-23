@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Vis \"Redigér cookies\" i højrekliksmenuen"
     },
+    "editThis_ThemeColor": {
+        "message": "Mørkt tema"
+    },
     "editThis_Show_Alerts": {
         "message": "Anmod altid om bekræftelse"
     },

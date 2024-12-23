@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Показувати \"Редагувати кукі\" в контекстному меню браузера"
     },
+    "editThis_ThemeColor": {
+        "message": "Темна тема"
+    },
     "editThis_Show_Alerts": {
         "message": "Завжди запитувати підтвердження"
     },

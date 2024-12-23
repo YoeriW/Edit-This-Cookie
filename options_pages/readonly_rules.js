@@ -1,6 +1,7 @@
 $(document).ready(function () {
     setReadOnlyRules();
     setEvents();
+    applyTheme();
 });
 
 var forceHideOperations = false;
@@ -89,4 +90,17 @@ function hideEditCommands() {
     newRowVisible = false;
     $(".new_rule_operations").fadeOut();
     $(".new_row:not(.template)").fadeOut().detach();
+}
+
+function applyTheme() {
+    const themePreference = preferences.themeColor;
+    const darkThemeStylesheet = document.getElementById('dark-theme-stylesheet');
+
+    if (themePreference) {
+        // Apply dark theme
+        darkThemeStylesheet.href = '/css/dark_theme.css';
+    } else {
+        // Remove dark theme
+        darkThemeStylesheet.href = '';
+    }
 }

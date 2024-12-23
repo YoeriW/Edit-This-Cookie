@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Zobrazit \"Upravit cookies\" v kontextovém menu"
     },
+    "editThis_ThemeColor": {
+        "message": "Tmavé téma"
+    },
     "editThis_Show_Alerts": {
         "message": "Vždy se zeptat na potvrzení"
     },

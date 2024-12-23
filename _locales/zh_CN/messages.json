@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "添加“编辑Cookies”到右键菜单"
     },
+    "editThis_ThemeColor": {
+        "message": "深色主题"
+    },
     "editThis_Show_Alerts": {
         "message": "总是在操作前确认"
     },

@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Näytä ”Muokkaa evästeitä” kontekstivalikossa"
     },
+    "editThis_ThemeColor": {
+        "message": "Tumma teema"
+    },
     "editThis_Show_Alerts": {
         "message": "Pyydä aina varmistusta"
     },

@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Pokaż \"Edytuj ciasteczka\" w menu kontekstowym"
     },
+    "editThis_ThemeColor": {
+        "message": "Ciemny motyw"
+    },
     "editThis_Show_Alerts": {
         "message": "Zawsze pytaj o potwierdzenie"
     },

@@ -1,3 +1,7 @@
+:root {
+    --active-bg: #fff;
+}
+
 #addRule {
     float: right;
     border-bottom-width: 0 !important;

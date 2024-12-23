@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "اظهار \" تحرير الكوكيز \" في قائمة جانبية أو سياقية"
     },
+    "editThis_ThemeColor": {
+        "message": "المظهر الداكن"
+    },
     "editThis_Show_Alerts": {
         "message": "دائماً اسأل عن الموافقة"
     },

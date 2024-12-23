@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Hiện nút \"Sửa Cookies\" trong bảng chuột phải"
     },
+    "editThis_ThemeColor": {
+        "message": "Chủ đề tối"
+    },
     "editThis_Show_Alerts": {
         "message": "Luôn yêu cầu xác nhận"
     },

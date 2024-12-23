@@ -208,6 +208,9 @@
     "editThis_Show_ContextMenu": {
         "message": "Прикажи дугме „Уреди колачиће“ у контекстном менију"
     },
+    "editThis_ThemeColor": {
+        "message": "Тамна тема"
+    },
     "editThis_Show_Alerts": {
         "message": "Увек питај за потврду"
     },

@@ -2,6 +2,7 @@ $(document).ready(function () {
     $("input:checkbox, input:text, select").uniform();
     setOptions();
     setEvents();
+    applyTheme();
 });
 
 updateCallback = function () {
@@ -13,6 +14,7 @@ function setOptions() {
     $("#maxDateType").controlgroup();
     $(':checkbox', '#options-box').removeAttr('checked');
     $("#justDelete").prop('checked', preferences.justDelete);
+    $("#themeColor").prop('checked', preferences.themeColor);
     $("#showAlerts").prop('checked', preferences.showAlerts);
     $("#showDomain").prop('checked', preferences.showDomain);
     $("#showContextMenu").prop('checked', preferences.showContextMenu);
@@ -63,10 +65,11 @@ function setOptions() {
 
     $("#showDomainBeforeName").prop('checked', preferences.showDomainBeforeName);
     $("#showDomainBeforeName").prop("disabled", !preferences.showDomain);
-    if (!preferences.showDomain)
+    if (!preferences.showDomain) {
         $("#showDomainBeforeNameLabel").addClass("disabled");
-    else
+    } else {
         $("#showDomainBeforeNameLabel").removeClass("disabled");
+    }
 
     $("option[value='" + preferences.sortCookiesType + "']").prop("selected", true);
 
@@ -77,9 +80,15 @@ function setOptions() {
 
 //Set Events
 function setEvents() {
+    $("#themeColor").click(function () {
+        preferences.themeColor = $('#themeColor').prop("checked");
+        applyTheme();
+    });
+
     $("#showAlerts").click(function () {
         preferences.showAlerts = $('#showAlerts').prop("checked");
     });
+
     $("#showDomain").click(function () {
         preferences.showDomain = $('#showDomain').prop("checked");
         $("#showDomainBeforeName").prop("disabled", !preferences.showDomain);
@@ -90,6 +99,7 @@ function setEvents() {
         }
         $.uniform.update();
     });
+
     $("#refreshAfterSubmit").click(function () {
         preferences.refreshAfterSubmit = $('#refreshAfterSubmit').prop("checked");
         $("#skipCacheRefresh").prop("disabled", !preferences.refreshAfterSubmit);
@@ -100,21 +110,27 @@ function setEvents() {
         }
         $.uniform.update();
     });
+
     $("#skipCacheRefresh").click(function () {
         preferences.skipCacheRefresh = $('#skipCacheRefresh').prop("checked");
     });
+
     $("#encodeCookieValue").click(function () {
         preferences.encodeCookieValue = $('#encodeCookieValue').prop("checked");
     });
+
     $("#showContextMenu").click(function () {
         preferences.showContextMenu = $('#showContextMenu').prop("checked");
     });
+
     $("#showFlagAndDeleteAll").click(function () {
         preferences.showFlagAndDeleteAll = $('#showFlagAndDeleteAll').prop("checked");
     });
+
     $("#showCommandsLabels").click(function () {
         preferences.showCommandsLabels = $('#showCommandsLabels').prop("checked");
     });
+
     $("#showChristmasIcon").click(function () {
         preferences.showChristmasIcon = $('#showChristmasIcon').prop("checked");
     });
@@ -122,9 +138,11 @@ function setEvents() {
     $("#useMaxDate").click(function () {
         updateMaxDate();
     });
+
     $("#maxDateType").click(function () {
         $("#saveMaxDateButton:hidden").fadeIn();
     });
+
     $("#maxDate").keydown(function (e) {
         var keyPressed;
         if (!e) var e = window.event;
@@ -145,6 +163,7 @@ function setEvents() {
             }
         }
     });
+
     $("#maxDate").bind("keyup blur", function (e) {
         $("#saveMaxDateButton:hidden").fadeIn();
     });
@@ -156,6 +175,7 @@ function setEvents() {
             });
         });
     });
+
     $("#useCustomLocale").click(function () {
         preferences.useCustomLocale = $('#useCustomLocale').prop("checked");
         top.location.reload();
@@ -249,4 +269,17 @@ function shortenCookies(cookies, callback) {
         cookiesShortened++;
     } else
         shortenCookies(cookies, callback);
+}
+
+function applyTheme() {
+    const themePreference = preferences.themeColor;
+    const darkThemeStylesheet = document.getElementById('dark-theme-stylesheet');
+
+    if (themePreference) {
+        // Apply dark theme
+        darkThemeStylesheet.href = '/css/dark_theme.css';
+    } else {
+        // Remove dark theme
+        darkThemeStylesheet.href = '';
+    }
 }
