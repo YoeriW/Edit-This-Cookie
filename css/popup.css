@@ -22,6 +22,9 @@
     --popup-cookie-table-input-border: 1px solid #ccc;
 
     --popup-wrapper-color: #000;
+
+    --loader-container-background: rgba(255,255,255,0.6);
+    --loader-container-icon-color: #222;;
 }
 
 body {
@@ -475,13 +478,17 @@ textarea::placeholder {
     right: 0;
     text-align: center;
     padding-top: 15px;
-    background-image: url('/img/transparent_white_60.png');
+    background: var(--loader-container-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #loader-container i {
     z-index: 1001;
-    color: #222;
+    color: var(--loader-container-icon-color);
 }
+
 
 #noCookies {
     display: none;
