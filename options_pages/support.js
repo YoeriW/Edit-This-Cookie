@@ -1,6 +1,7 @@
 jQuery(document).ready(function () {
     $("input:checkbox").uniform();
     setEvents();
+    applyTheme();
 });
 
 function setEvents() {
@@ -18,4 +19,17 @@ function setEvents() {
             });
         });
     });
+}
+
+function applyTheme() {
+    const themePreference = preferences.themeColor;
+    const darkThemeStylesheet = document.getElementById('dark-theme-stylesheet');
+
+    if (themePreference) {
+        // Apply dark theme
+        darkThemeStylesheet.href = '/css/dark_theme.css';
+    } else {
+        // Remove dark theme
+        darkThemeStylesheet.href = '';
+    }
 }

@@ -11,6 +11,7 @@
     --hr-border-top-color: #E3E3E3;
     --helper-border-bottom: 1px dotted #9e9e9e;
     --helper-color: #9e9e9e;
+    --linkify-color-hover: #4D4D4D;
 }
 
 body {
@@ -93,13 +94,11 @@ h1 {
 .box h1 {
     color: var(--box-h1-color);
     margin-top: 10px;
-    margin-left: -10px;
     font-size: 200%;
 }
 
 .section-title {
     margin-top: 0px;
-    margin-left: -10px;
     margin-bottom: 10px;
     font-size: 110%;
     font-weight: bold;
@@ -133,7 +132,23 @@ A:link, A:visited, A:active, .link_like {
 }
 
 .linkify:hover {
-    color: #4D4D4D;
+    color: var(--linkify-color-hover);
+}
+
+#support-box .support-box-item .linkify {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+#support-box .support-box-item .linkify i {
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+#support-box .support-box-item .linkify .section-title:first-of-type {
+    width: 100%;
 }
 
 .helper {
@@ -182,6 +197,6 @@ hr {
 }
 
 .fa {
-    font-size: 1.2em;
-    line-height: 20px;
+    /* font-size: 1.2em; */
+    /* line-height: 20px; */
 }

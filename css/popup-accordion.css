@@ -12,7 +12,7 @@
 }
 
 #cookiesList .ui-accordion-header {
-    background: var(--ui-accordion-cookieslist-header-bg);
+    background: var(--ui-accordion-cookieslist-header-bg) !important;
 }
 
 .ui-accordion-header {

@@ -46,4 +46,6 @@
     --ui-widget-content-color: #fff;
     
     --ui-icon-set: url('../lib/jquery-ui-1.14.1.custom/images/ui-icons_ffffff_256x240.png');
+
+    --linkify-color-hover: #bababa;
 }
