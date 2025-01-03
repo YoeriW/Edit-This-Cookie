@@ -3,6 +3,7 @@ $(document).ready(function () {
     setOptions();
     setEvents();
     applyTheme();
+    savePreferences();
 });
 
 updateCallback = function () {
@@ -74,6 +75,8 @@ function setOptions() {
     $("option[value='" + preferences.sortCookiesType + "']").prop("selected", true);
 
     $("#showDevToolsPanel").prop('checked', preferences.showDevToolsPanel);
+
+    savePreferences();
 
     $.uniform.update();
 }
@@ -282,4 +285,12 @@ function applyTheme() {
         // Remove dark theme
         darkThemeStylesheet.href = '';
     }
+}
+
+function savePreferences() {
+    chrome.storage.local.set({ preferences }, function () {
+        if (chrome.runtime.lastError) {
+            console.error("Error saving preferences: ", chrome.runtime.lastError);
+        }
+    });
 }
