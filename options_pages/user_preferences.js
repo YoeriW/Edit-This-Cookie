@@ -1,7 +1,14 @@
 // Apply saved theme from localStorage during page load
-const savedTheme = localStorage.getItem('themeColor') || 'light';
-document.documentElement.setAttribute('data-theme', savedTheme);
-$("#themeColor").prop('checked', savedTheme === 'dark');
+const savedTheme = localStorage.getItem('themeColor');
+if (savedTheme === 'dark' || savedTheme === 'light') {
+    preferences.themeColor = savedTheme;
+} else {
+    preferences.themeColor = 'light'; // Fallback to default if invalid data
+}
+
+// Apply the theme to the document
+document.documentElement.setAttribute('data-theme', preferences.themeColor);
+$("#themeColor").prop('checked', preferences.themeColor === 'dark');
 
 $(document).ready(function () {
     $("input:checkbox, input:text, select").uniform();
@@ -88,11 +95,9 @@ function setOptions() {
 //Set Events
 function setEvents() {
     $("#themeColor").click(function () {
-        // Update preferences and localStorage
-        preferences.themeColor = $('#themeColor').prop("checked");
-        const newTheme = preferences.themeColor ? 'dark' : 'light';
-        localStorage.setItem('themeColor', newTheme); // Save to localStorage
-        document.documentElement.setAttribute('data-theme', newTheme); // Apply theme
+        preferences.themeColor = $('#themeColor').prop("checked") ? 'dark' : 'light';
+        localStorage.setItem('themeColor', preferences.themeColor); // Store as string
+        document.documentElement.setAttribute('data-theme', preferences.themeColor);
     });
 
     $("#showAlerts").click(function () {
@@ -282,13 +287,12 @@ function shortenCookies(cookies, callback) {
 }
 
 function savePreferences() {
-    // Save preferences in chrome.storage.local
-    chrome.storage.local.set({ preferences }, function () {
+    chrome.storage.local.set({ preferences: preferences }, function () {
         if (chrome.runtime.lastError) {
             console.error("Error saving preferences: ", chrome.runtime.lastError);
         }
     });
 
-    // Optionally, save preferences to localStorage (if needed for direct access)
-    localStorage.setItem('themeColor', preferences.themeColor ? 'dark' : 'light');
+    // Store the theme color as a string in localStorage
+    localStorage.setItem('themeColor', preferences.themeColor);
 }

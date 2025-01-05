@@ -1,6 +1,12 @@
-// Apply the saved theme on page load
-const savedTheme = localStorage.getItem('themeColor') || 'light';
-document.documentElement.setAttribute('data-theme', savedTheme);
+const savedTheme = localStorage.getItem('themeColor');
+if (savedTheme === 'dark' || savedTheme === 'light') {
+    preferences.themeColor = savedTheme;
+} else {
+    preferences.themeColor = 'light'; // Fallback to default if invalid data
+}
+document.documentElement.setAttribute('data-theme', preferences.themeColor);
+$("#themeColor").prop('checked', preferences.themeColor === 'dark');
+
 
 console.log(savedTheme);
 

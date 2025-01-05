@@ -12,6 +12,7 @@ var data = {
 
 // Initialize global preferences
 var preferences = {
+    themeColor: 'light',
     showContextMenu: true,
     showChristmasIcon: false,
     useMaxCookieAge: false,

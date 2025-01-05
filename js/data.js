@@ -4,7 +4,7 @@
 var preferences_template = {
     // Use a dark theme
     "themeColor": {
-        "default_value": false
+        "default_value": 'light'
     },
     // Show alerts when the user performs some operations such as deleting a cookie
     "showAlerts": {
