@@ -1,10 +1,10 @@
-Privacy Policy for EditThisCookie - Updated for Manifest V3
+Privacy Policy for EditThisCookie
 
 Effective Date: 04-12-2024
 
 Introduction
 
-EditThisCookie - Updated for Manifest V3 (“we”, “our”, “us”) is committed to protecting your privacy. This Privacy Policy explains how we handle user data when you use our extension, which is available on the Chrome Web Store.
+EditThisCookie (“we”, “our”, “us”) is committed to protecting your privacy. This Privacy Policy explains how we handle user data when you use our extension, which is available on the Chrome Web Store.
 
 Data Collection and Use
 

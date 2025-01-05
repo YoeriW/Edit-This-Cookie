@@ -1,6 +1,6 @@
 {
-    "name": "EditThisCookie - Updated for Manifest V3",
-    "version": "1.7.3",
+    "name": "EditThisCookie",
+    "version": "1.7.4",
     "description": "__MSG_editThis_description__",
     "icons": {
       "16": "img/icon_16x16.png",
@@ -32,7 +32,7 @@
     ],
     "host_permissions": ["<all_urls>"],
     "content_security_policy": {
-      "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self'"
+      "extension_pages": "script-src 'self'; object-src 'self'; connect-src https://ssl.google-analytics.com"
     },
     "minimum_chrome_version": "88",
     "manifest_version": 3,
