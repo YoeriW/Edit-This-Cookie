@@ -1,6 +1,14 @@
 :root {
     --addrule-btn-bg: #171717;
     --addrule-btn-color: #fff;
+    --maxdatetype-ui-icon-blank-border: 2px solid #4D4D4D;
+    --maxdatetype-ui-icon-blank-bg: #cacaca;
+    --maxdatetype-ui-icon-blank-hover-border-color: #000;
+    --maxdatetype-ui-checkbox-icon-color: #000;
+    --maxdatetype-ui-checkbox-icon-bg: #000;
+    --maxdatetype-ui-btn-active-bg: #fff;
+    --maxdatetype-ui-btn-active-border-color: #c3c3c3;
+    --maxdatetype-ui-btn-active-color: #000;
 }
 
 hr:first-of-type {
@@ -11,8 +19,67 @@ hr:first-of-type {
     color: #9e9e9e;
 }
 
+
 #maxDateType {
     display: inline-flex;
+}
+
+#maxDateType .ui-icon-blank {
+    background: none;
+    box-shadow: none;
+    border: var(--maxdatetype-ui-icon-blank-border);
+    margin: 0 10px 0 0;
+    background: var(--maxdatetype-ui-icon-blank-bg);
+    width: 19px;
+    height: 19px;
+    transition: border-color 200ms, background 200ms;
+}
+
+#maxDateType .ui-icon-blank:hover {
+    border-color: var(--maxdatetype-ui-icon-blank-hover-border-color);
+}
+
+#maxDateType .ui-checkboxradio-radio-label.ui-checkboxradio-checked .ui-icon,
+#maxDateType .ui-checkboxradio-radio-label.ui-checkboxradio-checked:hover .ui-icon {
+    width: 19px;
+    height: 19px;
+    border-width: 2px;
+}
+
+#maxDateType .ui-checkboxradio-radio-label.ui-checkboxradio-checked .ui-checkboxradio-icon {
+    position: relative;
+}
+
+#maxDateType .ui-checkboxradio-radio-label.ui-checkboxradio-checked .ui-checkboxradio-icon:after {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    content: '';
+    color: var(--maxdatetype-ui-checkbox-icon-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    transition: border-color 200ms, background 200ms;
+    width: 50%;
+    height: 50%;
+    display: block;
+    z-index: 9999;
+    background: var(--maxdatetype-ui-checkbox-icon-bg);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#maxDateType .ui-button:active,
+#maxDateType .ui-button:hover,
+#maxDateType .ui-button.ui-state-active {
+    background: var(--maxdatetype-ui-btn-active-bg);
+    border-color: var(--maxdatetype-ui-btn-active-border-color);
+    color: var(--maxdatetype-ui-btn-active-color);
+}
+
+#maxDateType label:hover .ui-icon-blank.ui-icon-blank.ui-icon-blank {
+    border-color: var(--maxdatetype-ui-icon-blank-hover-border-color);
 }
 
 #maxDateContainer {

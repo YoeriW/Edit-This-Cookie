@@ -19,6 +19,7 @@
     --checker-span-before-bg: #fff;
     --checker-span-hover-before-bg: #f1f1f1;
     --checker-span-hover-before-border-color: #000;
+    --checker-span-after-color: #000;
 }
 
 body {
@@ -53,7 +54,8 @@ h1 {
 }
 
 #navigation>h1 {
-    margin-left: 5px;
+    width: 100%;
+    text-align: center;
 }
 
 #navigation>ul {
@@ -249,7 +251,7 @@ hr {
     content: '\f00c';
     font-family: var(--fa-style-family, "Font Awesome 6 Free");
     font-weight: var(--fa-style, 900);
-    color: #088346;
+    color: var(--checker-span-after-color);
     display: flex;
     align-items: center;
     justify-content: center;

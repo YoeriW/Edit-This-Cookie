@@ -55,12 +55,23 @@ html[data-theme="dark"] {
     --addrule-btn-bg: #fff;
     --addrule-btn-color: #171717;
 
-    --ui-controlgroup-item-bg: #2f2f2f;
-    --ui-controlgroup-item-border-color: #141414;
+    --ui-controlgroup-item-bg: #4c4c4c;
+    --ui-controlgroup-item-border-color: #2f2f2f;
     --ui-controlgroup-item-color: #fff;
 
     --checker-span-before-border: 2px solid #2f2f2f;
     --checker-span-before-bg: #3d3d3d;
+    --checker-span-after-color: #fff;
     --checker-span-hover-before-bg: #444444;
     --checker-span-hover-before-border-color: #fff;
+
+    --maxdatetype-ui-icon-blank-border: 2px solid #2f2f2f;
+    --maxdatetype-ui-icon-blank-bg: #3d3d3d;
+    --maxdatetype-ui-icon-blank-hover-border-color: #fff;
+    --maxdatetype-ui-checkbox-icon-color: #fff;
+    --maxdatetype-ui-checkbox-icon-bg: #fff;
+    --maxdatetype-ui-btn-active-bg: #5f5f5f;
+    --maxdatetype-ui-btn-active-border-color: #393939;
+    --maxdatetype-ui-btn-active-color: #fff;
+    
 }
