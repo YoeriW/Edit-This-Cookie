@@ -1,3 +1,8 @@
+:root {
+    --addrule-btn-bg: #171717;
+    --addrule-btn-color: #fff;
+}
+
 hr:first-of-type {
     margin-bottom: 30px;
 }
@@ -7,7 +12,7 @@ hr:first-of-type {
 }
 
 #maxDateType {
-    display: inline;
+    display: inline-flex;
 }
 
 #maxDateContainer {
@@ -19,9 +24,19 @@ hr:first-of-type {
 }
 
 #saveMaxDateButton {
-    display: inline-block;
-    max-width: 80px;
-    margin-left: 20px;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 10px;
+    font-size: 15px;
+    text-align: center;
+    background: var(--addrule-btn-bg);
+    color: var(--addrule-btn-color);
+    border: none;
+    transition: opacity 200ms;
+}
+
+#saveMaxDateButton:hover {
+    opacity: 0.7
 }
 
 #shortenProgress {

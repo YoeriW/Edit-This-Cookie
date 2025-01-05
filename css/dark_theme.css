@@ -54,4 +54,13 @@ html[data-theme="dark"] {
 
     --addrule-btn-bg: #fff;
     --addrule-btn-color: #171717;
+
+    --ui-controlgroup-item-bg: #2f2f2f;
+    --ui-controlgroup-item-border-color: #141414;
+    --ui-controlgroup-item-color: #fff;
+
+    --checker-span-before-border: 2px solid #2f2f2f;
+    --checker-span-before-bg: #3d3d3d;
+    --checker-span-hover-before-bg: #444444;
+    --checker-span-hover-before-border-color: #fff;
 }

@@ -7,7 +7,6 @@
 
 #addRule {
     float: right;
-    border-bottom-width: 0 !important;
     font-size: 15px;
     height: 25px;
     display: flex;

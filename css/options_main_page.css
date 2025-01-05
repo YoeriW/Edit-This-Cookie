@@ -12,6 +12,13 @@
     --helper-border-bottom: 1px dotted #9e9e9e;
     --helper-color: #9e9e9e;
     --linkify-color-hover: #4D4D4D;
+    --ui-controlgroup-item-bg: #cacaca;
+    --ui-controlgroup-item-border-color: #b8b8b8;
+    --ui-controlgroup-item-color: #000;
+    --checker-span-before-border: 2px solid #c3c3c3;
+    --checker-span-before-bg: #fff;
+    --checker-span-hover-before-bg: #f1f1f1;
+    --checker-span-hover-before-border-color: #000;
 }
 
 body {
@@ -113,7 +120,8 @@ h1 {
 }
 
 .formLine {
-    height: 30px;
+    margin-bottom: 10px;
+    clear: both;
 }
 
 .checker>span {
@@ -196,7 +204,60 @@ hr {
     vertical-align: middle;
 }
 
-.fa {
-    /* font-size: 1.2em; */
-    /* line-height: 20px; */
+.ui-controlgroup > .ui-controlgroup-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ui-controlgroup-item-bg);
+    border-color: var(--ui-controlgroup-item-border-color);
+    color: var(--ui-controlgroup-item-color);
+}
+
+.ui-controlgroup > .ui-controlgroup-item.ui-state-active {
+    font-weight: bold !important;
+}
+
+.checker input[type="checkbox"] {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.checker > span {
+    background: none !important;
+    position: relative;
+}
+
+.checker > span:before {
+    top: 0;
+    left: 0;
+    position: absolute;
+    content: '';
+    width: 19px;
+    height: 19px;
+    border: var(--checker-span-before-border);
+    display: block;
+    border-radius: 4px;
+    background: var(--checker-span-before-bg);
+    box-sizing: border-box;
+}
+
+.checker > span.checked:after {
+    top: 3px;
+    left: 3px;
+    position: absolute;
+    content: '\f00c';
+    font-family: var(--fa-style-family, "Font Awesome 6 Free");
+    font-weight: var(--fa-style, 900);
+    color: #088346;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    transition: border-color 200ms, background 200ms;
+}
+
+.checker > span:hover:before {
+    background: var(--checker-span-hover-before-bg);
+    border-color: var(--checker-span-hover-before-border-color);
 }

@@ -412,6 +412,7 @@ textarea::placeholder {
 
 .commands-row-texy>a>span {
     display: block;
+    margin-top: 5px;
 }
 
 .vertical-commands-row {
@@ -439,13 +440,6 @@ textarea::placeholder {
     padding: 5px;
     width: 30px;
     font-size: 1.8em;
-}
-
-.fa:not(.fa-spin) {
-    padding-right: 1px;
-    padding-left: 5px;
-    width: 14px;
-    height: 18px;
 }
 
 .error {
