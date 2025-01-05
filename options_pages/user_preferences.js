@@ -1,8 +1,12 @@
+// Apply saved theme from localStorage during page load
+const savedTheme = localStorage.getItem('themeColor') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
+$("#themeColor").prop('checked', savedTheme === 'dark');
+
 $(document).ready(function () {
     $("input:checkbox, input:text, select").uniform();
     setOptions();
     setEvents();
-    applyTheme();
     savePreferences();
 });
 
@@ -84,8 +88,11 @@ function setOptions() {
 //Set Events
 function setEvents() {
     $("#themeColor").click(function () {
+        // Update preferences and localStorage
         preferences.themeColor = $('#themeColor').prop("checked");
-        applyTheme();
+        const newTheme = preferences.themeColor ? 'dark' : 'light';
+        localStorage.setItem('themeColor', newTheme); // Save to localStorage
+        document.documentElement.setAttribute('data-theme', newTheme); // Apply theme
     });
 
     $("#showAlerts").click(function () {
@@ -274,23 +281,14 @@ function shortenCookies(cookies, callback) {
         shortenCookies(cookies, callback);
 }
 
-function applyTheme() {
-    const themePreference = preferences.themeColor;
-    const darkThemeStylesheet = document.getElementById('dark-theme-stylesheet');
-
-    if (themePreference) {
-        // Apply dark theme
-        darkThemeStylesheet.href = '/css/dark_theme.css';
-    } else {
-        // Remove dark theme
-        darkThemeStylesheet.href = '';
-    }
-}
-
 function savePreferences() {
+    // Save preferences in chrome.storage.local
     chrome.storage.local.set({ preferences }, function () {
         if (chrome.runtime.lastError) {
             console.error("Error saving preferences: ", chrome.runtime.lastError);
         }
     });
+
+    // Optionally, save preferences to localStorage (if needed for direct access)
+    localStorage.setItem('themeColor', preferences.themeColor ? 'dark' : 'light');
 }

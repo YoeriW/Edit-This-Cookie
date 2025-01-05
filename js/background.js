@@ -166,4 +166,3 @@ function setContextMenu(show) {
         }
     });
 }
-

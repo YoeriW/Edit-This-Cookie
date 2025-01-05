@@ -1,4 +1,4 @@
-:root {
+html[data-theme="dark"] {
     --body-bg: #454545;
     --body-color: #fff;
     --h1-color: #f1f1f1;
@@ -51,4 +51,7 @@
     --ui-icon-set: url('../lib/jquery-ui-1.14.1.custom/images/ui-icons_ffffff_256x240.png');
 
     --linkify-color-hover: #bababa;
+
+    --addrule-btn-bg: #fff;
+    --addrule-btn-color: #171717;
 }
