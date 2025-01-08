@@ -133,7 +133,7 @@
         "message": "Puteti trimite donatii la:"
     },
     "editThis_description": {
-        "message": "EditThisCookie este un manager de cookie-uri. Poti adauga, sterge, edita, cauta, proteja şi bloca cookie-uri!"
+        "message": "EditThisCookie este un manager de cookie-uri. Poti adauga, sterge, edita, cauta, proteja şi bloca cookie-uri! Anterior în Magazinul web Chrome ca „EditThisCookie - Updated for Manifest V3”"
     },
     "editThis_cookiesModified": {
         "message": "Cookie-urile au fost modificate"

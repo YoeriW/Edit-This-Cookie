@@ -133,7 +133,7 @@
         "message": "Sie können Spenden schicken an:"
     },
     "editThis_description": {
-        "message": "EditThisCookie ist ein Cookie-Manager mit dem man Cookies hinzufügen, löschen, bearbeiten, suchen, schützen und blockieren kann."
+        "message": "EditThisCookie ist ein Cookie-Manager mit dem man Cookies hinzufügen, löschen, bearbeiten, suchen, schützen und blockieren kann. Zuvor im Chrome Web Store als 'EditThisCookie - Updated for Manifest V3'"
     },
     "editThis_cookiesModified": {
         "message": "Veränderte Cookies"

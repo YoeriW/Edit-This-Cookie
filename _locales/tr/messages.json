@@ -133,7 +133,7 @@
         "message": "Bağışları buraya gönder"
     },
     "editThis_description": {
-        "message": "Bu cookiyi düzenle bir cookie yönetimidir. Cookileri ekleyebilir,silebilir,düzeltebilir,arayabilir,koruyabilir ve engelleyebilirsin"
+        "message": "Bu cookiyi düzenle bir cookie yönetimidir. Cookileri ekleyebilir,silebilir,düzeltebilir,arayabilir,koruyabilir ve engelleyebilirsin. Daha önce Chrome Web Mağazası'nda 'EditThisCookie - Updated for Manifest V3' olarak yer alıyordu"
     },
     "editThis_cookiesModified": {
         "message": "Çerezler Düzenlendi"

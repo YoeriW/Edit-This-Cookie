@@ -133,7 +133,7 @@
         "message": "Saate annetusi saata:"
     },
     "editThis_description": {
-        "message": "EditThisCookie on virtuaalse küpsise haldur. Saate küpsiseid lisada, kustutada, otsida, kaitsta ja keelata!"
+        "message": "EditThisCookie on virtuaalse küpsise haldur. Saate küpsiseid lisada, kustutada, otsida, kaitsta ja keelata! Varem Chrome'i veebipoes nimega 'EditThisCookie - Updated for Manifest V3'"
     },
     "editThis_cookiesModified": {
         "message": "Küpsised kohandatud"

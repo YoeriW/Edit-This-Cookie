@@ -133,7 +133,7 @@
         "message": "Ти можеш відправити пожертву через:"
     },
     "editThis_description": {
-        "message": "EditThisCookie це менеджер файлів кукі. Ти можеш додавати, видаляти, редагувати, шукати, захищати та блокувати кукі!"
+        "message": "EditThisCookie це менеджер файлів кукі. Ти можеш додавати, видаляти, редагувати, шукати, захищати та блокувати кукі! Раніше у веб-магазині Chrome як 'EditThisCookie - Updated for Manifest V3'"
     },
     "editThis_cookiesModified": {
         "message": "Кукі модифіковано"

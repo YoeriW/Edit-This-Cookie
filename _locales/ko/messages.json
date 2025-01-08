@@ -133,7 +133,7 @@
         "message": "다음으로 기부를 할 수 있습니다:"
     },
     "editThis_description": {
-        "message": "EditThisCookie는 쿠키 관리자입니다. 이것을 이용하여 쿠키를 추가하고, 삭제하고, 편집하고, 찾고, 보호하거나 막을 수 있습니다!"
+        "message": "EditThisCookie는 쿠키 관리자입니다. 이것을 이용하여 쿠키를 추가하고, 삭제하고, 편집하고, 찾고, 보호하거나 막을 수 있습니다! 이전에 Chrome 웹 스토어에서 'EditThisCookie - Updated for Manifest V3'로 출시됨"
     },
     "editThis_cookiesModified": {
         "message": "편집된 쿠키"

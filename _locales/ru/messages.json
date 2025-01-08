@@ -133,7 +133,7 @@
         "message": "Ты можешь отправить помощь через:"
     },
     "editThis_description": {
-        "message": "EditThisCookie - это менеджер cookie. Вы можете добавлять, удалять, изменять, искать, защищать и блокировать cookie!"
+        "message": "EditThisCookie - это менеджер cookie. Вы можете добавлять, удалять, изменять, искать, защищать и блокировать cookie! Ранее в интернет-магазине Chrome был известен как «EditThisCookie - Updated for Manifest V3»."
     },
     "editThis_cookiesModified": {
         "message": "Cookie отредактированы"

@@ -133,7 +133,7 @@
         "message": "こちらから寄付をお願いします。"
     },
     "editThis_description": {
-        "message": "EditThisCookieはCookie管理ソフトです。Cookieを追加、削除、編集、検索、保護、そしてブロックすることができます！"
+        "message": "EditThisCookieはCookie管理ソフトです。Cookieを追加、削除、編集、検索、保護、そしてブロックすることができます！以前は Chrome ウェブストアで「EditThisCookie - Updated for Manifest V3」として公開されていました"
     },
     "editThis_cookiesModified": {
         "message": "Cookieが修正されました"

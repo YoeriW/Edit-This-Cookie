@@ -133,7 +133,7 @@
         "message": "您可以把捐款送到："
     },
     "editThis_description": {
-        "message": "EditThisCookie 是一個 cookie 管理器。您可以增加、刪除、修改、搜尋、保護和封鎖 cookies！"
+        "message": "EditThisCookie 是一個 cookie 管理器。您可以增加、刪除、修改、搜尋、保護和封鎖 cookies！先前在 Chrome 線上應用程式商店中的名稱為“EditThisCookie - Updated for Manifest V3”"
     },
     "editThis_cookiesModified": {
         "message": "Cookies modified"

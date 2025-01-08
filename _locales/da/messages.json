@@ -133,7 +133,7 @@
         "message": "Du kan sende donationer til: "
     },
     "editThis_description": {
-        "message": "EditThisCookie er en cookie-manager. Du kan tilføje, slette, rette, søge, beskytte og blokere cookies!"
+        "message": "EditThisCookie er en cookie-manager. Du kan tilføje, slette, rette, søge, beskytte og blokere cookies! Tidligere i Chrome Webshop som 'EditThisCookie - Updated for Manifest V3'"
     },
     "editThis_cookiesModified": {
         "message": "Ændrede cookies"

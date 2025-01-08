@@ -133,7 +133,7 @@
         "message": "Bạn có thể đóng góp tới:"
     },
     "editThis_description": {
-        "message": "EditThisCookie là chương trình quản lý cookie. Bạn có thể thêm, xóa, chỉnh sửa, tìm kiếm, bảo vệ và chặn cookies trên các website!"
+        "message": "EditThisCookie là chương trình quản lý cookie. Bạn có thể thêm, xóa, chỉnh sửa, tìm kiếm, bảo vệ và chặn cookies trên các website! Trước đây trong Chrome Web Store với tên 'EditThisCookie - Updated for Manifest V3'"
     },
     "editThis_cookiesModified": {
         "message": "Cookie đã được sửa"

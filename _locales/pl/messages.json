@@ -133,7 +133,7 @@
         "message": "Możesz wysłać dotacje do:"
     },
     "editThis_description": {
-        "message": "EditThisCookie to menadżer ciasteczek. Możesz dodawać, usuwać, edytować, wyszukiwać, chronić oraz blokować ciasteczka!"
+        "message": "EditThisCookie to menadżer ciasteczek. Możesz dodawać, usuwać, edytować, wyszukiwać, chronić oraz blokować ciasteczka! Wcześniej w sklepie Chrome Web Store jako „EditThisCookie - Updated for Manifest V3”"
     },
     "editThis_cookiesModified": {
         "message": "Zmodyfikowane ciasteczka"

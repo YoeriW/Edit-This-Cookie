@@ -133,7 +133,7 @@
         "message": "Voit lähettää lahjoituksesi osoitteeseen:"
     },
     "editThis_description": {
-        "message": "EditThisCookie on evästemuokkain. Voit lisätä, poistaa, muokata, hakea, suojata ja estää evästeitä!"
+        "message": "EditThisCookie on evästemuokkain. Voit lisätä, poistaa, muokata, hakea, suojata ja estää evästeitä! Aiemmin Chrome Web Storessa nimellä 'EditThisCookie - Updated for Manifest V3'"
     },
     "editThis_cookiesModified": {
         "message": "Evästeitä muokattu"
