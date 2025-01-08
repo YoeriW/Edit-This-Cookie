@@ -133,7 +133,7 @@
         "message": "Μπορείτε να στείλετε συνεισφορές προς:"
     },
     "editThis_description": {
-        "message": "Με το EditThisCookie μπορείς να προσθέσεις, διαγράψεις, επεξεργαστείς, αναζητήσεις,  προστατέψεις και αποκλείσεις Cookies! Παλαιότερα στο Chrome Web Store ως 'EditThisCookie - Updated for Manifest V3'"
+        "message": "Με το EditThisCookie μπορείς να προσθέσεις, διαγράψεις, επεξεργαστείς, αναζητήσεις,  προστατέψεις και αποκλείσεις Cookies!"
     },
     "editThis_cookiesModified": {
         "message": "Τα Cookies επεξεργάστηκαν"

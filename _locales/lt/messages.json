@@ -133,7 +133,7 @@
         "message": "Galite siųsti paramą:"
     },
     "editThis_description": {
-        "message": "EditThisCookie yra slapukų valdytojas. Gali pridėti, ištrinti, keisti, ieškoti, apsaugoti ir blokuoti slapukus! Anksčiau „Chrome“ internetinėje parduotuvėje kaip „EditThisCookie - Updated for Manifest V3“"
+        "message": "EditThisCookie yra slapukų valdytojas. Gali pridėti, ištrinti, keisti, ieškoti, apsaugoti ir blokuoti slapukus!"
     },
     "editThis_cookiesModified": {
         "message": "Pakeisti slapukai"

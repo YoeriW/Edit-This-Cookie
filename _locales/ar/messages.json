@@ -133,7 +133,7 @@
         "message": "يمكنك إرسال التبرعات إلى"
     },
     "editThis_description": {
-        "message": "EditThisCookie هو برنامج للتحكم في الكوكيز. يمكنك إضافة, مسح, إعداد, بحث, حماية و منع الكوكيز. كان موجودًا سابقًا في متجر Chrome الإلكتروني باسم 'EditThisCookie - تم التحديث لإصدار Manifest V3'"
+        "message": "EditThisCookie هو برنامج للتحكم في الكوكيز. يمكنك إضافة, مسح, إعداد, بحث, حماية و منع الكوكيز"
     },
     "editThis_cookiesModified": {
         "message": "الكوكيز المعدلة"

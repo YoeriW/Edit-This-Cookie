@@ -133,7 +133,7 @@
         "message": "Příspěvek můžete poslat na:"
     },
     "editThis_description": {
-        "message": "EditThisCookie je manažer cookies. Můžete přidávat, mazat, upravovat, hledat, chránit a blokovat cookies! Dříve v Internetovém obchodě Chrome jako 'EditThisCookie - Updated for Manifest V3'"
+        "message": "EditThisCookie je manažer cookies. Můžete přidávat, mazat, upravovat, hledat, chránit a blokovat cookies!"
     },
     "editThis_cookiesModified": {
         "message": "Cookie upraveny"

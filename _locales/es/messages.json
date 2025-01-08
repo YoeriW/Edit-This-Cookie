@@ -133,7 +133,7 @@
         "message": "Puedes enviar donaciones a:"
     },
     "editThis_description": {
-        "message": "EditThisCookie es un gestor de cookies. ¡Puedes añadir, eliminar, editar, buscar, proteger y bloquear cookies! Anteriormente en Chrome Web Store como 'EditThisCookie - Updated for Manifest V3'"
+        "message": "EditThisCookie es un gestor de cookies. ¡Puedes añadir, eliminar, editar, buscar, proteger y bloquear cookies!"
     },
     "editThis_cookiesModified": {
         "message": "Cookies modificadas"

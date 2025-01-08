@@ -133,7 +133,7 @@
         "message": "Sem môžeš poslať podporu:"
     },
     "editThis_description": {
-        "message": "EditThisCookie je manažovací systém pre cookies. Môžete pridávať, vymazávať, upravovať, vyhľadávať, chrániť a blokovať cookies! Predtým v Internetovom obchode Chrome ako „EditThisCookie - Updated for Manifest V3“"
+        "message": "EditThisCookie je manažovací systém pre cookies. Môžete pridávať, vymazávať, upravovať, vyhľadávať, chrániť a blokovať cookies!"
     },
     "editThis_cookiesModified": {
         "message": "Cookies boli upravené"
