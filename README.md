@@ -26,4 +26,4 @@ Contributing
 How to Install
 --------------
 
-Install it on Chromium Browsers from [here](https://chromewebstore.google.com/detail/editthiscookie-updated-fo/ihfmcbadakjehneaijebhpogkegajgnk)
+Install it on Chromium Browsers from [here](https://chromewebstore.google.com/detail/EditThisCookie/ihfmcbadakjehneaijebhpogkegajgnk)
