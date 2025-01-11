@@ -1,4 +1,4 @@
-EditThisCookie
+EditThisCookie Fork
 ========================
 
 Description

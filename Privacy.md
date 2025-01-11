@@ -35,4 +35,4 @@ We may update this Privacy Policy from time to time. If we make significant chan
 Contact Us
 
 If you have any questions about this Privacy Policy or the extension, please contact us at:
-	•	Email: yoeriwas@gmail.com
+	•	Email: support@editthiscookiefork.com

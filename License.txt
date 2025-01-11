@@ -1,5 +1,5 @@
 EditThisCookie is a Chrome extension made by Francesco Capano
-https://editthiscookie.com/
+https://editthiscookiefork.com/
 
 
 This file is part of "EditThisCookie".

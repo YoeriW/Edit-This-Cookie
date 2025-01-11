@@ -39,11 +39,11 @@ chrome.storage.local.get(['lastVersionRun', 'readOnly', 'filters', 'preferences'
     if (oldVersion !== currentVersion) {
         if (oldVersion === null || oldVersion === undefined) { 
             // Is firstrun
-            chrome.tabs.create({ url: 'https://www.editthiscookie.com/start/' });
+            chrome.tabs.create({ url: 'https://www.editthiscookiefork.com/getting-started/' });
         } else {
             chrome.notifications.onClicked.addListener(function (notificationId) {
                 chrome.tabs.create({
-                    url: 'https://www.editthiscookie.com/changelog/'
+                    url: 'https://www.editthiscookiefork.com/changelog/'
                 });
                 chrome.notifications.clear(notificationId, function () {});
             });
