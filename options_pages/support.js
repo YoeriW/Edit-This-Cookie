@@ -1,13 +1,3 @@
-const savedTheme = localStorage.getItem('themeColor');
-if (savedTheme === 'dark' || savedTheme === 'light') {
-    preferences.themeColor = savedTheme;
-} else {
-    preferences.themeColor = 'light';
-}
-document.documentElement.setAttribute('data-theme', preferences.themeColor);
-console.log('preferences.themeColor:', preferences.themeColor);
-
-
 jQuery(document).ready(function () {
     $("input:checkbox").uniform();
     setEvents();

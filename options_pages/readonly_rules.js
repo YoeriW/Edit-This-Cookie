@@ -1,11 +1,3 @@
-const savedTheme = localStorage.getItem('themeColor');
-if (savedTheme === 'dark' || savedTheme === 'light') {
-    preferences.themeColor = savedTheme;
-} else {
-    preferences.themeColor = 'light';
-}
-document.documentElement.setAttribute('data-theme', preferences.themeColor);
-
 $(document).ready(function () {
     setReadOnlyRules();
     setEvents();

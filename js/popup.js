@@ -1,11 +1,3 @@
-const savedTheme = localStorage.getItem('themeColor');
-if (savedTheme === 'dark' || savedTheme === 'light') {
-    preferences.themeColor = savedTheme;
-} else {
-    preferences.themeColor = 'light'; // Fallback to default if invalid data
-}
-document.documentElement.setAttribute('data-theme', preferences.themeColor);
-
 var currentTabID;
 var isTabIncognito = false;
 var cookieList = [];
@@ -327,8 +319,9 @@ function importCookies() {
 
     try {
         var cookieArray = $.parseJSON(text);
-        if (Object.prototype.toString.apply(cookieArray) === "[object Object]")
+        if (Object.prototype.toString.apply(cookieArray) === "[object Object]") {
             cookieArray = [cookieArray];
+        }
         for (var i = 0; i < cookieArray.length; i++) {
             try {
                 var cJSON = cookieArray[i];
@@ -337,10 +330,9 @@ function importCookies() {
                     let error = chrome.runtime.lastError;
                     if (!cookieResponse || error) {
                         let errorMessage = (error ? error.message : '') || 'Unknown error';
-                        console.error( "EditThisCookie::importCookies: " + errorMessage );
-                        }
+                        console.error("EditThisCookie::importCookies: " + errorMessage);
                     }
-                );
+                });
                 nCookiesImportedThisTime++;
             } catch (e) {
                 error.html(error.html() + "<br>" + $('<div/>').text("Cookie number " + i).html() + "<br>" + $('<div/>').text(e.message).html());

@@ -4,7 +4,7 @@
 var preferences_template = {
     // Use a dark theme
     "themeColor": {
-        "default_value": 'light'
+        "default_value": false
     },
     // Show alerts when the user performs some operations such as deleting a cookie
     "showAlerts": {
@@ -310,3 +310,14 @@ if (firstRun !== null) {
 // On exit, make sure any data in the queue is synced to the localStorage
 var syncTimeout = setTimeout(syncDataToLS, syncTime);
 $(window).bind("beforeunload", syncDataToLS);
+
+// Set the theme color
+(function() {
+    const savedTheme = localStorage.getItem('themeColor');
+    if (savedTheme === 'true' || savedTheme === 'false') {
+        preferences.themeColor = JSON.parse(savedTheme);
+    } else {
+        preferences.themeColor = false;
+    }
+    document.documentElement.setAttribute('data-theme', preferences.themeColor ? 'dark' : 'light');
+})();
