@@ -1,21 +1,20 @@
-jQuery(document).ready(function () {
+$(document).ready(() => {
     $("input:checkbox").uniform();
     setEvents();
 });
 
-function setEvents() {
+const setEvents = () => {
     $(".linkify").click(function () {
-        var urlToOpen = $(this).attr("lnk");
-        if (urlToOpen == undefined)
-            return;
+        const urlToOpen = $(this).attr("lnk");
+        if (urlToOpen === undefined) return;
 
-        chrome.tabs.getCurrent(function (cTab) {
+        chrome.tabs.getCurrent((cTab) => {
             chrome.tabs.create({
-                "url": urlToOpen,
-                "active": true,
-                "index": cTab.index + 1,
-                "openerTabId": cTab.id
+                url: urlToOpen,
+                active: true,
+                index: cTab.index + 1,
+                openerTabId: cTab.id
             });
         });
     });
-}
+};

@@ -1,12 +1,12 @@
-$(document).ready(function () {
+$(document).ready(() => {
     setBlockRules();
     setEvents();
 });
 
-var forceHideOperations = false;
-var newRowVisible = false;
+let forceHideOperations = false;
+let newRowVisible = false;
 
-updateCallback = function () {
+updateCallback = () => {
     location.reload(true);
     return;
 
@@ -15,29 +15,29 @@ updateCallback = function () {
     setEvents();
 };
 
-function setEvents() {
+const setEvents = () => {
     $("#submitButton").button();
 
     $("#addRule").button();
-    $("#addRule").unbind().click(function () {
+    $("#addRule").unbind().click(() => {
         showNewEmptyRule();
     });
 
     $('.cmd_delete').unbind().click(function () {
-        if (!preferences.showAlerts || confirm(_getMessage("Alert_deleteRule") + "?")) {
+        if (!preferences.showAlerts || confirm(`${_getMessage("Alert_deleteRule")}?`)) {
             hideEditCommands();
-            var index = $('.active').attr("index");
+            const index = $('.active').attr("index");
             forceHideOperations = true;
             $('.operations:visible').clearQueue();
             $('.operations:visible').fadeOut();
-            $('.active').fadeOut(function () {
+            $('.active').fadeOut(() => {
                 forceHideOperations = false;
                 if (newRowVisible) {
                     showNewEmptyRule();
                 }
                 deleteBlockRule(index);
-                if (data.filters.length == 0) {
-                    var row = $("#no_rules").clone().removeClass('template');
+                if (data.filters.length === 0) {
+                    const row = $("#no_rules").clone().removeClass('template');
                     $(".table").append(row);
                     return;
                 } else {
@@ -49,11 +49,11 @@ function setEvents() {
         }
     });
 
-    $('.cmd_accept').unbind().click(function () {
+    $('.cmd_accept').unbind().click(() => {
         submitRule();
     });
 
-    $('.cmd_cancel').unbind().click(function () {
+    $('.cmd_cancel').unbind().click(() => {
         hideEditCommands();
     });
 
@@ -73,33 +73,33 @@ function setEvents() {
         });
 
         // set bucket icon position
-        var index = $(this).attr('index');
-        var tableRowHeight = $('.table_row').height();
-        var offsetTop = 34; // with the bucket in position: relative, we need to know pad for heading row
-        var newTop = offsetTop + index * tableRowHeight;
+        const index = $(this).attr('index');
+        const tableRowHeight = $('.table_row').height();
+        const offsetTop = 34; // with the bucket in position: relative, we need to know pad for heading row
+        const newTop = offsetTop + index * tableRowHeight;
         $('.operations').animate({
             top: newTop
         }, 250);
     });
 }
 
-function setBlockRules() {
+const setBlockRules = () => {
     $('.table_row:not(.header, .template, #line_template)', '.table').detach();
 
-    if (data.filters.length == 0) {
-        var row = $("#no_rules").clone().removeClass('template').attr("id", "#no_rules1");
+    if (data.filters.length === 0) {
+        const row = $("#no_rules").clone().removeClass('template').attr("id", "#no_rules1");
         $(".table").append(row);
         return;
     } else {
         $("#no_rules1").detach();
     }
 
-    for (var i = 0; i < data.filters.length; i++) {
+    for (let i = 0; i < data.filters.length; i++) {
         try {
-            var filter = data.filters[i];
-            var domain = (filter.domain != undefined) ? filter.domain : "any";
-            var name = (filter.name != undefined) ? filter.name : "any";
-            var value = (filter.value != undefined) ? filter.value : "any";
+            const filter = data.filters[i];
+            const domain = (filter.domain !== undefined) ? filter.domain : "any";
+            const name = (filter.name !== undefined) ? filter.name : "any";
+            const value = (filter.value !== undefined) ? filter.value : "any";
             addBlockLine(domain, name, value, i);
         } catch (e) {
             console.error(e.message);
@@ -107,24 +107,24 @@ function setBlockRules() {
     }
 }
 
-function addBlockLine(domain, name, value, index) {
-    var line = $("#line_template").clone();
+const addBlockLine = (domain, name, value, index) => {
+    const line = $("#line_template").clone();
     $('.domain_field', line).empty().text(domain);
     $('.name_field', line).empty().text(name);
     $('.value_field', line).empty().text(value);
-    line.attr('id', 'rule_n_' + index);
+    line.attr('id', `rule_n_${index}`);
     line.attr('index', index);
     line.css('display', '');
     $(".table").append(line);
 }
 
-function hideEditCommands() {
+const hideEditCommands = () => {
     newRowVisible = false;
     $(".new_rule_operations").fadeOut();
     $(".new_row:not(.template)").fadeOut().detach();
 }
 
-function showNewEmptyRule() {
+const showNewEmptyRule = () => {
     if ($(".new_row:not(.template)").length > 0) {
         $(".new_rule_operations").css("top", $(".new_row:not(.template)").position().top + "px");
         $(".new_rule_operations").css("left", $(".new_row:not(.template)").position().left + "px");
@@ -133,7 +133,7 @@ function showNewEmptyRule() {
 
     newRowVisible = true;
 
-    var newRow = $(".new_row.template").clone().removeClass('template');
+    const newRow = $(".new_row.template").clone().removeClass('template');
     $(".table").append(newRow);
 
     $(".new_rule_operations").css("top", newRow.position().top + "px");
@@ -143,7 +143,7 @@ function showNewEmptyRule() {
     newRow.fadeIn();
     $(".new_rule_operations").fadeIn();
 
-    newRow.keyup(function (event) {
+    newRow.keyup((event) => {
         // ESC
         if (event.keyCode == 27) {
             $('.cmd_cancel').trigger('click');
@@ -155,20 +155,20 @@ function showNewEmptyRule() {
     });
 }
 
-function submitRule() {
-    var domain = $(".new_rule_domain", ".new_row:not(.template)").val();
+const submitRule = () => {
+    let domain = $(".new_rule_domain", ".new_row:not(.template)").val();
     domain = (domain == "any" || domain == '') ? undefined : domain;
-    var name = $(".new_rule_name", ".new_row:not(.template)").val();
+    let name = $(".new_rule_name", ".new_row:not(.template)").val();
     name = (name == "any" || name == '') ? undefined : name;
-    var value = $(".new_rule_value", ".new_row:not(.template)").val();
+    let value = $(".new_rule_value", ".new_row:not(.template)").val();
     value = (value == "any" || value == '') ? undefined : value;
 
-    var newRule = {};
+    const newRule = {};
     newRule.name = name;
     newRule.domain = domain;
     newRule.value = value;
 
-    if (name == undefined && domain == undefined && value == undefined) {
+    if (name === undefined && domain === undefined && value === undefined) {
         return;
     }
 

@@ -1,7 +1,7 @@
 importScripts('utils.js');
 
 // Initialize global variables
-var data = {
+const data = {
     lastVersionRun: null,
     readOnly: [],
     filters: [],
@@ -11,7 +11,7 @@ var data = {
 };
 
 // Initialize global preferences
-var preferences = {
+let preferences = {
     themeColor: 'light',
     showContextMenu: true,
     showChristmasIcon: false,
@@ -19,10 +19,10 @@ var preferences = {
     maxCookieAgeType: 0
 };
 
-var showContextMenu = undefined;
+let showContextMenu = undefined;
 
 // Load preferences and data from Chrome storage
-chrome.storage.local.get(['lastVersionRun', 'readOnly', 'filters', 'preferences'], function (items) {
+chrome.storage.local.get(['lastVersionRun', 'readOnly', 'filters', 'preferences'], items => {
     data.lastVersionRun = items.lastVersionRun || null;
     data.readOnly = items.readOnly || [];
     data.filters = items.filters || [];
@@ -30,8 +30,8 @@ chrome.storage.local.get(['lastVersionRun', 'readOnly', 'filters', 'preferences'
 
     showContextMenu = preferences.showContextMenu;
 
-    var currentVersion = chrome.runtime.getManifest().version;
-    var oldVersion = data.lastVersionRun;
+    const currentVersion = chrome.runtime.getManifest().version;
+    const oldVersion = data.lastVersionRun;
 
     data.lastVersionRun = currentVersion;
     chrome.storage.local.set({ lastVersionRun: currentVersion });
@@ -41,20 +41,20 @@ chrome.storage.local.get(['lastVersionRun', 'readOnly', 'filters', 'preferences'
             // Is firstrun
             chrome.tabs.create({ url: 'https://www.editthiscookiefork.com/getting-started/' });
         } else {
-            chrome.notifications.onClicked.addListener(function (notificationId) {
+            chrome.notifications.onClicked.addListener(notificationId => {
                 chrome.tabs.create({
                     url: 'https://www.editthiscookiefork.com/changelog/'
                 });
-                chrome.notifications.clear(notificationId, function () {});
+                chrome.notifications.clear(notificationId, () => {});
             });
-            var opt = {
+            const opt = {
                 type: "basic",
                 title: "EditThisCookie",
                 message: _getMessage("updated"),
                 iconUrl: "/img/icon_128x128.png",
                 isClickable: true
             };
-            chrome.notifications.create("", opt, function () {});
+            chrome.notifications.create("", opt, () => {});
         }
     }
 
@@ -81,7 +81,7 @@ setChristmasIcon();
 setInterval(setChristmasIcon, 60 * 60 * 1000);
 
 // Every time the browser restarts, the first time the user goes to the options he ends up in the default page (support)
-chrome.storage.local.set({ option_panel: "null" }, function () {
+chrome.storage.local.set({ option_panel: "null" }, () => {
     if (chrome.runtime.lastError) {
         console.error("Error setting option_panel: ", chrome.runtime.lastError);
     } else {
@@ -91,24 +91,21 @@ chrome.storage.local.set({ option_panel: "null" }, function () {
 
 setContextMenu(preferences.showContextMenu);
 
-chrome.cookies.onChanged.addListener(function (changeInfo) {
-    var removed = changeInfo.removed;
-    var cookie = changeInfo.cookie;
-    var cause = changeInfo.cause;
+chrome.cookies.onChanged.addListener(changeInfo => {
+    const { removed, cookie, cause } = changeInfo;
 
     if (cause === "expired" || cause === "evicted") return;
 
-    for (var i = 0; i < data.readOnly.length; i++) {
-        var currentRORule = data.readOnly[i];
+    for (const currentRORule of data.readOnly) {
         if (compareCookies(cookie, currentRORule)) {
             if (removed) {
                 chrome.cookies.get({
-                    url: "http" + ((currentRORule.secure) ? "s" : "") + "://" + currentRORule.domain + currentRORule.path,
+                    url: `http${currentRORule.secure ? "s" : ""}://${currentRORule.domain}${currentRORule.path}`,
                     name: currentRORule.name,
                     storeId: currentRORule.storeId
-                }, function (currentCookie) {
+                }, currentCookie => {
                     if (compareCookies(currentCookie, currentRORule)) return;
-                    var newCookie = cookieForCreationFromFullCookie(currentRORule);
+                    const newCookie = cookieForCreationFromFullCookie(currentRORule);
                     chrome.cookies.set(newCookie);
                     ++data.nCookiesProtected;
                 });
@@ -118,12 +115,11 @@ chrome.cookies.onChanged.addListener(function (changeInfo) {
     }
 
     if (!removed) {
-        for (var i = 0; i < data.filters.length; i++) {
-            var currentFilter = data.filters[i];
+        for (const currentFilter of data.filters) {
             if (filterMatchesCookie(currentFilter, cookie.name, cookie.domain, cookie.value)) {
-                chrome.tabs.query({ active: true }, function (tabs) {
-                    var toRemove = {
-                        url: "http" + (cookie.secure ? "s" : "") + "://" + cookie.domain + cookie.path,
+                chrome.tabs.query({ active: true }, tabs => {
+                    const toRemove = {
+                        url: `http${cookie.secure ? "s" : ""}://${cookie.domain}${cookie.path}`,
                         name: cookie.name
                     };
                     chrome.cookies.remove(toRemove);
@@ -134,9 +130,9 @@ chrome.cookies.onChanged.addListener(function (changeInfo) {
     }
 
     if (!removed && preferences.useMaxCookieAge && preferences.maxCookieAgeType > 0) {
-        var maxAllowedExpiration = Math.round(Date.now() / 1000) + (preferences.maxCookieAge * preferences.maxCookieAgeType);
+        const maxAllowedExpiration = Math.round(Date.now() / 1000) + (preferences.maxCookieAge * preferences.maxCookieAgeType);
         if (cookie.expirationDate !== undefined && cookie.expirationDate > maxAllowedExpiration + 60) {
-            var newCookie = cookieForCreationFromFullCookie(cookie);
+            const newCookie = cookieForCreationFromFullCookie(cookie);
             if (!cookie.session) newCookie.expirationDate = maxAllowedExpiration;
             chrome.cookies.set(newCookie);
             ++data.nCookiesShortened;
@@ -145,7 +141,7 @@ chrome.cookies.onChanged.addListener(function (changeInfo) {
 });
 
 function setContextMenu(show) {
-    chrome.contextMenus.removeAll(function() {
+    chrome.contextMenus.removeAll(() => {
         if (chrome.runtime.lastError) {
             console.error("Error removing context menus: ", chrome.runtime.lastError);
         } else {
@@ -157,7 +153,7 @@ function setContextMenu(show) {
                 id: "editThisCookie", // Unique identifier for the context menu item
                 title: "EditThisCookie",
                 contexts: ["page"]
-            }, function() {
+            }, () => {
                 if (chrome.runtime.lastError) {
                     console.error("Error creating context menu: ", chrome.runtime.lastError);
                 } else {
@@ -167,3 +163,42 @@ function setContextMenu(show) {
         }
     });
 }
+
+const handleMessage = (message, sender, sendResponse) => {
+    switch (message.type) {
+        case 'getCookies':
+            getCookies(message.details, sendResponse);
+            break;
+        case 'setCookie':
+            setCookie(message.details, sendResponse);
+            break;
+        case 'removeCookie':
+            removeCookie(message.details, sendResponse);
+            break;
+        default:
+            sendResponse({ error: 'Unknown message type' });
+    }
+};
+
+const getCookies = ({ url, name }, callback) => {
+    chrome.cookies.get({ url, name }, cookie => {
+        callback(cookie);
+    });
+};
+
+const setCookie = (details, callback) => {
+    chrome.cookies.set(details, cookie => {
+        callback(cookie);
+    });
+};
+
+const removeCookie = ({ url, name, storeId }, callback) => {
+    chrome.cookies.remove({ url, name, storeId }, details => {
+        callback(details);
+    });
+};
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    handleMessage(message, sender, sendResponse);
+    return true; // Keep the message channel open for sendResponse
+});

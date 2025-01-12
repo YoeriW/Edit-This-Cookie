@@ -1,7 +1,7 @@
 /**
  * User preferences with default values
  */
-var preferences_template = {
+const preferences_template = {
     // Use a dark theme
     "themeColor": {
         "default_value": false
@@ -85,7 +85,7 @@ var preferences_template = {
 /**
  * User data with default values
  */
-var data_template = {
+const data_template = {
     "filters": {
         "default_value": []
     },
@@ -127,26 +127,26 @@ var data_template = {
     }
 };
 
-var preferences = {};
-var data = {};
-var preferences_prefix = "options_";
-var data_prefix = "data_";
+let preferences = {};
+let data = {};
+const preferences_prefix = "options_";
+const data_prefix = "data_";
 
-var updateCallback = undefined;
-var dataToSync = [];
-var syncTimeout = false;
-var syncTime = 200;
+let updateCallback = undefined;
+let dataToSync = [];
+let syncTimeout = false;
+const syncTime = 200;
 
 /**
  * Used to access settings and data in local storage
  */
-var ls = {
+const ls = {
     /**
      * Stores an object in the local storage
      * @param name Name of the object to be stored
      * @param value Value of the object to be stored
      */
-    set: function (name, value) {
+    set: (name, value) => {
         localStorage.setItem(name, JSON.stringify(value));
     },
 
@@ -156,7 +156,7 @@ var ls = {
      * @param default_value Value to assign to the object if it doesn't exist.
      * @return The fetched/created object
      */
-    get: function (name, default_value) {
+    get: (name, default_value) => {
         if (localStorage[name] === undefined) {
             if (default_value !== undefined)
                 ls.set(name, default_value);
@@ -176,7 +176,7 @@ var ls = {
      * Remove an object from the local storage
      * @param name Name of the object to delete
      */
-    remove: function (name) {
+    remove: (name) => {
         localStorage.removeItem(name);
     }
 };
@@ -187,22 +187,22 @@ var ls = {
  * without having to worry about manually updating the local storage. It will be synced across all open pages
  * of the extension.
  */
-function syncDataToLS() {
-    for (var cID in dataToSync) {
-        var cVal = dataToSync[cID];
+const syncDataToLS = () => {
+    for (const cID in dataToSync) {
+        const cVal = dataToSync[cID];
         delete dataToSync[cID];
         ls.set(cID, cVal);
     }
     syncTimeout = false;
-}
+};
 
 /**
  * Fetch data from the localStorage based on the previously declared templates (preferences_template and data_template).
  */
-function fetchData() {
-    for (var key in preferences_template) {
-        default_value = preferences_template[key].default_value;
-        preferences[key] = ls.get(preferences_prefix + key, default_value);
+const fetchData = () => {
+    for (const key in preferences_template) {
+        const default_value = preferences_template[key].default_value;
+        preferences[key] = ls.get(`${preferences_prefix}${key}`, default_value);
 
         /**
          * When a preference change is detected, it will be added to the queue (dataToSync).
@@ -211,8 +211,8 @@ function fetchData() {
          * @param oldval Old value
          * @param newval New value
          */
-        var onPreferenceChange = function (id, oldval, newval) {
-            dataToSync[preferences_prefix + id] = newval;
+        const onPreferenceChange = (id, oldval, newval) => {
+            dataToSync[`${preferences_prefix}${id}`] = newval;
             if (!syncTimeout)
                 syncTimeout = setTimeout(syncDataToLS, syncTime);
             return newval;
@@ -222,7 +222,7 @@ function fetchData() {
          * When a preference is read, mark it as dirty.
          * @param id  Name of the element being read
          */
-        var onPreferenceRead = function (id) {
+        const onPreferenceRead = (id) => {
             preferences_template[id].used = true;
         };
 
@@ -230,9 +230,9 @@ function fetchData() {
         preferences.watch(key, onPreferenceChange, onPreferenceRead);
     }
 
-    for (var key in data_template) {
-        default_value = data_template[key].default_value;
-        data[key] = ls.get(data_prefix + key, default_value);
+    for (const key in data_template) {
+        const default_value = data_template[key].default_value;
+        data[key] = ls.get(`${data_prefix}${key}`, default_value);
 
         /**
          * When data change is detected, it will be added to the queue (dataToSync).
@@ -241,8 +241,8 @@ function fetchData() {
          * @param oldval Old value
          * @param newval New value
          */
-        var onDataChange = function (id, oldval, newval) {
-            dataToSync[data_prefix + id] = newval;
+        const onDataChange = (id, oldval, newval) => {
+            dataToSync[`${data_prefix}${id}`] = newval;
             if (!syncTimeout)
                 syncTimeout = setTimeout(syncDataToLS, syncTime);
             return newval;
@@ -252,31 +252,31 @@ function fetchData() {
          * When data is read, mark it as dirty.
          * @param id  Name of the element being read
          */
-        var onDataRead = function (id) {
+        const onDataRead = (id) => {
             data_template[id].used = true;
         };
 
         // Monitor the data for changes
         data.watch(key, onDataChange, onDataRead);
     }
-}
+};
 
 /**
  * Monitor the storage for changes. When triggered it checks to see whether any preference or data has changed.
  * If so, it verifies whether that data had been used.
  * If relevant data has changed and an update callback has been set, it will be called.
  */
-window.addEventListener("storage", function (event) {
+window.addEventListener("storage", (event) => {
     try {
-        var varUsed = false;
-        var varChanged = false;
-        var oldValue = (event.oldValue !== null) ? JSON.parse(event.oldValue) : null;
-        var newValue = (event.newValue !== null) ? JSON.parse(event.newValue) : null;
+        let varUsed = false;
+        let varChanged = false;
+        const oldValue = (event.oldValue !== null) ? JSON.parse(event.oldValue) : null;
+        const newValue = (event.newValue !== null) ? JSON.parse(event.newValue) : null;
 
         if (oldValue === newValue)
             return;
 
-        var key;
+        let key;
         if (event.key.indexOf(preferences_prefix) === 0) {
             key = event.key.substring(preferences_prefix.length);
             varUsed = !!preferences_template[key].used;
@@ -302,17 +302,17 @@ window.addEventListener("storage", function (event) {
 // Finally fetch the data
 fetchData();
 
-firstRun = ls.get("status_firstRun");
+const firstRun = ls.get("status_firstRun");
 if (firstRun !== null) {
     data.lastVersionRun = chrome.runtime.getManifest().version;
 }
 
 // On exit, make sure any data in the queue is synced to the localStorage
-var syncTimeout = setTimeout(syncDataToLS, syncTime);
+syncTimeout = setTimeout(syncDataToLS, syncTime);
 $(window).bind("beforeunload", syncDataToLS);
 
 // Set the theme color
-(function() {
+(() => {
     const savedTheme = localStorage.getItem('themeColor');
     if (savedTheme === 'true' || savedTheme === 'false') {
         preferences.themeColor = JSON.parse(savedTheme);
