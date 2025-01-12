@@ -2,10 +2,10 @@ const savedTheme = localStorage.getItem('themeColor');
 if (savedTheme === 'dark' || savedTheme === 'light') {
     preferences.themeColor = savedTheme;
 } else {
-    preferences.themeColor = 'light'; // Fallback to default if invalid data
+    preferences.themeColor = 'light';
 }
 document.documentElement.setAttribute('data-theme', preferences.themeColor);
-$("#themeColor").prop('checked', preferences.themeColor === 'dark');
+console.log('preferences.themeColor:', preferences.themeColor);
 
 
 jQuery(document).ready(function () {

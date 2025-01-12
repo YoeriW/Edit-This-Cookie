@@ -3,12 +3,11 @@ const savedTheme = localStorage.getItem('themeColor');
 if (savedTheme === 'dark' || savedTheme === 'light') {
     preferences.themeColor = savedTheme;
 } else {
-    preferences.themeColor = 'light'; // Fallback to default if invalid data
+    preferences.themeColor = 'light';
 }
 
 // Apply the theme to the document
 document.documentElement.setAttribute('data-theme', preferences.themeColor);
-$("#themeColor").prop('checked', preferences.themeColor === 'dark');
 
 $(document).ready(function () {
     $("input:checkbox, input:text, select").uniform();
@@ -26,7 +25,9 @@ function setOptions() {
     $("#maxDateType").controlgroup();
     $(':checkbox', '#options-box').removeAttr('checked');
     $("#justDelete").prop('checked', preferences.justDelete);
-    $("#themeColor").prop('checked', preferences.themeColor);
+    if(preferences.themeColor === 'dark') {
+        $("#themeColor").prop('checked', preferences.themeColor);
+    }
     $("#showAlerts").prop('checked', preferences.showAlerts);
     $("#showDomain").prop('checked', preferences.showDomain);
     $("#showContextMenu").prop('checked', preferences.showContextMenu);
@@ -97,6 +98,7 @@ function setEvents() {
     $("#themeColor").click(function () {
         preferences.themeColor = $('#themeColor').prop("checked") ? 'dark' : 'light';
         localStorage.setItem('themeColor', preferences.themeColor); // Store as string
+        
         document.documentElement.setAttribute('data-theme', preferences.themeColor);
     });
 

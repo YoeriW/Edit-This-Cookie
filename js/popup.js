@@ -5,8 +5,6 @@ if (savedTheme === 'dark' || savedTheme === 'light') {
     preferences.themeColor = 'light'; // Fallback to default if invalid data
 }
 document.documentElement.setAttribute('data-theme', preferences.themeColor);
-$("#themeColor").prop('checked', preferences.themeColor === 'dark');
-
 
 var currentTabID;
 var isTabIncognito = false;
