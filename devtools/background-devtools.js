@@ -1,5 +1,3 @@
-console.log("Starting background-devtools");
-
 // Background page -- background.js
 chrome.runtime.onConnect.addListener(function (port) {
     if (port.name != "devtools-page") {
@@ -14,7 +12,13 @@ chrome.runtime.onConnect.addListener(function (port) {
             var cookie = message.cookie;
             var origName = message.origName;
             deleteCookie(cookie.url, origName, cookie.storeId);
-            chrome.cookies.set(cookie);
+            chrome.cookies.set(cookie, function() {
+                if (chrome.runtime.lastError) {
+                    console.error(chrome.runtime.lastError.message);
+                } else {
+                    console.log("Cookie set successfully");
+                }
+            });
             issueRefresh(port);
         }
 
@@ -34,17 +38,35 @@ function issueRefresh(port) {
 }
 
 function getAll(port, message) {
+
     chrome.tabs.get(message.tabId, function (tab) {
         var url = tab.url;
-        console.log("Looking for cookies on: " + url);
-        chrome.cookies.getAll({
-            url: url
-        }, function (cks) {
-            console.log("I have " + cks.length + " cookies");
-            port.postMessage({
-                action: "getall",
-                url: url,
-                cks: cks
+
+        chrome.cookies.getAllCookieStores((cookieStores) => {
+            let storeId;
+            for (let x = 0; x < cookieStores.length; x++) {
+                if (cookieStores[x].tabIds.indexOf(message.tabId) != -1) {
+                    storeId = cookieStores[x].id;
+                    break;
+                }
+            }
+
+            if (!storeId) {
+                console.error("No valid cookie store id found.");
+                return;
+            }
+
+            chrome.cookies.getAll({ url: url, storeId: storeId }, function (cks) {
+                if (chrome.runtime.lastError) {
+                    console.error(chrome.runtime.lastError.message);
+                    return;
+                }
+
+                port.postMessage({
+                    action: "getall",
+                    url: url,
+                    cks: cks
+                });
             });
         });
     });

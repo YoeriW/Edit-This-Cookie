@@ -142,12 +142,21 @@ const createList = (filters, isSeparateWindow) => {
     }
 
     chrome.cookies.getAllCookieStores((cookieStores) => {
+        let storeId;
         for (let x = 0; x < cookieStores.length; x++) {
+            console.log("Checking cookie store:", cookieStores[x]);
             if (cookieStores[x].tabIds.indexOf(currentTabID) != -1) {
-                filterURL.storeId = cookieStores[x].id;
+                storeId = cookieStores[x].id;
                 break;
             }
         }
+
+        if (!storeId) {
+            console.error("No valid cookie store id found.");
+            return;
+        }
+
+        filterURL.storeId = storeId;
 
         chrome.cookies.getAll(filterURL, (cks) => {
             let currentC;
@@ -450,9 +459,12 @@ const setEvents = () => {
                 $("#copiedToast").fadeOut();
             }, 2500);
         });
-        $(this).animate({ backgroundColor: "#B3FFBD" }, 300, function () {
-            $(this).animate({ backgroundColor: "#EDEDED" }, 500);
-        });
+        const $this = $(this);
+        if ($this.length) {
+            $this.animate({ backgroundColor: "#B3FFBD" }, 300, function () {
+                $this.animate({ backgroundColor: "#EDEDED" }, 500);
+            });
+        }
     });
 
     $("#pasteButton").unbind().click(() => {

@@ -33,19 +33,21 @@ function start() {
 
 function createList(url) {
     tabURL = url;
-    chrome.cookies.getAll({
-        url: tabURL
-    }, function (cks) {
-        createTable({
-            url: tabURL,
-            cks: cks
-        });
+    chrome.cookies.getAll({ url: tabURL }, function (cks) {
+        if (chrome.runtime.lastError) {
+            console.error("Error getting cookies:", chrome.runtime.lastError.message);
+        } else {
+            createTable({
+                url: tabURL,
+                cks: cks
+            });
+        }
     });
 }
 
 function createTable(message) {
     tabURL = message.url;
-    cookieList = message.cks;
+    cookieList = message.cks || [];
 
     $tableBody = $("#cookieTable > tbody");
     $tableBody.empty();

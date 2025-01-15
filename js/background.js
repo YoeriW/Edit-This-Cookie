@@ -102,7 +102,7 @@ chrome.cookies.onChanged.addListener(changeInfo => {
                 chrome.cookies.get({
                     url: `http${currentRORule.secure ? "s" : ""}://${currentRORule.domain}${currentRORule.path}`,
                     name: currentRORule.name,
-                    storeId: currentRORule.storeId
+                    storeId: String(currentRORule.storeId)
                 }, currentCookie => {
                     if (compareCookies(currentCookie, currentRORule)) return;
                     const newCookie = cookieForCreationFromFullCookie(currentRORule);
