@@ -42,7 +42,7 @@ const setOptions = () => {
     const select = $("#customLocale");
     const existingLocales = chrome.i18n.getExistingLocales();
     for (let i = 0; i < existingLocales.length; i++) {
-        $("#customLocale").append($("<option>").attr("value", existingLocales[i].code).prop("selected", (existingLocales[i].code == preferences.customLocale)).text(existingLocales[i].name));
+        $("#customLocale").append($("<option>").attr("value", existingLocales[i].code).prop("selected", (existingLocales[i].code == preferences.customLocale)).text(existingLocales[i].code));
     }
 
     $("#useMaxDate").prop('checked', preferences.useMaxCookieAge);
