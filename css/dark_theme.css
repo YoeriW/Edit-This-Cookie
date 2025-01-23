@@ -37,7 +37,9 @@ html[data-theme="dark"] {
     --popup-wrapper-color: #fff;
 
     --loader-container-background: rgba(0,0,0,0.6);
-    --loader-container-icon-color: #f1f1f1;;
+    --loader-container-icon-color: #f1f1f1;
+
+    --icon-color: #fff;
 
     --ui-accordion-cookieslist-header-bg: #363636;
     --ui-accordion-header-bg: #363636;

@@ -24,7 +24,9 @@
     --popup-wrapper-color: #000;
 
     --loader-container-background: rgba(255,255,255,0.6);
-    --loader-container-icon-color: #222;;
+    --loader-container-icon-color: #222;
+
+    --icon-color: #363636;
 }
 
 body {
