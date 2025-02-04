@@ -66,7 +66,7 @@
         "message": "Pokaż domenę przed nazwą ciasteczka"
     },
     "editThis_paypalSupportCharity": {
-        "message": "EditThisCookie is free to use but please donate now with $1. All proceeds go to charities! :)<br><br>Move the slider to change the amount",
+        "message": "EditThisCookie (fork) is free to use but please donate now with $1. All proceeds go to charities! :)<br><br>Move the slider to change the amount",
         "description": "It will read: Donate now with PayPal"
     },
     "editThis_cookiesProtected": {
@@ -133,7 +133,7 @@
         "message": "Możesz wysłać dotacje do:"
     },
     "editThis_description": {
-        "message": "EditThisCookie to menadżer ciasteczek. Możesz dodawać, usuwać, edytować, wyszukiwać, chronić oraz blokować ciasteczka!"
+        "message": "EditThisCookie (fork) to menadżer ciasteczek. Możesz dodawać, usuwać, edytować, wyszukiwać, chronić oraz blokować ciasteczka!"
     },
     "editThis_cookiesModified": {
         "message": "Zmodyfikowane ciasteczka"

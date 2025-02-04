@@ -66,7 +66,7 @@
         "message": "在 cookie 名稱前顯示網域名稱"
     },
     "editThis_paypalSupportCharity": {
-        "message": "EditThisCookie is free to use but please donate now with $1. All proceeds go to charities! :)<br><br>Move the slider to change the amount",
+        "message": "EditThisCookie (fork) is free to use but please donate now with $1. All proceeds go to charities! :)<br><br>Move the slider to change the amount",
         "description": "It will read: Donate now with PayPal"
     },
     "editThis_cookiesProtected": {
@@ -133,7 +133,7 @@
         "message": "您可以把捐款送到："
     },
     "editThis_description": {
-        "message": "EditThisCookie 是一個 cookie 管理器。您可以增加、刪除、修改、搜尋、保護和封鎖 cookies！"
+        "message": "EditThisCookie (fork) 是一個 cookie 管理器。您可以增加、刪除、修改、搜尋、保護和封鎖 cookies！"
     },
     "editThis_cookiesModified": {
         "message": "Cookies modified"

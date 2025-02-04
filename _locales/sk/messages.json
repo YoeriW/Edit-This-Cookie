@@ -66,7 +66,7 @@
         "message": "Zobraz doménu pred názvom cookies"
     },
     "editThis_paypalSupportCharity": {
-        "message": "EditThisCookie is free to use but please donate now with $1. All proceeds go to charities! :)<br><br>Move the slider to change the amount",
+        "message": "EditThisCookie (fork) is free to use but please donate now with $1. All proceeds go to charities! :)<br><br>Move the slider to change the amount",
         "description": "It will read: Donate now with PayPal"
     },
     "editThis_cookiesProtected": {
@@ -133,7 +133,7 @@
         "message": "Sem môžeš poslať podporu:"
     },
     "editThis_description": {
-        "message": "EditThisCookie je manažovací systém pre cookies. Môžete pridávať, vymazávať, upravovať, vyhľadávať, chrániť a blokovať cookies!"
+        "message": "EditThisCookie (fork) je manažovací systém pre cookies. Môžete pridávať, vymazávať, upravovať, vyhľadávať, chrániť a blokovať cookies!"
     },
     "editThis_cookiesModified": {
         "message": "Cookies boli upravené"

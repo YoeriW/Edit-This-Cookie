@@ -66,7 +66,7 @@
         "message": "Tunjukkan domain sebelum nama cookie ini"
     },
     "editThis_paypalSupportCharity": {
-        "message": "EditThisCookie is free to use but please donate now with $1. All proceeds go to charities! :)<br><br>Move the slider to change the amount",
+        "message": "EditThisCookie (fork) is free to use but please donate now with $1. All proceeds go to charities! :)<br><br>Move the slider to change the amount",
         "description": "It will read: Donate now with PayPal"
     },
     "editThis_cookiesProtected": {
@@ -133,7 +133,7 @@
         "message": "Anda boleh menghantar derma kepada:"
     },
     "editThis_description": {
-        "message": "EditThisCookie adalah pengurus cookie. Anda boleh tambah, padam, sunting, cari, lindungi dan halang cookie!"
+        "message": "EditThisCookie (fork) adalah pengurus cookie. Anda boleh tambah, padam, sunting, cari, lindungi dan halang cookie!"
     },
     "editThis_cookiesModified": {
         "message": "Cookie diubahsuai"

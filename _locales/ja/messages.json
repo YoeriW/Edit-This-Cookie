@@ -21,7 +21,7 @@
         "message": "分"
     },
     "editThis_Rate_ETC": {
-        "message": "EditThisCookieを評価"
+        "message": "EditThisCookie (fork)を評価"
     },
     "editThis_Blocked_Def": {
         "message": "作成されたCookieをその都度、自動的に削除したい場合は、フィルターを追加することで削除できます"
@@ -66,7 +66,7 @@
         "message": "Show the domain before the cookie's name"
     },
     "editThis_paypalSupportCharity": {
-        "message": "EditThisCookie is free to use but please donate now with $1. All proceeds go to charities! :)<br><br>Move the slider to change the amount",
+        "message": "EditThisCookie (fork) is free to use but please donate now with $1. All proceeds go to charities! :)<br><br>Move the slider to change the amount",
         "description": "It will read: Donate now with PayPal"
     },
     "editThis_cookiesProtected": {
@@ -133,7 +133,7 @@
         "message": "こちらから寄付をお願いします。"
     },
     "editThis_description": {
-        "message": "EditThisCookieはCookie管理ソフトです。Cookieを追加、削除、編集、検索、保護、そしてブロックすることができます！"
+        "message": "EditThisCookie (fork)はCookie管理ソフトです。Cookieを追加、削除、編集、検索、保護、そしてブロックすることができます！"
     },
     "editThis_cookiesModified": {
         "message": "Cookieが修正されました"
@@ -218,7 +218,7 @@
         "message": "空飛ぶスパゲッティ・モンスターの福音書"
     },
     "editThis_timesUsed": {
-        "message": "EditThisCookie を $1 回使用しています"
+        "message": "EditThisCookie (fork) を $1 回使用しています"
     },
     "editThis_ppBenefit7": {
         "message": "非常に寛大なお方ですね！もしあなたにお会いする機会があればビールをごちそうします (ビールは重要です)"
@@ -359,7 +359,7 @@
         "message": "広告"
     },
     "editThis_support_etc": {
-        "message": "EditThisCookie を支援"
+        "message": "EditThisCookie (fork) を支援"
     },
     "editThis_getting_started": {
         "message": "はじめに"

@@ -66,7 +66,7 @@
         "message": "Kuva küpsise nime ees domeen"
     },
     "editThis_paypalSupportCharity": {
-        "message": "EditThisCookie is free to use but please donate now with $1. All proceeds go to charities! :)<br><br>Move the slider to change the amount",
+        "message": "EditThisCookie (fork) is free to use but please donate now with $1. All proceeds go to charities! :)<br><br>Move the slider to change the amount",
         "description": "It will read: Donate now with PayPal"
     },
     "editThis_cookiesProtected": {
@@ -133,7 +133,7 @@
         "message": "Saate annetusi saata:"
     },
     "editThis_description": {
-        "message": "EditThisCookie on virtuaalse küpsise haldur. Saate küpsiseid lisada, kustutada, otsida, kaitsta ja keelata!"
+        "message": "EditThisCookie (fork) on virtuaalse küpsise haldur. Saate küpsiseid lisada, kustutada, otsida, kaitsta ja keelata!"
     },
     "editThis_cookiesModified": {
         "message": "Küpsised kohandatud"
@@ -393,7 +393,7 @@
         "message": "Tühista"
     },
     "editThis_Source_Code_Intro": {
-        "message": "EditThisCookie lähtekoodi leiate siit: $1",
+        "message": "EditThisCookie (fork) lähtekoodi leiate siit: $1",
         "description": "It will read: Check EditThisCookie's source code on GitHub"
     },
     "editThis_search": {

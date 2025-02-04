@@ -1,6 +1,6 @@
 {
     "editThis_description": {
-        "message": "EditThisCookie is a cookie manager. You can add, delete, edit, search, protect and block cookies!"
+        "message": "EditThisCookie (fork) is a cookie manager. You can add, delete, edit, search, protect and block cookies!"
     },
     "editThis_deleteAll": {
         "message": "Delete all"
@@ -265,7 +265,7 @@
         "description": "It will read: Support us using PayPal. Move the slider to change the amount"
     },
     "editThis_paypalSupportCharity": {
-        "message": "EditThisCookie is free to use but please donate now with $1. All proceeds go to charities! :)<br><br>Move the slider to change the amount",
+        "message": "EditThisCookie (fork) is free to use but please donate now with $1. All proceeds go to charities! :)<br><br>Move the slider to change the amount",
         "description": "It will read: Donate now with PayPal"
     },
     "editThis_iWantDonate": {

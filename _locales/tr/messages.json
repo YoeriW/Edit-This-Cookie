@@ -21,7 +21,7 @@
         "message": "dakika"
     },
     "editThis_Rate_ETC": {
-        "message": "EditThisCookie'yi oylayın"
+        "message": "EditThisCookie (fork)'yi oylayın"
     },
     "editThis_Blocked_Def": {
         "message": "Eğer programlı olarak bir cookienin silinmesini istiyorsan o bir filtre yaratacak ve daha fazla seni rahatsız etmeyecek"
@@ -60,13 +60,13 @@
         "message": "Hepsini blokla ve Sil"
     },
     "editThis_Rate_Us_Intro": {
-        "message": "EditThisCookie eklentisini sevdiyseniz, bizi Chrome Web Store'da oylayın"
+        "message": "EditThisCookie (fork) eklentisini sevdiyseniz, bizi Chrome Web Store'da oylayın"
     },
     "editThis_Show_Domain_Before_Name": {
         "message": "Site adını cookieden önce göster"
     },
     "editThis_paypalSupportCharity": {
-        "message": "EditThisCookie is free to use but please donate now with $1. All proceeds go to charities! :)<br><br>Move the slider to change the amount",
+        "message": "EditThisCookie (fork) is free to use but please donate now with $1. All proceeds go to charities! :)<br><br>Move the slider to change the amount",
         "description": "It will read: Donate now with PayPal"
     },
     "editThis_cookiesProtected": {
@@ -218,7 +218,7 @@
         "message": "Uçan Spagetti Canavarı'nın Kutsal Kitabı"
     },
     "editThis_timesUsed": {
-        "message": "EditThisCookie'yi $1 kere kullandınız"
+        "message": "EditThisCookie (fork)'yi $1 kere kullandınız"
     },
     "editThis_ppBenefit7": {
         "message": "Oldukça cömertsin! Eğer bir şekilde bir araya gelirsek sana bir kaç bira ısmarlayacağım (hey, bira önemlidir)"
@@ -230,7 +230,7 @@
         "message": "Eklenmesini istediğiniz bir özelliği belirtebileceksiniz ve ben gerçekleştireceğim! (imkansızı istemediğiniz sürece :P )"
     },
     "editThis_ppBenefit4": {
-        "message": "EditThisCookie'deki rahatsız edici dediğiniz her türlü hatayı belirtebileceksiniz ve ben onu süper hızlı şekilde düzelteceğim!"
+        "message": "EditThisCookie (fork)'deki rahatsız edici dediğiniz her türlü hatayı belirtebileceksiniz ve ben onu süper hızlı şekilde düzelteceğim!"
     },
     "editThis_ppBenefit3": {
         "message": "Bir teşekkür emaili alacaksınız"
@@ -359,7 +359,7 @@
         "message": "Reklamlar"
     },
     "editThis_support_etc": {
-        "message": "EditThisCookie destek ol"
+        "message": "EditThisCookie (fork) destek ol"
     },
     "editThis_getting_started": {
         "message": "Buradan başlayın"
@@ -393,7 +393,7 @@
         "message": "İptal"
     },
     "editThis_Source_Code_Intro": {
-        "message": "EditThisCookie kaynak koduna $1 adresinden ulaşabilirsiniz.",
+        "message": "EditThisCookie (fork) kaynak koduna $1 adresinden ulaşabilirsiniz.",
         "description": "It will read: Check EditThisCookie's source code on GitHub"
     },
     "editThis_search": {
