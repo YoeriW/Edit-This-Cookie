@@ -76,4 +76,40 @@ html[data-theme="dark"] {
     --maxdatetype-ui-btn-active-border-color: #393939;
     --maxdatetype-ui-btn-active-color: #fff;
     
+    
+    --panel-sidebar-bg: #d6dde5;
+    --panel-sidebar-border-color: #B3B3B3;
+
+    --panel-main-bg: #282828;
+
+    --panel-checkbox-bg: #282828;
+    --panel-checkbox-border: 1px solid #181818;
+    --panel-checkbox-color: #fff;
+
+    --panel-select-bg: #282828;
+    --panel-select-border: 1px solid #181818;
+    --panel-select-color: #fff;
+
+    --panel-tablesorter-color: #fff;
+
+    --panel-datagrid-bg: #282828;
+
+    --panel-datagrid-th-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E7E7E7', endColorstr='#FFFFFF');
+    --panel-datagrid-th-bg: #282828;
+    --panel-datagrid-th-color: #fff;
+    --panel-datagrid-th-border: 1px solid #181818;
+
+    --panel-datagrid-td-bg: #393939;
+    --panel-datagrid-td-color: #fff;
+    --panel-datagrid-td-border: 1px solid #2f2f2f;
+
+    --panel-datagrid-tr-even-bg: #FAFAFA;
+    --panel-datagrid-tr-even-color: #fff;
+
+    --panel-disabled-color: #393939;
+    --panel-datagrid-tr-hover: #2f2f2f;
+
+    --panel-beta-alter-bg-color: #FFC2C2;
+    --panel-beta-alter-color: #fff;
+    --panel-beta-alter-a-color: red;
 }

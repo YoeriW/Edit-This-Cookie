@@ -1,7 +1,95 @@
+:root {
+    --panel-sidebar-bg: #d6dde5;
+    --panel-sidebar-border-color: #B3B3B3;
+
+    --panel-main-bg: #fff;
+
+    --panel-checkbox-bg: #fff;
+    --panel-checkbox-border: 1px solid #B3B3B3;
+    --panel-checkbox-color: #000;
+
+    --panel-select-bg: #fff;
+    --panel-select-border: 1px solid #B3B3B3;
+    --panel-select-color: #000;
+
+    --panel-tablesorter-color: #000;
+
+    --panel-datagrid-bg: #fff;
+
+    --panel-datagrid-th-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E7E7E7', endColorstr='#FFFFFF') !important;
+    --panel-datagrid-th-bg: #E7E7E7;
+    --panel-datagrid-th-color: #000;
+    --panel-datagrid-th-border: 1px solid #B3B3B3;
+
+    --panel-datagrid-td-bg: #fff;
+    --panel-datagrid-td-color: #000;
+    --panel-datagrid-td-border: 1px solid #B3B3B3;
+
+    --panel-datagrid-tr-even-bg: #FAFAFA;
+    --panel-datagrid-tr-even-color: #000;
+
+    --panel-disabled-color: #919191;
+    --panel-datagrid-tr-hover: #DEECFF;
+
+    --panel-beta-alter-bg-color: #FFC2C2;
+    --panel-beta-alter-color: #000;
+    --panel-beta-alter-a-color: red;
+}
+
+html {
+    background: var(--body-bg) !important;
+}
+
 body {
     padding: 0;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    background: var(--body-bg) !important;
+}
+
+select {
+    color: var(--panel-select-color);
+    width: 100%;
+    background: var(--panel-select-bg);
+    border: var(--panel-select-border);
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    appearance: none;
+    border: var(--panel-checkbox-border);
+    background: var(--panel-checkbox-bg);
+    width: 15px;
+    height: 15px;
+}
+
+input[type="checkbox"]:checked:before {
+    content: '\f00c';
+    font-family: var(--fa-style-family, "Font Awesome 6 Free");
+    font-weight: var(--fa-style, 900);
+    color: var(--panel-checkbox-color);
+    font-size: 12px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tablesorter-default .header, .tablesorter-default .tablesorter-header {
+    background: none;
+    position: relative;
+}
+
+.tablesorter-default .header, .tablesorter-default .tablesorter-header:before {
+    content: '\f0dc';
+    font-family: var(--fa-style-family, "Font Awesome 6 Free");
+    font-weight: var(--fa-style, 900);
+    color: var(--panel-tablesorter-color);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 #sidebar {
@@ -9,8 +97,8 @@ body {
     float: left;
     width: 200px;
     height: 100%;
-    background: #d6dde5;
-    border-right: #B3B3B3;
+    background: var(--panel-sidebar-bg) !important;
+    border-right: var(--panel-sidebar-border-color) !important;
     border-right-width: 1px;
     border-right-style: solid;
 }
@@ -20,7 +108,7 @@ body {
     width: auto;
     height: 100%;
     margin-bottom: 30px;
-    background: #ffffff;
+    background: var(--panel-main-bg) !important;
 }
 
 .datagrid table {
@@ -31,7 +119,7 @@ body {
 }
 
 .datagrid {
-    background: #fff;
+    background: var(--panel-datagrid-bg) !important;
     overflow: hidden;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -44,12 +132,13 @@ body {
 
 .datagrid table thead th {
     background: 0;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E7E7E7', endColorstr='#FFFFFF');
-    background-color: #E7E7E7;
-    color: #000;
+    filter: var(--panel-datagrid-th-filter) !important;
+    background-color: var(--panel-datagrid-th-bg) !important;
+    color: var(--panel-datagrid-th-color) !important;
     font-size: 12px;
     font-weight: 700;
-    border-left: 1px solid #B3B3B3;
+    border-left: var(--panel-datagrid-th-border) !important;
+    border-bottom: var(--panel-datagrid-th-border) !important;
 }
 
 .datagrid table thead th:first-child {
@@ -57,15 +146,17 @@ body {
 }
 
 .datagrid table tbody td {
-    color: #000;
-    border-left: 1px solid #B3B3B3;
+    color: var(--panel-datagrid-td-color) !important;
+    background: var(--panel-datagrid-td-bg) !important;
+    border-left: var(--panel-datagrid-td-border) !important;
+    border-bottom: var(--panel-datagrid-td-border) !important;
     font-size: 12px;
     font-weight: 400;
 }
 
 .datagrid table tbody tr:nth-child(even) {
-    background: #FAFAFA !important;
-    color: #000;
+    background: var(--panel-datagrid-tr-even-bg) !important;
+    color: var(--panel-datagrid-tr-even-color) !important;
 }
 
 .datagrid table tbody td:first-child {
@@ -116,11 +207,11 @@ textarea {
 }
 
 .disabled {
-    color: #919191 !important;
+    color: var(--panel-disabled-color) !important;
 }
 
 .datagrid table tbody tr:hover {
-    background: #DEECFF !important;
+    background: var(--panel-datagrid-tr-hover) !important;
 }
 
 #beta_alter {
@@ -132,9 +223,9 @@ textarea {
     right: 0;
     width: 100%;
     height: 30px;
-    background-color: #FFC2C2;
+    background-color: var(--panel-beta-alter-bg-color) !important;
     text-align: center;
-    color: #000;
+    color:  var(--panel-beta-alter-color) !important;
 }
 
 #beta_alter>div {
@@ -143,5 +234,5 @@ textarea {
 }
 
 #beta_alter a {
-    color: red;
+    color: var(--panel-beta-alter-a-color) !important;
 }
