@@ -183,10 +183,11 @@ body {
     right: 10px;
     text-align: right;
     color: var(--popup-helpbtn-color);
+    transition: 200ms opacity;
 }
 
 #helpButton:hover {
-    color: #3B3B3B;
+    opacity: 0.5;
 }
 
 #submitButton {

@@ -1,4 +1,59 @@
 html[data-theme="dark"] {
+    /* Base colors */
+    --color-white: #fff;
+    --color-black: #000;
+    --color-light-grey: #3d3d3d;
+    --color-grey: #363636;
+    --color-dark-grey: #2f2f2f;
+    --color-darker-grey: #1e1e1e;
+    --color-darkest-grey: #171717;
+    --color-light-border: #4f4f4f;
+    --color-mid-border: #454545;
+    --color-dark-border: #181818;
+    
+    /* Text colors */
+    --text-primary: #fff;
+    --text-secondary: #f1f1f1;
+    --text-tertiary: #bababa;
+    --text-light: #fff;
+    --text-link: #4183C4;
+    --text-header: #f1f1f1;
+    --text-nav: #f1f1f1;
+    --text-nav-hover: #bababa;
+    --text-nav-selected: #fff;
+    
+    /* Background colors */
+    --bg-primary: #282828;
+    --bg-secondary: #363636;
+    --bg-tertiary: #3d3d3d;
+    --bg-nav: #3d3d3d;
+    --bg-accordion-header: #363636;
+    --bg-accordion-content: #333;
+    --bg-input: #171717;
+    --bg-button: #fff;
+    --bg-controlgroup: #4c4c4c;
+    
+    /* Border colors */
+    --border-light: #4f4f4f;
+    --border-medium: #454545;
+    --border-dark: #171717;
+    --border-input: #454545;
+    --border-checkbox: 2px solid #2f2f2f;
+    --border-controlgroup: #2f2f2f;
+    
+    /* Icon colors */
+    --icon-color: #fff;
+    --icon-loader: #f1f1f1;
+    
+    /* UI specific */
+    --ui-icons-url: url('../lib/jquery-ui-1.14.1.custom/images/ui-icons_ffffff_256x240.png');
+    
+    /* Other */
+    --helper-color: #f7f7f7;
+    --helper-border: 1px dotted #f1f1f1;
+    --loader-bg: rgba(0,0,0,0.6);
+    
+    /* Legacy variables - keeping for backward compatibility */
     --body-bg: #454545;
     --body-color: #fff;
     --h1-color: #f1f1f1;

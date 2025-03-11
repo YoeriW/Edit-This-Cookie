@@ -1,8 +1,7 @@
 :root {
-    --active-bg-color: #F7F7F7;
-
-    --addrule-btn-bg: #171717;
-    --addrule-btn-color: #fff;
+    --active-bg-color: var(--color-light-grey);
+    --addrule-btn-bg: var(--bg-button);
+    --addrule-btn-color: var(--text-light);
 }
 
 #addRule {
