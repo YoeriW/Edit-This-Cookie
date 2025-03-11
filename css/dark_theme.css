@@ -53,28 +53,28 @@ html[data-theme="dark"] {
     --helper-border: 1px dotted #f1f1f1;
     --loader-bg: rgba(0,0,0,0.6);
     
-    /* Legacy variables - keeping for backward compatibility */
-    --body-bg: #454545;
-    --body-color: #fff;
-    --h1-color: #f1f1f1;
-    --nav-bg: #3d3d3d;
-    --nav-border-right-color: #4f4f4f;
-    --nav-list-color: #f1f1f1;
-    --nav-list-color-hover: #bababa;
-    --nav-list-selected-color: #fff;
-    --box-h1-color: #fff;
-    --hr-border-top-color: #2f2f2f;
-    --helper-border-bottom: 1px dotted #f1f1f1;
-    --helper-color: #f7f7f7;
-    --active-bg-color: #3d3d3d;
+    /* Popup Specific Variables */
+    --popup-body-bg: var(--bg-secondary);
+    --popup-body-color: var(--text-primary);
+    --popup-commands-table-color: var(--text-secondary);
+    --popup-commands-table-border-bottom: 1px solid var(--border-dark);
+    
+    --popup-submitdiv-bg: var(--bg-secondary);
+    --popup-submitdiv-border-top: 1px solid var(--border-dark);
+    --popup-helpbtn-color: var(--text-primary);
 
-    --popup-body-bg: #363636;
-    --popup-body-color: #fff;
-    --popup-commands-table-color: #ededed;
-    --popup-commands-table-border-bottom: 1px solid #000;
-    --popup-submitdiv-bg: #363636;
-    --popup-submitdiv-border-top: 1px solid #171717;
-    --popup-helpbtn-color: #fff;
+    --popup-searchcondition-bg: var(--color-darker-grey);
+    --popup-searchcondition-border: 1px solid var(--color-black);
+    --popup-searchcondition-color: var(--text-primary);
+
+    --popup-commandrow-link-border-right: 1px solid var(--color-black);
+
+    --popup-textarea-placeholder: var(--text-primary);
+
+    --popup-cookie-table-label-color: var(--text-secondary);
+    --popup-cookie-table-input-bg: var(--bg-input);
+    --popup-cookie-table-input-color: var(--text-primary);
+    --popup-cookie-table-input-border: 1px solid var(--border-input);
     
     --popup-searchcondition-bg: #1e1e1e;
     --popup-searchcondition-border: 1px solid #000;

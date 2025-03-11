@@ -27,8 +27,9 @@
 
 .ui-accordion-content {
     border-radius: 0 !important;
-    padding-left: 0!important;
-    padding-right: 0!important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    position: relative;
 }
 
 .ui-icon, .ui-widget-content .ui-icon ,
