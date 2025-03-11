@@ -150,14 +150,20 @@ function setContextMenu(show) {
 
         if (show) {
             chrome.contextMenus.create({
-                id: "editThisCookie", // Unique identifier for the context menu item
-                title: "EditThisCookie",
+                id: "editThisCookie",
+                title: "Edit This Cookie",
                 contexts: ["page"]
             }, () => {
                 if (chrome.runtime.lastError) {
                     console.error("Error creating context menu: ", chrome.runtime.lastError);
                 } else {
                     console.log("Context menu created");
+                }
+            });
+            
+            chrome.contextMenus.onClicked.addListener((info, tab) => {
+                if (info.menuItemId === "editThisCookie") {
+                    chrome.action.openPopup();
                 }
             });
         }
