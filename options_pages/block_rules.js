@@ -169,8 +169,24 @@ const submitRule = () => {
     newRule.value = value;
 
     if (name === undefined && domain === undefined && value === undefined) {
+        alert("Please specify at least one field (domain, name, or value) for the blocking rule.");
         return;
     }
+
+    // Validate regex patterns if they contain special characters
+    const validateRegexPattern = (pattern, fieldName) => {
+        if (pattern && !pattern.startsWith('/') && !pattern.endsWith('/')) {
+            // Check if it contains regex special characters
+            const regexChars = /[.*+?^${}()|[\]\\]/;
+            if (regexChars.test(pattern)) {
+                console.warn(`Warning: ${fieldName} contains regex special characters. Consider wrapping in /pattern/ for regex matching.`);
+            }
+        }
+    };
+
+    validateRegexPattern(domain, 'Domain');
+    validateRegexPattern(name, 'Name');
+    validateRegexPattern(value, 'Value');
 
     addBlockRule(newRule);
     hideEditCommands();

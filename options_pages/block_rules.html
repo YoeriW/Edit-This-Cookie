@@ -101,7 +101,13 @@
             <label class="inputLabel" i18n="value"></label>
             <input id="ruleValue" type="text" value="any" onfocus="if (this.value=='any') this.value='';">
             <br>
-            <div style="margin-top:10px;font-size: smaller;color: #949494; text-align: center" i18n="useRegularExpressions"></div>
+            <div style="margin-top:10px;font-size: smaller;color: #949494; text-align: center">
+                <div i18n="useRegularExpressions"></div>
+                <div style="margin-top:5px;font-size: 11px;">
+                    Tip: Use exact text for simple matching, or wrap in /pattern/ for regex matching.<br>
+                    Example: "example.com" or "/example\\.com/" for regex
+                </div>
+            </div>
             <div id="submitDiv">
                 <input onClick='submitRule()' id='submitButton' type='submit' value='' i18n="Alert_submitAll" />
             </div>
