@@ -173,20 +173,9 @@ const submitRule = () => {
         return;
     }
 
-    // Validate regex patterns if they contain special characters
-    const validateRegexPattern = (pattern, fieldName) => {
-        if (pattern && !pattern.startsWith('/') && !pattern.endsWith('/')) {
-            // Check if it contains regex special characters
-            const regexChars = /[.*+?^${}()|[\]\\]/;
-            if (regexChars.test(pattern)) {
-                console.warn(`Warning: ${fieldName} contains regex special characters. Consider wrapping in /pattern/ for regex matching.`);
-            }
-        }
-    };
-
-    validateRegexPattern(domain, 'Domain');
-    validateRegexPattern(name, 'Name');
-    validateRegexPattern(value, 'Value');
+    // Note: Special characters in domain names, cookie names, and values are automatically escaped
+    // for exact matching. If you want to use regex patterns, wrap them in /pattern/
+    // Example: /example\.com/ for regex matching or "example.com" for exact matching
 
     addBlockRule(newRule);
     hideEditCommands();

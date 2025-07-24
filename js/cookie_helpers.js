@@ -15,14 +15,28 @@ const deleteAll = (cookieList, searchUrl) => {
 };
 
 const deleteCookie = (url, name, store, callback) => {
+    // Validate parameters
+    if (typeof url !== 'string' || typeof name !== 'string') {
+        console.error('deleteCookie called with invalid parameters:', { url, name, store, callback });
+        return;
+    }
+    
     chrome.cookies.remove({
         url,
         name,
         storeId: store
     }, details => {
-        if (typeof callback === "undefined")
-            return;
-        callback(details !== null && details !== undefined && details !== "undefined");
+        try {
+            if (typeof callback === "function") {
+                callback(details !== null && details !== undefined && details !== "undefined");
+            } else if (callback !== undefined && callback !== null) {
+                console.warn('deleteCookie called with non-function callback:', typeof callback, callback);
+            }
+        } catch (e) {
+            console.error('Error in deleteCookie callback:', e, {
+                url, name, store, callbackType: typeof callback
+            });
+        }
     });
 };
 
