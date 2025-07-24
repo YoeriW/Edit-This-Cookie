@@ -43,25 +43,26 @@ const addBlockRule = (rule) => {
     }
     dfilters.push(rule);
     data.filters = dfilters;
-    const filterURL = {};
-
-    if (rule.name !== undefined) {
-        filterURL.name = rule.name;
-    }
-    if (rule.value !== undefined) {
-        filterURL.value = rule.value;
-    }
-    if (rule.domain !== undefined) {
-        filterURL.domain = rule.domain;
-    }
-    chrome.cookies.getAll({}, (cookieL) => {
-        cookieL.forEach((cCookie) => {
-            if (filterMatchesCookie(filterURL, cCookie.name, cCookie.domain, cCookie.value)) {
-                const cUrl = `https://${cCookie.domain}${cCookie.path}`;
-                deleteCookie(cUrl, cCookie.name, cCookie.storeId, cCookie);
-            }
-        });
+    
+    // Save the updated filters to storage
+    chrome.storage.local.set({ filters: data.filters }, () => {
+        if (chrome.runtime.lastError) {
+            console.error('Error saving filters:', chrome.runtime.lastError);
+        } else {
+            console.log('Blocking rule added successfully:', rule);
+            
+            // Notify background script immediately about the new rule
+            chrome.runtime.sendMessage({type: 'ruleAdded', rule: rule, allFilters: data.filters}, (response) => {
+                if (chrome.runtime.lastError) {
+                    console.log('Background script notification sent');
+                }
+            });
+        }
     });
+    
+    // Note: We don't immediately delete existing cookies here.
+    // The blocking will happen automatically when new cookies are set
+    // via the chrome.cookies.onChanged listener in background.js
 };
 
 const switchReadOnlyRule = (rule) => {
@@ -95,23 +96,96 @@ const deleteBlockRule = (toDelete) => {
     const filtersList = data.filters;
     filtersList.splice(toDelete, 1);
     data.filters = filtersList;
+    
+    // Save the updated filters to storage
+    chrome.storage.local.set({ filters: data.filters }, () => {
+        if (chrome.runtime.lastError) {
+            console.error('Error saving filters after deletion:', chrome.runtime.lastError);
+        } else {
+            console.log('Blocking rule deleted successfully, updated filters:', data.filters);
+            
+            // Notify background script immediately about the rule deletion
+            chrome.runtime.sendMessage({type: 'ruleDeleted', allFilters: data.filters}, (response) => {
+                if (chrome.runtime.lastError) {
+                    console.log('Background script notification sent for deletion');
+                }
+            });
+        }
+    });
 };
 
 const _getMessage = (string, args) => chrome.i18n.getMessage(`editThis_${string}`, args);
 
+const escapeRegex = (string) => {
+    if (typeof string !== 'string') return string;
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+};
+
 const filterMatchesCookie = (rule, name, domain, value) => {
-    const ruleDomainReg = new RegExp(rule.domain);
-    const ruleNameReg = new RegExp(rule.name);
-    const ruleValueReg = new RegExp(rule.value);
-    if (rule.domain !== undefined && domain.match(ruleDomainReg) === null) {
-        return false;
+    // Only create regex patterns for defined rule properties
+    if (rule.domain !== undefined && rule.domain !== null) {
+        try {
+            // Handle domain matching with better subdomain support
+            let domainPattern = rule.domain;
+            
+            if (domainPattern.startsWith('/') && domainPattern.endsWith('/')) {
+                // It's already a regex pattern
+                domainPattern = domainPattern.slice(1, -1);
+            } else {
+                // For exact domain matching, handle subdomains properly
+                // If rule domain starts with '.', it should match the domain and all subdomains
+                if (domainPattern.startsWith('.')) {
+                    // Convert '.example.com' to '.*\\.example\\.com' to match example.com and all subdomains
+                    domainPattern = '.*' + escapeRegex(domainPattern);
+                } else {
+                    // For exact domain matching, escape special characters
+                    domainPattern = escapeRegex(domainPattern);
+                }
+            }
+            
+            const ruleDomainReg = new RegExp(domainPattern);
+            if (domain.match(ruleDomainReg) === null) {
+                console.log('Domain mismatch:', { ruleDomain: rule.domain, cookieDomain: domain, pattern: domainPattern });
+                return false;
+            }
+        } catch (e) {
+            console.error('Invalid domain regex pattern:', rule.domain, e);
+            return false;
+        }
     }
-    if (rule.name !== undefined && name.match(ruleNameReg) === null) {
-        return false;
+    
+    if (rule.name !== undefined && rule.name !== null) {
+        try {
+            // Escape regex special characters for exact matching unless it's already a regex pattern
+            const namePattern = rule.name.startsWith('/') && rule.name.endsWith('/') 
+                ? rule.name.slice(1, -1) 
+                : escapeRegex(rule.name);
+            const ruleNameReg = new RegExp(namePattern);
+            if (name.match(ruleNameReg) === null) {
+                return false;
+            }
+        } catch (e) {
+            console.error('Invalid name regex pattern:', rule.name, e);
+            return false;
+        }
     }
-    if (rule.value !== undefined && value.match(ruleValueReg) === null) {
-        return false;
+    
+    if (rule.value !== undefined && rule.value !== null) {
+        try {
+            // Escape regex special characters for exact matching unless it's already a regex pattern
+            const valuePattern = rule.value.startsWith('/') && rule.value.endsWith('/') 
+                ? rule.value.slice(1, -1) 
+                : escapeRegex(rule.value);
+            const ruleValueReg = new RegExp(valuePattern);
+            if (value.match(ruleValueReg) === null) {
+                return false;
+            }
+        } catch (e) {
+            console.error('Invalid value regex pattern:', rule.value, e);
+            return false;
+        }
     }
+    
     return true;
 };
 

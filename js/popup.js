@@ -355,18 +355,29 @@ const setEvents = () => {
     $("#submitFiltersButton").button();
 
     $("#submitFiltersDiv").unbind().click(() => {
-        const domainChecked = $(".filterDomain:checked", $(this).parent()).val() !== undefined;
-        const domain = $("#filterByDomain", $(this).parent()).text();
-        const nameChecked = $(".filterName:checked", $(this).parent()).val() !== undefined;
-        const name = $("#filterByName", $(this).parent()).text();
-        const valueChecked = $(".filterValue:checked", $(this).parent()).val() !== undefined;
-        const value = $("#filterByValue", $(this).parent()).text();
+        const domainChecked = $(".filterDomain:checked", "#cookieFilter").val() !== undefined;
+        const domain = $("#filterByDomain", "#cookieFilter").text();
+        const nameChecked = $(".filterName:checked", "#cookieFilter").val() !== undefined;
+        const name = $("#filterByName", "#cookieFilter").text();
+        const valueChecked = $(".filterValue:checked", "#cookieFilter").val() !== undefined;
+        const value = $("#filterByValue", "#cookieFilter").text();
+
+        console.log('Creating blocking rule:', { domainChecked, domain, nameChecked, name, valueChecked, value });
 
         const newRule = {};
-        if (domainChecked) newRule.domain = domain;
-        if (nameChecked) newRule.name = name;
-        if (valueChecked) newRule.value = value;
+        if (domainChecked && domain && domain !== 'any') newRule.domain = domain;
+        if (nameChecked && name && name !== 'any') newRule.name = name;
+        if (valueChecked && value && value !== 'any') newRule.value = value;
 
+        // If no valid fields are selected, show an error
+        if (Object.keys(newRule).length === 0) {
+            alert("Please select at least one field (domain, name, or value) to block.");
+            return;
+        }
+
+        console.log('Final blocking rule:', newRule);
+
+        // Delete matching cookies from current page
         for (let i = 0; i < cookieList.length; i++) {
             const currentCookie = cookieList[i];
             if (currentCookie.isProtected) continue;
@@ -375,8 +386,9 @@ const setEvents = () => {
             const url = buildUrl(currentCookie.domain, currentCookie.path, getUrlOfCookies());
             deleteCookie(url, currentCookie.name, currentCookie.storeId);
         }
+        
         data.nCookiesFlagged += cookieList.length;
-        const exists = addBlockRule(newRule);
+        addBlockRule(newRule);
 
         doSearch();
         return;
