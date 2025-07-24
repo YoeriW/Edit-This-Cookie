@@ -1,4 +1,5 @@
 importScripts('utils.js');
+importScripts('cookie_helpers.js');
 
 // Initialize global variables
 const data = {
