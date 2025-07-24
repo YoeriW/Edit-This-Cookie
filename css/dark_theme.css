@@ -1,170 +1,63 @@
+/* Dark theme specific overrides */
+
 html[data-theme="dark"] {
-    /* Base colors */
-    --color-white: #fff;
-    --color-black: #000;
-    --color-light-grey: #3d3d3d;
-    --color-grey: #363636;
-    --color-dark-grey: #2f2f2f;
-    --color-darker-grey: #1e1e1e;
-    --color-darkest-grey: #171717;
-    --color-light-border: #4f4f4f;
-    --color-mid-border: #454545;
-    --color-dark-border: #181818;
+    /* Navigation and body */
+    --body-bg: #454545;
+    --body-color: #fff;
+    --h1-color: #f1f1f1;
+    --nav-bg: #3d3d3d;
+    --nav-border-right-color: #4f4f4f;
+    --nav-list-color: #f1f1f1;
+    --nav-list-color-hover: #bababa;
+    --nav-list-selected-color: #fff;
+    --box-h1-color: #fff;
+    --hr-border-top-color: #2f2f2f;
     
-    /* Text colors */
-    --text-primary: #fff;
-    --text-secondary: #f1f1f1;
-    --text-tertiary: #bababa;
-    --text-light: #fff;
-    --text-link: #4183C4;
-    --text-header: #f1f1f1;
-    --text-nav: #f1f1f1;
-    --text-nav-hover: #bababa;
-    --text-nav-selected: #fff;
-    
-    /* Background colors */
-    --bg-primary: #282828;
-    --bg-secondary: #363636;
-    --bg-tertiary: #3d3d3d;
-    --bg-nav: #3d3d3d;
-    --bg-accordion-header: #363636;
-    --bg-accordion-content: #333;
-    --bg-input: #171717;
-    --bg-button: #fff;
-    --bg-controlgroup: #4c4c4c;
-    
-    /* Border colors */
-    --border-light: #4f4f4f;
-    --border-medium: #454545;
-    --border-dark: #171717;
-    --border-input: #454545;
-    --border-checkbox: 2px solid #2f2f2f;
-    --border-controlgroup: #2f2f2f;
-    
-    /* Icon colors */
-    --icon-color: #fff;
-    --icon-loader: #f1f1f1;
-    
-    /* UI specific */
-    --ui-icons-url: url('../lib/jquery-ui-1.14.1.custom/images/ui-icons_ffffff_256x240.png');
-    
-    /* Other */
-    --helper-color: #f7f7f7;
-    --helper-border: 1px dotted #f1f1f1;
-    --loader-bg: rgba(0,0,0,0.6);
-    
-    /* Popup Specific Variables */
-    --popup-body-bg: var(--bg-secondary);
-    --popup-body-color: var(--text-primary);
-    --popup-commands-table-color: var(--text-secondary);
-    --popup-commands-table-border-bottom: 1px solid var(--border-dark);
-    
-    --popup-submitdiv-bg: var(--bg-secondary);
-    --popup-submitdiv-border-top: 1px solid var(--border-dark);
-    --popup-helpbtn-color: var(--text-primary);
-
-    --popup-searchcondition-bg: var(--color-darker-grey);
-    --popup-searchcondition-border: 1px solid var(--color-black);
-    --popup-searchcondition-color: var(--text-primary);
-
-    --popup-commandrow-link-border-right: 1px solid var(--color-black);
-
-    --popup-textarea-placeholder: var(--text-primary);
-
-    --popup-cookie-table-label-color: var(--text-secondary);
-    --popup-cookie-table-input-bg: var(--bg-input);
-    --popup-cookie-table-input-color: var(--text-primary);
-    --popup-cookie-table-input-border: 1px solid var(--border-input);
-    
+    /* Popup elements */
+    --popup-body-bg: #363636;
+    --popup-body-color: #fff;
+    --popup-commands-table-color: #ededed;
+    --popup-commands-table-border-bottom: 1px solid #000;
+    --popup-submitdiv-bg: #363636;
+    --popup-submitdiv-border-top: 1px solid #171717;
+    --popup-helpbtn-color: #fff;
     --popup-searchcondition-bg: #1e1e1e;
     --popup-searchcondition-border: 1px solid #000;
     --popup-searchcondition-color: #fff;
-
     --popup-commandrow-link-border-right: 1px solid #000;
-
     --popup-textarea-placeholder: #fff;
-
     --popup-cookie-table-label-color: #ededed;
     --popup-cookie-table-input-bg: #171717;
     --popup-cookie-table-input-color: #fff;
     --popup-cookie-table-input-border: 1px solid #454545;
-
     --popup-wrapper-color: #fff;
-
-    --loader-container-background: rgba(0,0,0,0.6);
-    --loader-container-icon-color: #f1f1f1;
-
-    --icon-color: #fff;
-
-    --ui-accordion-cookieslist-header-bg: #363636;
-    --ui-accordion-header-bg: #363636;
-    --ui-accordion-header-border: 1px solid #454545;
-    --ui-accordion-header-color: #f1f1f1;
-
-    --ui-widget-content-border: 1px solid #454545;
-    --ui-widget-content-bg: #333;
-    --ui-widget-content-color: #fff;
     
-    --ui-icon-set: url('../lib/jquery-ui-1.14.1.custom/images/ui-icons_ffffff_256x240.png');
-
+    /* UI accordion */
+    --ui-accordion-cookieslist-header-bg: #363636;
+    
+    /* Link colors */
     --linkify-color-hover: #bababa;
-
+    
+    /* Button styles */
     --addrule-btn-bg: #fff;
     --addrule-btn-color: #171717;
-
-    --ui-controlgroup-item-bg: #4c4c4c;
-    --ui-controlgroup-item-border-color: #2f2f2f;
-    --ui-controlgroup-item-color: #fff;
-
-    --checker-span-before-border: 2px solid #2f2f2f;
-    --checker-span-before-bg: #3d3d3d;
-    --checker-span-after-color: #fff;
-    --checker-span-hover-before-bg: #444444;
-    --checker-span-hover-before-border-color: #fff;
-
-    --maxdatetype-ui-icon-blank-border: 2px solid #2f2f2f;
-    --maxdatetype-ui-icon-blank-bg: #3d3d3d;
-    --maxdatetype-ui-icon-blank-hover-border-color: #fff;
-    --maxdatetype-ui-checkbox-icon-color: #fff;
-    --maxdatetype-ui-checkbox-icon-bg: #fff;
-    --maxdatetype-ui-btn-active-bg: #5f5f5f;
-    --maxdatetype-ui-btn-active-border-color: #393939;
-    --maxdatetype-ui-btn-active-color: #fff;
     
-    
-    --panel-sidebar-bg: #d6dde5;
-    --panel-sidebar-border-color: #B3B3B3;
-
+    /* Panel styles */
     --panel-main-bg: #282828;
-
     --panel-checkbox-bg: #282828;
     --panel-checkbox-border: 1px solid #181818;
     --panel-checkbox-color: #fff;
-
     --panel-select-bg: #282828;
     --panel-select-border: 1px solid #181818;
     --panel-select-color: #fff;
-
     --panel-tablesorter-color: #fff;
-
     --panel-datagrid-bg: #282828;
-
-    --panel-datagrid-th-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E7E7E7', endColorstr='#FFFFFF');
     --panel-datagrid-th-bg: #282828;
     --panel-datagrid-th-color: #fff;
     --panel-datagrid-th-border: 1px solid #181818;
-
     --panel-datagrid-td-bg: #393939;
     --panel-datagrid-td-color: #fff;
     --panel-datagrid-td-border: 1px solid #2f2f2f;
-
-    --panel-datagrid-tr-even-bg: #FAFAFA;
-    --panel-datagrid-tr-even-color: #fff;
-
-    --panel-disabled-color: #393939;
     --panel-datagrid-tr-hover: #2f2f2f;
-
-    --panel-beta-alter-bg-color: #FFC2C2;
-    --panel-beta-alter-color: #fff;
-    --panel-beta-alter-a-color: red;
+    --panel-disabled-color: #393939;
 }

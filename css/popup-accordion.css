@@ -12,11 +12,11 @@
 }
 
 #cookiesList .ui-accordion-header {
-    background: var(--ui-accordion-cookieslist-header-bg) !important;
+    background: var(--ui-accordion-cookieslist-header-bg, var(--color-grey)) !important;
 }
 
 .ui-accordion-header {
-    background-color: var(--ui-accordion-header-bg);
+    background-color: var(--ui-accordion-header-bg) !important;
     margin: 0 !important;
     border-radius: 0 !important;
 }
@@ -32,9 +32,9 @@
     position: relative;
 }
 
-.ui-icon, .ui-widget-content .ui-icon ,
+.ui-icon, .ui-widget-content .ui-icon,
 .ui-state-hover .ui-icon, .ui-widget-content .ui-state-hover .ui-icon {
-    background-image: var(--ui-icon-set) !important;
+    background-image: var(--ui-icons-url) !important;
 }
 
 .ui-state-hover .ui-icon {

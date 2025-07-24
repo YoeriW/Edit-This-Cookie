@@ -1,8 +1,8 @@
 :root {
     --addrule-btn-bg: var(--bg-button);
-    --addrule-btn-color: var(--text-light);
+    --addrule-btn-color: var(--color-white);
     --maxdatetype-ui-icon-blank-border: 2px solid var(--color-darkest-grey);
-    --maxdatetype-ui-icon-blank-bg: var(--bg-controlgroup);
+    --maxdatetype-ui-icon-blank-bg: var(--color-grey2);
     --maxdatetype-ui-icon-blank-hover-border-color: var(--color-black);
     --maxdatetype-ui-checkbox-icon-color: var(--color-black);
     --maxdatetype-ui-checkbox-icon-bg: var(--color-black);

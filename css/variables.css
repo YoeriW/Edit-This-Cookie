@@ -6,10 +6,10 @@
     --color-grey: #ededed;
     --color-dark-grey: #ccc;
     --color-darker-grey: #999;
-    --color-darker-grey2: #A1A1A1;
     --color-darkest-grey: #4d4d4d;
     --color-darkest-grey2: #363636;
-    --color-darkest-grey3: #383838;
+    
+    /* Border colors */
     --color-light-border: #e3e3e3;
     --color-mid-border: #c5c5c5;
     --color-dark-border: #525252;
@@ -17,42 +17,96 @@
     /* Text colors */
     --text-primary: #000;
     --text-secondary: #383838;
-    --text-tertiary: #999;
-    --text-light: #fff;
-    --text-link: #4183C4;
-    --text-header: rgb(92, 97, 102);
-    --text-nav: #999;
-    --text-nav-hover: #777;
-    --text-nav-selected: rgb(70, 78, 90);
     
     /* Background colors */
-    --bg-primary: #fff;
-    --bg-secondary: #ededed;
-    --bg-tertiary: #f7f7f7;
-    --bg-nav: #f7f7f7;
-    --bg-accordion-header: #ccc;
-    --bg-accordion-content: #fff;
+    --body-bg: #fff;
     --bg-input: #fff;
     --bg-button: #171717;
-    --bg-controlgroup: #cacaca;
     
-    /* Border colors */
-    --border-light: #e3e3e3;
-    --border-medium: #c5c5c5;
-    --border-dark: #525252;
+    /* UI elements */
     --border-input: #ccc;
-    --border-checkbox: 2px solid #c3c3c3;
-    --border-controlgroup: #b8b8b8;
-    
-    /* Icon colors */
-    --icon-color: #363636;
-    --icon-loader: #222;
-    
-    /* UI specific */
     --ui-icons-url: url('../lib/jquery-ui-1.14.1.custom/images/ui-icons_444444_256x240.png');
     
-    /* Other */
+    /* Helper elements */
     --helper-color: #9e9e9e;
-    --helper-border: 1px dotted #9e9e9e;
-    --loader-bg: rgba(255,255,255,0.6);
+    --helper-border: 1px dotted #f1f1f1;
+    
+    /* Loader */
+    --bg-loader: rgba(255,255,255,0.6);
+    --icon-loader: #222;
+    
+    /* UI components */
+    --ui-accordion-header-bg: var(--color-dark-grey);
+    --ui-accordion-header-border: 1px solid var(--color-mid-border);
+    --ui-accordion-header-color: var(--text-secondary);
+    --ui-widget-content-border: 1px solid var(--color-dark-grey);
+    --ui-widget-content-bg: var(--color-white);
+    --ui-widget-content-color: var(--text-primary);
+    --ui-controlgroup-item-bg: #cacaca;
+    --ui-controlgroup-item-border-color: #b8b8b8;
+    --ui-controlgroup-item-color: #000;
+    
+    /* Form elements */
+    --checker-span-before-border: 2px solid #c3c3c3;
+    --checker-span-before-bg: #fff;
+    --checker-span-hover-before-bg: #f1f1f1;
+    --checker-span-hover-before-border-color: #000;
+    --checker-span-after-color: #000;
+}
+
+/* Dark theme variables */
+html[data-theme="dark"] {    
+    /* Base colors */
+    --color-white: #fff;
+    --color-black: #000;
+    --color-light-grey: #3d3d3d;
+    --color-grey: #363636;
+    --color-dark-grey: #2f2f2f;
+    --color-darker-grey: #1e1e1e;
+    --color-darkest-grey: #171717;
+    --color-darkest-grey2: #363636;
+    
+    /* Border colors */
+    --color-light-border: #4f4f4f;
+    --color-mid-border: #454545;
+    --color-dark-border: #181818;
+    
+    /* Text colors */
+    --text-primary: #fff;
+    --text-secondary: #f1f1f1;
+    
+    /* Background colors */
+    --body-bg: #454545;
+    --bg-input: #171717;
+    --bg-button: #fff;
+    
+    /* UI elements */
+    --border-input: #454545;
+    --ui-icons-url: url('../lib/jquery-ui-1.14.1.custom/images/ui-icons_ffffff_256x240.png');
+    
+    /* Helper elements */
+    --helper-color: #f7f7f7;
+    --helper-border: 1px dotted #f1f1f1;
+    
+    /* Loader */
+    --bg-loader: rgba(0,0,0,0.6);
+    --icon-loader: #f1f1f1;
+    
+    /* UI components */
+    --ui-accordion-header-bg: #363636;
+    --ui-accordion-header-border: 1px solid #454545;
+    --ui-accordion-header-color: #f1f1f1;
+    --ui-widget-content-border: 1px solid #454545;
+    --ui-widget-content-bg: #333;
+    --ui-widget-content-color: #fff;
+    --ui-controlgroup-item-bg: #4c4c4c;
+    --ui-controlgroup-item-border-color: #2f2f2f;
+    --ui-controlgroup-item-color: #fff;
+    
+    /* Form elements */
+    --checker-span-before-border: 2px solid #2f2f2f;
+    --checker-span-before-bg: #3d3d3d;
+    --checker-span-hover-before-bg: #444444;
+    --checker-span-hover-before-border-color: #fff;
+    --checker-span-after-color: #fff;
 }

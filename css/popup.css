@@ -23,14 +23,14 @@
 
     --popup-wrapper-color: var(--color-black);
 
-    --loader-container-background: var(--loader-bg);
+    --loader-container-background: var(--bg-loader);
     --loader-container-icon-color: var(--icon-loader);
 
     --icon-color: var(--color-grey);
 }
 
 body {
-    background-color: var(--popup-body-bg);
+    background-color: var(--popup-body-bg, var(--body-bg));
     width: 550px;
     height: 100.1%;
     margin: 0 auto;
@@ -48,7 +48,7 @@ body {
 #wrapper {
     width: 100%;
     padding: 0 0 40px 0;
-    color: var(--popup-wrapper-color);
+    color: var(--popup-wrapper-color, var(--text-primary));
 }
 
 #labelChooserBanner {
@@ -336,14 +336,14 @@ body {
 .cookie-table textarea,
 .cookie-table select,
 #pasteCookie textarea {
-    background: var(--popup-cookie-table-input-bg);
-    color: var(--popup-cookie-table-input-color);
-    border: var(--popup-cookie-table-input-border);
+    background: var(--popup-cookie-table-input-bg, var(--bg-input));
+    color: var(--popup-cookie-table-input-color, var(--text-primary));
+    border: var(--popup-cookie-table-input-border, 1px solid var(--color-dark-grey));
     margin-bottom: 5px;
 }
 
 textarea::placeholder {
-    color: var(--popup-textarea-placeholder);
+    color: var(--popup-textarea-placeholder, var(--text-secondary));
 }  
 
 .cookie-row {
@@ -362,8 +362,8 @@ textarea::placeholder {
     display: table;
     z-index: 10;
     width: 100%;
-    border-bottom: var(--popup-commands-table-border-bottom);
-    color: var(--popup-commands-table-color);
+    border-bottom: var(--popup-commands-table-border-bottom, 1px solid var(--color-dark-border));
+    color: var(--popup-commands-table-color, var(--color-grey));
     table-layout: fixed;
 }
 
@@ -484,7 +484,7 @@ textarea::placeholder {
     right: 0;
     text-align: center;
     padding-top: 15px;
-    background: var(--loader-container-background);
+    background: var(--bg-loader);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -492,7 +492,7 @@ textarea::placeholder {
 
 #loader-container i {
     z-index: 1001;
-    color: var(--loader-container-icon-color);
+    color: var(--icon-loader);
 }
 
 #noCookies {
