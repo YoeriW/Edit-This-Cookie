@@ -1,29 +1,31 @@
-EditThisCookie (fork)
-========================
+# EditThisCookie (Fork)
 
-Description
---------------
+**EditThisCookie** is a powerful and simple cookie manager for Chromium browsers. Originally inspired by the lack of solid cookie management tools, this fork brings the beloved functionality of the original [EditThisCookie](https://github.com/fcapano/EditThisCookie) into the modern web with support for **Manifest V3 and up** — plus many improvements and fixes.
 
-EditThisCookie is a cookie manager. You can add, delete, edit, search, protect, and block cookies!
-Inspired by the lack of good cookie managers in Chromium Browsers, I developed this small, simple, and extremely useful extension that allows you to do anything you'll ever need to do to cookies!
+## 🔧 What You Can Do
+- ✅ Add, edit, delete, and search cookies  
+- 🔒 Protect cookies (read-only)  
+- 🚫 Block cookies via filters  
+- 📤 Export cookies in JSON, Netscape format (great for `wget`/`curl`), or Perl::LPW  
+- 📥 Import cookies in JSON  
+- ⏳ Limit the max expiration date of cookies  
 
-* Delete any cookie
-* Edit any cookie
-* Add a new cookie
-* Search a cookie
-* Protect a cookie (read-only)
-* Block cookies (cookie filter)
-* Export cookies in JSON, Netscape cookie file (perfect for wget and curl), Perl::LPW
-* Import cookies in JSON
-* Limit the maximum expiration date of any cookie
+## 🎉 New in This Fork
+- Updated to **Manifest V3**
+- Refreshed packages: jQuery, jQueryUI, Font Awesome
+- Built-in **Dark Theme** support
+- Improved UI styling for user preferences
+- Many **bug fixes** (JavaScript errors, layout issues)
+- Merged helpful community PRs from the original repo
 
+## 🌍 Open Source
+Check out the source code and contribute:  
+[https://github.com/YoeriW/Edit-This-Cookie](https://github.com/YoeriW/Edit-This-Cookie)
 
-Contributing
---------------
-- Improve the translations or add new languages [here](https://github.com/YoeriW/Edit-This-Cookie/issues)
+## 🌐 Website
+More info at:  
+[https://www.editthiscookiefork.com](https://www.editthiscookiefork.com)
 
-
-How to Install
---------------
-
-Install it on Chromium Browsers from [here](https://chromewebstore.google.com/detail/editthiscookie-fork/ihfmcbadakjehneaijebhpogkegajgnk)
+## 📦 Install
+Available on Chromium-based browsers:  
+👉 [Chrome Web Store](https://chromewebstore.google.com/detail/editthiscookie-fork/ihfmcbadakjehneaijebhpogkegajgnk)
