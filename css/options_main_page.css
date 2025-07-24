@@ -26,7 +26,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--body-bg);
-    color: var(--body-color);
+    color: var(--body-color, var(--text-primary));
     font-family: 'Open Sans', sans-serif;
     font-size: 75%;
     cursor: default;
@@ -34,7 +34,7 @@ body {
 }
 
 h1 {
-    color: var(--h1-color);
+    color: var(--h1-color, var(--text-secondary));
     font-size: 150%;
     font-weight: normal;
     line-height: 1;
@@ -46,10 +46,10 @@ h1 {
     width: 160px;
     height: 100%;
     padding-top: 15px;
-    background-color: var(--nav-bg);
+    background-color: var(--nav-bg, var(--color-light-grey));
     border-right-width: 1px;
     border-right-style: solid;
-    border-right-color: var(--nav-border-right-color);
+    border-right-color: var(--nav-border-right-color, var(--color-light-border));
     z-index: 1;
 }
 
@@ -162,15 +162,15 @@ A:link, A:visited, A:active, .link_like {
 }
 
 .helper {
-    border-bottom: var(--helper-border-bottom) !important;
-    color: var(--helper-border-bottom) !important;
+    border-bottom: var(--helper-border) !important;
+    color: var(--helper-color) !important;
     cursor: pointer !important;
     text-decoration: none !important;
 }
 
 hr {
     margin: 10px 0 10px -15px;
-    border-top-color: var(--hr-border-top-color);
+    border-top-color: var(--hr-border-top-color, var(--color-light-border));
     border-top-style: solid;
     border-width: 1px 0 0 0;
 }

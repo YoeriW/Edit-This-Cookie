@@ -1,14 +1,14 @@
 :root {
-    --addrule-btn-bg: #171717;
-    --addrule-btn-color: #fff;
-    --maxdatetype-ui-icon-blank-border: 2px solid #4D4D4D;
-    --maxdatetype-ui-icon-blank-bg: #cacaca;
-    --maxdatetype-ui-icon-blank-hover-border-color: #000;
-    --maxdatetype-ui-checkbox-icon-color: #000;
-    --maxdatetype-ui-checkbox-icon-bg: #000;
-    --maxdatetype-ui-btn-active-bg: #fff;
-    --maxdatetype-ui-btn-active-border-color: #c3c3c3;
-    --maxdatetype-ui-btn-active-color: #000;
+    --addrule-btn-bg: var(--bg-button);
+    --addrule-btn-color: var(--color-white);
+    --maxdatetype-ui-icon-blank-border: 2px solid var(--color-darkest-grey);
+    --maxdatetype-ui-icon-blank-bg: var(--color-grey2);
+    --maxdatetype-ui-icon-blank-hover-border-color: var(--color-black);
+    --maxdatetype-ui-checkbox-icon-color: var(--color-black);
+    --maxdatetype-ui-checkbox-icon-bg: var(--color-black);
+    --maxdatetype-ui-btn-active-bg: var(--color-white);
+    --maxdatetype-ui-btn-active-border-color: var(--color-dark-grey);
+    --maxdatetype-ui-btn-active-color: var(--color-black);
 }
 
 hr:first-of-type {

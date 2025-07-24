@@ -1,22 +1,22 @@
 :root {
-    --ui-accordion-cookieslist-header-bg: #eee;
-    --ui-accordion-header-bg: #ccc;
-    --ui-accordion-header-border: 1px solid #c5c5c5;
-    --ui-accordion-header-color: #454545;
+    --ui-accordion-cookieslist-header-bg: var(--color-grey);
+    --ui-accordion-header-bg: var(--color-dark-grey);
+    --ui-accordion-header-border: 1px solid var(--color-mid-border);
+    --ui-accordion-header-color: var(--text-secondary);
 
-    --ui-widget-content-border: 1px solid #ddd;
-    --ui-widget-content-bg: #fff;
-    --ui-widget-content-color: #333;
+    --ui-widget-content-border: 1px solid var(--color-dark-grey);
+    --ui-widget-content-bg: var(--color-white);
+    --ui-widget-content-color: var(--text-primary);
 
-    --ui-icon-set: url('../lib/jquery-ui-1.14.1.custom/images/ui-icons_444444_256x240.png');
+    --ui-icon-set: var(--ui-icons-url);
 }
 
 #cookiesList .ui-accordion-header {
-    background: var(--ui-accordion-cookieslist-header-bg) !important;
+    background: var(--ui-accordion-cookieslist-header-bg, var(--color-grey)) !important;
 }
 
 .ui-accordion-header {
-    background-color: var(--ui-accordion-header-bg);
+    background-color: var(--ui-accordion-header-bg) !important;
     margin: 0 !important;
     border-radius: 0 !important;
 }
@@ -27,13 +27,14 @@
 
 .ui-accordion-content {
     border-radius: 0 !important;
-    padding-left: 0!important;
-    padding-right: 0!important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    position: relative;
 }
 
-.ui-icon, .ui-widget-content .ui-icon ,
+.ui-icon, .ui-widget-content .ui-icon,
 .ui-state-hover .ui-icon, .ui-widget-content .ui-state-hover .ui-icon {
-    background-image: var(--ui-icon-set) !important;
+    background-image: var(--ui-icons-url) !important;
 }
 
 .ui-state-hover .ui-icon {
