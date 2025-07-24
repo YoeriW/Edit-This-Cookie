@@ -356,22 +356,40 @@ const setEvents = () => {
 
     $("#submitFiltersDiv").unbind().click(() => {
         const domainChecked = $(".filterDomain:checked", "#cookieFilter").val() !== undefined;
-        const domain = $("#filterByDomain", "#cookieFilter").text();
+        const domain = $("#filterByDomain", "#cookieFilter").text().trim();
         const nameChecked = $(".filterName:checked", "#cookieFilter").val() !== undefined;
-        const name = $("#filterByName", "#cookieFilter").text();
+        const name = $("#filterByName", "#cookieFilter").text().trim();
         const valueChecked = $(".filterValue:checked", "#cookieFilter").val() !== undefined;
-        const value = $("#filterByValue", "#cookieFilter").text();
+        const value = $("#filterByValue", "#cookieFilter").text().trim();
 
         console.log('Creating blocking rule:', { domainChecked, domain, nameChecked, name, valueChecked, value });
 
         const newRule = {};
-        if (domainChecked && domain && domain !== 'any') newRule.domain = domain;
-        if (nameChecked && name && name !== 'any') newRule.name = name;
-        if (valueChecked && value && value !== 'any') newRule.value = value;
+        
+        // Validate domain - "any" is NOT allowed for domains (too dangerous)
+        if (domainChecked && domain && domain !== 'any' && domain.length > 0) {
+            newRule.domain = domain;
+        }
+        
+        // Validate name - "any" IS allowed for names
+        if (nameChecked && name && name.length > 0) {
+            newRule.name = name;
+        }
+        
+        // Validate value - "any" IS allowed for values
+        if (valueChecked && value && value.length > 0) {
+            newRule.value = value;
+        }
 
         // If no valid fields are selected, show an error
         if (Object.keys(newRule).length === 0) {
-            alert("Please select at least one field (domain, name, or value) to block.");
+            alert("⚠️ Error: Please select at least one field (domain, name, or value) with a valid value to block.\n\nNote: 'any' is not allowed for domains (too broad), but can be used for names and values.");
+            return;
+        }
+
+        // Additional safety check: prevent overly broad rules
+        if (Object.keys(newRule).length === 1 && newRule.domain && newRule.domain.length < 3) {
+            alert("⚠️ Warning: The domain value is too short and might block too many cookies.\n\nPlease provide a more specific domain name.");
             return;
         }
 

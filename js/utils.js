@@ -122,8 +122,24 @@ const escapeRegex = (string) => {
 };
 
 const filterMatchesCookie = (rule, name, domain, value) => {
+    // Safety check: prevent overly broad rules that could match everything
+    if (!rule || (Object.keys(rule).length === 0)) {
+        console.warn('Empty rule provided to filterMatchesCookie');
+        return false;
+    }
+    
+    // Check for dangerously broad patterns
+    const hasValidRule = (rule.domain && rule.domain.length > 0) || 
+                        (rule.name && rule.name.length > 0) || 
+                        (rule.value && rule.value.length > 0);
+    
+    if (!hasValidRule) {
+        console.warn('Rule has no valid criteria:', rule);
+        return false;
+    }
+    
     // Only create regex patterns for defined rule properties
-    if (rule.domain !== undefined && rule.domain !== null) {
+    if (rule.domain !== undefined && rule.domain !== null && rule.domain.length > 0) {
         try {
             // Handle domain matching with better subdomain support
             let domainPattern = rule.domain;
@@ -154,35 +170,45 @@ const filterMatchesCookie = (rule, name, domain, value) => {
         }
     }
     
-    if (rule.name !== undefined && rule.name !== null) {
-        try {
-            // Escape regex special characters for exact matching unless it's already a regex pattern
-            const namePattern = rule.name.startsWith('/') && rule.name.endsWith('/') 
-                ? rule.name.slice(1, -1) 
-                : escapeRegex(rule.name);
-            const ruleNameReg = new RegExp(namePattern);
-            if (name.match(ruleNameReg) === null) {
+    if (rule.name !== undefined && rule.name !== null && rule.name.length > 0) {
+        // Handle "any" value for names - matches any name
+        if (rule.name === 'any') {
+            // "any" matches any name, so we don't need to check
+        } else {
+            try {
+                // Escape regex special characters for exact matching unless it's already a regex pattern
+                const namePattern = rule.name.startsWith('/') && rule.name.endsWith('/') 
+                    ? rule.name.slice(1, -1) 
+                    : escapeRegex(rule.name);
+                const ruleNameReg = new RegExp(namePattern);
+                if (name.match(ruleNameReg) === null) {
+                    return false;
+                }
+            } catch (e) {
+                console.error('Invalid name regex pattern:', rule.name, e);
                 return false;
             }
-        } catch (e) {
-            console.error('Invalid name regex pattern:', rule.name, e);
-            return false;
         }
     }
     
-    if (rule.value !== undefined && rule.value !== null) {
-        try {
-            // Escape regex special characters for exact matching unless it's already a regex pattern
-            const valuePattern = rule.value.startsWith('/') && rule.value.endsWith('/') 
-                ? rule.value.slice(1, -1) 
-                : escapeRegex(rule.value);
-            const ruleValueReg = new RegExp(valuePattern);
-            if (value.match(ruleValueReg) === null) {
+    if (rule.value !== undefined && rule.value !== null && rule.value.length > 0) {
+        // Handle "any" value for values - matches any value
+        if (rule.value === 'any') {
+            // "any" matches any value, so we don't need to check
+        } else {
+            try {
+                // Escape regex special characters for exact matching unless it's already a regex pattern
+                const valuePattern = rule.value.startsWith('/') && rule.value.endsWith('/') 
+                    ? rule.value.slice(1, -1) 
+                    : escapeRegex(rule.value);
+                const ruleValueReg = new RegExp(valuePattern);
+                if (value.match(ruleValueReg) === null) {
+                    return false;
+                }
+            } catch (e) {
+                console.error('Invalid value regex pattern:', rule.value, e);
                 return false;
             }
-        } catch (e) {
-            console.error('Invalid value regex pattern:', rule.value, e);
-            return false;
         }
     }
     
