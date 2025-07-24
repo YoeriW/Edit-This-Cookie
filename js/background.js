@@ -97,52 +97,136 @@ function setChristmasIcon() {
 setChristmasIcon();
 setInterval(setChristmasIcon, 60 * 60 * 1000);
 
-// Periodic cleanup of blocked cookies
+// Periodic cleanup of blocked cookies - OPTIMIZED VERSION
+let cleanupInterval = null;
+let lastCleanupTime = 0;
+const CLEANUP_COOLDOWN = 30000; // 30 seconds between cleanups
+
 const cleanupBlockedCookies = () => {
-    if (data.filters.length === 0 || blockingDisabled) return;
+    // Skip if no blocking rules or blocking is disabled
+    if (data.filters.length === 0 || blockingDisabled) {
+        return;
+    }
     
-    chrome.cookies.getAll({}, (cookies) => {
-        cookies.forEach((cookie) => {
-            // Skip cleanup for sites with redirect loop protection
-            const cookieDomain = cookie.domain.replace(/^\./, '');
-            if (blockedSites.has(cookieDomain)) {
-                return;
+    // Skip if we just did a cleanup recently
+    const now = Date.now();
+    if (now - lastCleanupTime < CLEANUP_COOLDOWN) {
+        return;
+    }
+    
+    // Only run cleanup if there are active tabs with cookies
+    chrome.tabs.query({}, (tabs) => {
+        if (tabs.length === 0) return;
+        
+        // Get cookies only from active domains to reduce load
+        const activeDomains = new Set();
+        tabs.forEach(tab => {
+            if (tab.url && (tab.url.startsWith('http://') || tab.url.startsWith('https://'))) {
+                try {
+                    const url = new URL(tab.url);
+                    activeDomains.add(url.hostname);
+                    // Also add parent domain for broader coverage
+                    const parts = url.hostname.split('.');
+                    if (parts.length > 2) {
+                        activeDomains.add('.' + parts.slice(-2).join('.'));
+                    }
+                } catch (e) {
+                    // Skip invalid URLs
+                }
             }
+        });
+        
+        if (activeDomains.size === 0) return;
+        
+        // Only get cookies from active domains
+        const domainFilters = Array.from(activeDomains).map(domain => ({ domain }));
+        
+        chrome.cookies.getAll({}, (cookies) => {
+            let processedCount = 0;
+            let removedCount = 0;
             
-            for (const filter of data.filters) {
-                if (filterMatchesCookie(filter, cookie.name, cookie.domain, cookie.value)) {
-                    console.log('Periodic cleanup: found blocked cookie:', cookie.name, 'from', cookie.domain);
-                    
-                    try {
-                        let domain = cookie.domain;
-                        if (domain.startsWith('http://') || domain.startsWith('https://')) {
-                            domain = domain.replace(/^https?:\/\//, '');
-                        }
+            cookies.forEach((cookie) => {
+                // Skip if not from active domains
+                const cookieDomain = cookie.domain.replace(/^\./, '');
+                const isActiveDomain = Array.from(activeDomains).some(domain => 
+                    cookieDomain === domain.replace(/^\./, '') || 
+                    cookieDomain.endsWith(domain.replace(/^\./, ''))
+                );
+                
+                if (!isActiveDomain) return;
+                
+                // Skip cleanup for sites with redirect loop protection
+                if (blockedSites.has(cookieDomain)) {
+                    return;
+                }
+                
+                processedCount++;
+                
+                // Check if cookie matches any blocking rule
+                for (const filter of data.filters) {
+                    if (filterMatchesCookie(filter, cookie.name, cookie.domain, cookie.value)) {
+                        console.log('Periodic cleanup: found blocked cookie:', cookie.name, 'from', cookie.domain);
                         
-                        const toRemove = {
-                            url: `http${cookie.secure ? "s" : ""}://${domain}${cookie.path}`,
-                            name: cookie.name,
-                            storeId: cookie.storeId
-                        };
-                        
-                        chrome.cookies.remove(toRemove, (details) => {
-                            if (chrome.runtime.lastError) {
-                                console.error('Error in periodic cleanup:', chrome.runtime.lastError);
-                            } else {
-                                console.log('Periodic cleanup: removed blocked cookie:', cookie.name);
+                        try {
+                            let domain = cookie.domain;
+                            if (domain.startsWith('http://') || domain.startsWith('https://')) {
+                                domain = domain.replace(/^https?:\/\//, '');
                             }
-                        });
-                    } catch (e) {
-                        console.error('Error in periodic cleanup:', e);
+                            
+                            const toRemove = {
+                                url: `http${cookie.secure ? "s" : ""}://${domain}${cookie.path}`,
+                                name: cookie.name,
+                                storeId: cookie.storeId
+                            };
+                            
+                            chrome.cookies.remove(toRemove, (details) => {
+                                if (chrome.runtime.lastError) {
+                                    console.error('Error in periodic cleanup:', chrome.runtime.lastError);
+                                } else {
+                                    removedCount++;
+                                    console.log('Periodic cleanup: removed blocked cookie:', cookie.name);
+                                }
+                            });
+                        } catch (e) {
+                            console.error('Error in periodic cleanup:', e);
+                        }
+                        break; // Found a match, no need to check other filters
                     }
                 }
+            });
+            
+            if (processedCount > 0 || removedCount > 0) {
+                console.log(`Periodic cleanup completed: processed ${processedCount} cookies, removed ${removedCount} blocked cookies`);
+                lastCleanupTime = now;
             }
         });
     });
 };
 
-// Run cleanup every 5 seconds
-setInterval(cleanupBlockedCookies, 5000);
+// Start cleanup interval only when there are blocking rules
+const startCleanupInterval = () => {
+    if (cleanupInterval) {
+        clearInterval(cleanupInterval);
+    }
+    
+    if (data.filters.length > 0 && !blockingDisabled) {
+        cleanupInterval = setInterval(cleanupBlockedCookies, 5000);
+        console.log('Started periodic cleanup interval');
+    }
+};
+
+const stopCleanupInterval = () => {
+    if (cleanupInterval) {
+        clearInterval(cleanupInterval);
+        cleanupInterval = null;
+        console.log('Stopped periodic cleanup interval');
+    }
+};
+
+// Initialize cleanup based on current state
+if (data.filters.length > 0) {
+    startCleanupInterval();
+}
 
 // Every time the browser restarts, the first time the user goes to the options he ends up in the default page (support)
 chrome.storage.local.set({ option_panel: "null" }, () => {
@@ -388,6 +472,9 @@ const handleMessage = (message, sender, sendResponse) => {
             blockedSites.clear();
             redirectLoopCount = {};
             
+            // Stop cleanup interval since no rules exist
+            stopCleanupInterval();
+            
             // Clear from storage
             chrome.storage.local.set({ filters: [] }, () => {
                 if (chrome.runtime.lastError) {
@@ -412,11 +499,15 @@ const handleMessage = (message, sender, sendResponse) => {
             break;
         case 'disableAllBlocking':
             blockingDisabled = true;
+            stopCleanupInterval();
             console.log('All cookie blocking disabled globally');
             sendResponse({ success: true, message: 'All cookie blocking disabled globally' });
             break;
         case 'enableAllBlocking':
             blockingDisabled = false;
+            if (data.filters.length > 0) {
+                startCleanupInterval();
+            }
             console.log('All cookie blocking re-enabled globally');
             sendResponse({ success: true, message: 'All cookie blocking re-enabled globally' });
             break;
@@ -425,6 +516,8 @@ const handleMessage = (message, sender, sendResponse) => {
             if (message.allFilters) {
                 data.filters = message.allFilters;
                 console.log('Immediately updated filters from rule addition:', data.filters);
+                // Start cleanup interval if we now have rules
+                startCleanupInterval();
             }
             sendResponse({ success: true, message: 'Rule added and filters updated' });
             break;
@@ -433,6 +526,10 @@ const handleMessage = (message, sender, sendResponse) => {
             if (message.allFilters) {
                 data.filters = message.allFilters;
                 console.log('Immediately updated filters from rule deletion:', data.filters);
+                // Stop cleanup interval if no more rules
+                if (data.filters.length === 0) {
+                    stopCleanupInterval();
+                }
             }
             sendResponse({ success: true, message: 'Rule deleted and filters updated' });
             break;

@@ -1,5 +1,5 @@
 const buildUrl = (domain, path, searchUrl) => {
-    const secure = searchUrl.startsWith("https://");
+    const secure = searchUrl && searchUrl.startsWith("https://");
 
     if (domain.startsWith('.'))
         domain = domain.substring(1);
