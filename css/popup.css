@@ -1,7 +1,7 @@
 :root {
     --popup-body-bg: var(--color-grey);
     --popup-body-color: var(--color-black);
-    --popup-commands-table-color: var(--color-grey);
+    --popup-commands-table-color: var(--color-darkest-grey2);
     --popup-commands-table-border-bottom: 1px solid var(--color-dark-border);
     
     --popup-submitdiv-bg: var(--color-grey);
@@ -14,9 +14,9 @@
 
     --popup-commandrow-link-border-right: 1px solid var(--color-darker-grey2);
 
-    --popup-textarea-placeholder: var(--color-darkest-grey3);
+    --popup-textarea-placeholder: var(--color-darkest-grey2);
 
-    --popup-cookie-table-label-color: var(--color-darkest-grey3);
+    --popup-cookie-table-label-color: var(--color-darkest-grey2);
     --popup-cookie-table-input-bg: var(--color-white);
     --popup-cookie-table-input-color: var(--color-black);
     --popup-cookie-table-input-border: 1px solid var(--color-dark-grey);
@@ -363,7 +363,7 @@ textarea::placeholder {
     z-index: 10;
     width: 100%;
     border-bottom: var(--popup-commands-table-border-bottom, 1px solid var(--color-dark-border));
-    color: var(--popup-commands-table-color, var(--color-grey));
+    color: var(--popup-commands-table-color);
     table-layout: fixed;
 }
 
