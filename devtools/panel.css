@@ -67,7 +67,7 @@ input[type="checkbox"]:checked:before {
 }
 
 .tablesorter-default .header, .tablesorter-default .tablesorter-header {
-    background: none;
+    background: none !important;
     position: relative;
 }
 
