@@ -274,8 +274,24 @@ window.addEventListener("storage", (event) => {
     try {
         let varUsed = false;
         let varChanged = false;
-        const oldValue = (event.oldValue !== null) ? JSON.parse(event.oldValue) : null;
-        const newValue = (event.newValue !== null) ? JSON.parse(event.newValue) : null;
+        
+        // Safely parse JSON values from storage event
+        let oldValue = null;
+        let newValue = null;
+        
+        try {
+            oldValue = (event.oldValue !== null) ? JSON.parse(event.oldValue) : null;
+        } catch (parseError) {
+            console.warn("Failed to parse oldValue from storage event:", event.oldValue);
+            oldValue = null;
+        }
+        
+        try {
+            newValue = (event.newValue !== null) ? JSON.parse(event.newValue) : null;
+        } catch (parseError) {
+            console.warn("Failed to parse newValue from storage event:", event.newValue);
+            newValue = null;
+        }
 
         if (oldValue === newValue)
             return;
@@ -295,11 +311,30 @@ window.addEventListener("storage", (event) => {
             data_template[key].used = varUsed;
         }
         if (varUsed && varChanged && updateCallback !== undefined) {
-            updateCallback();
+            try {
+                if (typeof updateCallback === 'function') {
+                    updateCallback();
+                } else {
+                    console.warn("updateCallback is not a function. Type:", typeof updateCallback);
+                }
+            } catch (callbackError) {
+                console.error("Error executing updateCallback:", {
+                    error: callbackError.message,
+                    stack: callbackError.stack,
+                    key: key,
+                    oldValue: oldValue,
+                    newValue: newValue
+                });
+            }
         }
     } catch (e) {
-        console.error("Failed to call on the updateCallback.");
-        console.error(e.message);
+        console.error("Error in storage event listener:", {
+            error: e.message,
+            stack: e.stack,
+            eventKey: event.key,
+            eventOldValue: event.oldValue,
+            eventNewValue: event.newValue
+        });
     }
 }, false);
 
