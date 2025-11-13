@@ -252,7 +252,16 @@ const createAccordionList = (cks, callback, callbackArguments) => {
 
         $(".index", cookie).val(i);
         $(".name", cookie).val(currentC.name);
-        $(".value", cookie).val(currentC.value);
+        let displayValue = currentC.value;
+        if (preferences.urlDecodeValues) {
+            try {
+                displayValue = decodeURIComponent(currentC.value);
+            } catch (e) {
+                console.warn("Failed to decode cookie value, displaying as-is:", e);
+                displayValue = currentC.value;
+            }
+        }
+        $(".value", cookie).val(displayValue);
         $(".domain", cookie).val(currentC.domain);
         $(".path", cookie).val(currentC.path);
         $(".storeId", cookie).val(currentC.storeId);

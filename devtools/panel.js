@@ -61,7 +61,16 @@ function createTable(message) {
         $row = $("<tr/>");
         $row.append($("<td/>").addClass("hiddenColumn").text(i));
         $row.append($("<td/>").addClass("editable").text(currentC.name));
-        $row.append($("<td/>").addClass("editable").text(currentC.value));
+        let displayValue = currentC.value;
+        if (preferences.urlDecodeValues) {
+            try {
+                displayValue = decodeURIComponent(currentC.value);
+            } catch (e) {
+                console.warn("Failed to decode cookie value, displaying as-is:", e);
+                displayValue = currentC.value;
+            }
+        }
+        $row.append($("<td/>").addClass("editable").text(displayValue));
         $row.append($("<td/>").addClass("editable domain " + domainDisabled).text(currentC.domain));
         $row.append($("<td/>").addClass("editable").text(currentC.path));
 

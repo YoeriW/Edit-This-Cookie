@@ -410,5 +410,8 @@
     },
     "editThis_Details": {
         "message": "Detaljer"
+    },
+    "editThis_URL_Decode_Cookie_Values": {
+        "message": "Automatisk avkodning av cookievärden för bättre läsbarhet"
     }
 }

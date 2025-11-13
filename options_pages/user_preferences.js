@@ -74,6 +74,7 @@ const setOptions = () => {
     $("option[value='" + preferences.sortCookiesType + "']").prop("selected", true);
 
     $("#showDevToolsPanel").prop('checked', preferences.showDevToolsPanel);
+    $("#urlDecodeValues").prop('checked', preferences.urlDecodeValues);
 
     savePreferences();
 
@@ -204,6 +205,10 @@ const setEvents = () => {
 
     $("#showDevToolsPanel").change(() => {
         preferences.showDevToolsPanel = $('#showDevToolsPanel').prop("checked");
+    });
+
+    $("#urlDecodeValues").click(() => {
+        preferences.urlDecodeValues = $('#urlDecodeValues').prop("checked");
     });
 }
 

@@ -410,5 +410,8 @@
     },
     "editThis_Details": {
         "message": "详细信息"
+    },
+    "editThis_URL_Decode_Cookie_Values": {
+        "message": "自动解码 cookie 值以提高可读性"
     }
 }

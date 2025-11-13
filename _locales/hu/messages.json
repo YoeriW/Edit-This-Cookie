@@ -410,5 +410,8 @@
     },
     "editThis_Details": {
         "message": "Részletek"
+    },
+    "editThis_URL_Decode_Cookie_Values": {
+        "message": "Automatikusan dekódolja a sütik értékeit jobb olvashatóság érdekében"
     }
 }

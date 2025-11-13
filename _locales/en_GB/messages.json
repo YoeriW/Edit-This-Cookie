@@ -425,5 +425,8 @@
     },
     "editThis_toCurrentTabCookieUrl": {
         "message": "To Current Tab Cookie Url"
+    },
+    "editThis_URL_Decode_Cookie_Values": {
+        "message": "Automatically decode cookie values for better readability"
     }
 }

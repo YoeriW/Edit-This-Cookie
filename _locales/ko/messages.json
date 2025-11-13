@@ -410,5 +410,8 @@
     },
     "editThis_Details": {
         "message": "세부 사항"
+    },
+    "editThis_URL_Decode_Cookie_Values": {
+        "message": "쿠키 값을 자동으로 디코딩하여 가독성 향상"
     }
 }

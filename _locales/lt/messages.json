@@ -410,5 +410,8 @@
     },
     "editThis_Details": {
         "message": "Detalės"
+    },
+    "editThis_URL_Decode_Cookie_Values": {
+        "message": "Automatiškai dekodinti slapuko reikšmes geresniam skaitomumui"
     }
 }

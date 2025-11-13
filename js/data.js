@@ -79,6 +79,10 @@ const preferences_template = {
     // Whether to show the panel in the DevTools panel (e.g. panel shown when pressing F12)
     "showDevToolsPanel": {
         "default_value": true
+    },
+    // Whether to automatically URL decode cookie values for better readability
+    "urlDecodeValues": {
+        "default_value": false
     }
 };
 

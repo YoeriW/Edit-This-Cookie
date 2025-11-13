@@ -410,5 +410,8 @@
     },
     "editThis_Details": {
         "message": "تفاصيل"
+    },
+    "editThis_URL_Decode_Cookie_Values": {
+        "message": "فك تشفير قيم ملفات تعريف الارتباط تلقائيًا لتحسين القراءة"
     }
 }
