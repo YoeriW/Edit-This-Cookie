@@ -79,11 +79,19 @@ chrome.storage.local.get(['lastVersionRun', 'readOnly', 'filters', 'preferences'
 });
 
 function updateCallback() {
-    if (showContextMenu !== preferences.showContextMenu) {
-        showContextMenu = preferences.showContextMenu;
-        setContextMenu(showContextMenu);
+    try {
+        if (showContextMenu !== preferences.showContextMenu) {
+            showContextMenu = preferences.showContextMenu;
+            setContextMenu(showContextMenu);
+        }
+        setChristmasIcon();
+    } catch (e) {
+        console.error("Error in updateCallback:", {
+            error: e.message,
+            stack: e.stack,
+            preferences: preferences
+        });
     }
-    setChristmasIcon();
 }
 
 function setChristmasIcon() {
