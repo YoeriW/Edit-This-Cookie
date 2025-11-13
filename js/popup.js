@@ -319,7 +319,12 @@ const importCookies = () => {
     error.html(`${error.html()}<br> Also check&nbsp;<a href='https://developer.chrome.com/extensions/cookies.html#type-Cookie' target='_blank'>Developer Chrome Cookie</a><br>Error:`);
 
     try {
-        let cookieArray = $.parseJSON(text);
+        // Trim whitespace and validate input is not empty
+        const trimmedText = text.trim();
+        if (!trimmedText) {
+            throw new Error("Textarea is empty. Please paste valid JSON cookie data.");
+        }
+        let cookieArray = $.parseJSON(trimmedText);
         if (Object.prototype.toString.apply(cookieArray) === "[object Object]") {
             cookieArray = [cookieArray];
         }
