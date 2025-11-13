@@ -410,5 +410,8 @@
     },
     "editThis_Details": {
         "message": "Tiedot"
+    },
+    "editThis_URL_Decode_Cookie_Values": {
+        "message": "Purkaa automaattisesti evästeiden arvot paremman luettavuuden saavuttamiseksi"
     }
 }

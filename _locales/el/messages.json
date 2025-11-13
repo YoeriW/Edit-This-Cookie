@@ -410,5 +410,8 @@
     },
     "editThis_Details": {
         "message": "Λεπτομέρειες"
+    },
+    "editThis_URL_Decode_Cookie_Values": {
+        "message": "Αυτόματη αποκωδικοποίηση τιμών cookie για καλύτερη αναγνωσιμότητα"
     }
 }

@@ -410,5 +410,8 @@
     },
     "editThis_Details": {
         "message": "Detaylar"
+    },
+    "editThis_URL_Decode_Cookie_Values": {
+        "message": "Daha iyi okunabilirlik için çerez değerlerini otomatik olarak çöz"
     }
 }

@@ -410,5 +410,8 @@
     },
     "editThis_Details": {
         "message": "Деталі"
+    },
+    "editThis_URL_Decode_Cookie_Values": {
+        "message": "Автоматичне декодування значень cookie для кращої читабельності"
     }
 }

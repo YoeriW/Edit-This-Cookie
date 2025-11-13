@@ -410,5 +410,8 @@
     },
     "editThis_Details": {
         "message": "Dettagli"
+    },
+    "editThis_URL_Decode_Cookie_Values": {
+        "message": "Decodifica automaticamente i valori dei cookie per una migliore leggibilità"
     }
 }

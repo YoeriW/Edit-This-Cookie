@@ -410,5 +410,8 @@
     },
     "editThis_Details": {
         "message": "Chi tiết"
+    },
+    "editThis_URL_Decode_Cookie_Values": {
+        "message": "Tự động giải mã các giá trị cookie để dễ đọc hơn"
     }
 }

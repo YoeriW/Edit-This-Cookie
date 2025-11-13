@@ -410,5 +410,8 @@
     },
     "editThis_Details": {
         "message": "Rincian"
+    },
+    "editThis_URL_Decode_Cookie_Values": {
+        "message": "Secara otomatis mendekode nilai cookie untuk keterbacaan yang lebih baik"
     }
 }

@@ -410,5 +410,8 @@
     },
     "editThis_Details": {
         "message": "Детаљи"
+    },
+    "editThis_URL_Decode_Cookie_Values": {
+        "message": "Аутоматски декодирајте вредности колачића за боју читљивост"
     }
 }

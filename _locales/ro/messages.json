@@ -410,5 +410,8 @@
     },
     "editThis_Details": {
         "message": "Detalii"
+    },
+    "editThis_URL_Decode_Cookie_Values": {
+        "message": "Decodificați automat valorile cookie-urilor pentru o mai bună lizibilitate"
     }
 }

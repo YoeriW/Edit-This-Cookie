@@ -410,5 +410,8 @@
     },
     "editThis_Details": {
         "message": "جزییات"
+    },
+    "editThis_URL_Decode_Cookie_Values": {
+        "message": "رمزگشایی خودکار مقادیر کوکی برای قابلیت خواندن بهتر"
     }
 }

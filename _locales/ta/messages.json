@@ -410,5 +410,8 @@
     },
     "editThis_Details": {
         "message": "Details"
+    },
+    "editThis_URL_Decode_Cookie_Values": {
+        "message": "சிறந்த வாசிப்புத் திறனுக்கான குக்கி மதிப்புகளை தானாக டிகோட் செய்யவும்"
     }
 }
