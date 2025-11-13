@@ -67,7 +67,6 @@ input[type="checkbox"]:checked:before {
 }
 
 .tablesorter-default .header, .tablesorter-default .tablesorter-header {
-    background: none !important;
     position: relative;
 }
 
@@ -77,9 +76,13 @@ input[type="checkbox"]:checked:before {
     font-weight: var(--fa-style, 900);
     color: var(--panel-tablesorter-color);
     position: absolute;
-    right: 20px;
+    right: 5px;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.tablesorter-default .header, .tablesorter-default .tablesorter-header .tablesorter-resizer {
+    right: 20px !important;
 }
 
 #sidebar {

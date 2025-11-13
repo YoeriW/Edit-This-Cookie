@@ -52,7 +52,7 @@ html[data-theme="dark"] {
     --panel-select-color: #fff;
     --panel-tablesorter-color: #fff;
     --panel-datagrid-bg: #282828;
-    --panel-datagrid-th-bg: #282828;
+    --panel-datagrid-th-bg: #1a1a1a;
     --panel-datagrid-th-color: #fff;
     --panel-datagrid-th-border: 1px solid #181818;
     --panel-datagrid-td-bg: #393939;
