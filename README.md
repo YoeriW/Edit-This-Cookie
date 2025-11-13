@@ -8,7 +8,8 @@
 - 🚫 Block cookies via filters  
 - 📤 Export cookies in JSON, Netscape format (great for `wget`/`curl`), or Perl::LPW  
 - 📥 Import cookies in JSON  
-- ⏳ Limit the max expiration date of cookies  
+- ⏳ Limit the max expiration date of cookies
+- 🔓 URL-decode cookie values (optional)
 
 ## 🎉 New in This Fork
 - Updated to **Manifest V3**
@@ -17,6 +18,7 @@
 - Improved UI styling for user preferences
 - Many **bug fixes** (JavaScript errors, layout issues)
 - Merged helpful community PRs from the original repo
+- URL-decode feature for better readable cookie values
 
 ## 🌍 Open Source
 Check out the source code and contribute:  
