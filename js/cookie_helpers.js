@@ -71,32 +71,60 @@ class Filter {
 }
 
 const cookieForCreationFromFullCookie = (fullCookie) => {
-    fullCookie.domain = fullCookie.domain.replace(/^\./, "");
+    let domain = fullCookie.domain || "";
+    domain = domain.replace(/^\./, "");
 
-    const url = `http${fullCookie.secure ? "s" : ""}://${fullCookie.domain}${fullCookie.path}`;
+    let path = fullCookie.path || "/";
+    if (!path.startsWith("/")) path = "/" + path;
+
+    const url = `http${fullCookie.secure ? "s" : ""}://${domain}${path}`;
 
     const newCookie = {
         url,
         name: fullCookie.name || '',
         value: fullCookie.value || '',
-        domain: fullCookie.domain || '',
-        path: fullCookie.path || '',
+        domain: domain,
+        path: path,
         secure: fullCookie.secure || false,
         httpOnly: fullCookie.httpOnly || false,
-        expirationDate: fullCookie.expirationDate || null,
-        storeId: fullCookie.storeId || null,
-        sameSite: fullCookie.sameSite || null,
     };
 
-    if (fullCookie.hostOnly)
-        newCookie.domain = null;
-
-    if (fullCookie.session)
-        newCookie.expirationDate = null;
-
-    if (fullCookie.sameSite === 'unspecified') {
-        newCookie.sameSite = null;
+    if (fullCookie.expirationDate !== undefined && fullCookie.expirationDate !== null) {
+        newCookie.expirationDate = Math.round(fullCookie.expirationDate);
     }
+
+    if (fullCookie.storeId) {
+        newCookie.storeId = fullCookie.storeId;
+    }
+
+    if (fullCookie.partitionKey) {
+        newCookie.partitionKey = fullCookie.partitionKey;
+    }
+
+    if (fullCookie.sameSite) {
+        let ss = fullCookie.sameSite.toLowerCase();
+        if (ss === "none") ss = "no_restriction";
+        if (ss === "no_restriction" || ss === "lax" || ss === "strict" || ss === "unspecified") {
+            newCookie.sameSite = ss;
+        }
+    }
+
+    if (fullCookie.hostOnly) {
+        delete newCookie.domain;
+    }
+
+    if (fullCookie.session) {
+        delete newCookie.expirationDate;
+    }
+
+    // SameSite=None requires Secure=true
+    if (newCookie.sameSite === "no_restriction") {
+        newCookie.secure = true;
+        if (!newCookie.url.startsWith("https://")) {
+            newCookie.url = newCookie.url.replace("http://", "https://");
+        }
+    }
+
     return newCookie;
 };
 

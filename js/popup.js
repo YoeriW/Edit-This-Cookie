@@ -311,7 +311,6 @@ const createAccordionList = (cks, callback, callbackArguments) => {
 }
 
 const importCookies = () => {
-    let nCookiesImportedThisTime = 0;
     const text = $(".value", "#pasteCookie").val();
     const error = $(".error", "#pasteCookie");
     error.hide();
@@ -328,35 +327,68 @@ const importCookies = () => {
         if (Object.prototype.toString.apply(cookieArray) === "[object Object]") {
             cookieArray = [cookieArray];
         }
-        for (let i = 0; i < cookieArray.length; i++) {
-            try {
-                const cJSON = cookieArray[i];
-                const cookie = cookieForCreationFromFullCookie(cJSON);
-                chrome.cookies.set(cookie, (cookieResponse) => {
-                    const error = chrome.runtime.lastError;
-                    if (!cookieResponse || error) {
-                        const errorMessage = (error ? error.message : '') || 'Unknown error';
-                        console.error(`EditThisCookie::importCookies: ${errorMessage}`);
-                    }
-                });
-                nCookiesImportedThisTime++;
-            } catch (e) {
-                error.html(`${error.html()}<br>${$('<div/>').text(`Cookie number ${i}`).html()}<br>${$('<div/>').text(e.message).html()}`);
-                console.error(e.message);
-                error.fadeIn();
+
+        chrome.cookies.getAllCookieStores((cookieStores) => {
+            let currentStoreId = "0";
+            for (let x = 0; x < cookieStores.length; x++) {
+                if (cookieStores[x].tabIds.indexOf(currentTabID) != -1) {
+                    currentStoreId = cookieStores[x].id;
+                    break;
+                }
+            }
+
+            let nCookiesImportedThisTime = 0;
+            let pendingRequests = cookieArray.length;
+
+            if (pendingRequests === 0) {
+                doSearch();
                 return;
             }
-        }
+
+            for (let i = 0; i < cookieArray.length; i++) {
+                try {
+                    const cJSON = cookieArray[i];
+                    // Use the current storeId to ensure cookies are imported into the active profile/container
+                    cJSON.storeId = currentStoreId;
+
+                    const cookie = cookieForCreationFromFullCookie(cJSON);
+                    if (!cookie) {
+                        pendingRequests--;
+                        continue;
+                    }
+                    chrome.cookies.set(cookie, (cookieResponse) => {
+                        const err = chrome.runtime.lastError;
+                        if (!cookieResponse || err) {
+                            const errorMessage = (err ? err.message : '') || 'Unknown error';
+                            console.error(`EditThisCookie::importCookies: ${errorMessage}`, cookie);
+                        } else {
+                            nCookiesImportedThisTime++;
+                        }
+
+                        pendingRequests--;
+                        if (pendingRequests === 0) {
+                            data.nCookiesImported += nCookiesImportedThisTime;
+                            doSearch();
+                        }
+                    });
+                } catch (e) {
+                    error.html(`${error.html()}<br>${$('<div/>').text(`Cookie number ${i}`).html()}<br>${$('<div/>').text(e.message).html()}`);
+                    console.error(e.message);
+                    error.fadeIn();
+                    pendingRequests--;
+                    if (pendingRequests === 0) {
+                        data.nCookiesImported += nCookiesImportedThisTime;
+                        doSearch();
+                    }
+                }
+            }
+        });
     } catch (e) {
         error.html(`${error.html()}<br>${$('<div/>').text(e.message).html()}`);
         console.error(e.message);
         error.fadeIn();
         return;
     }
-
-    data.nCookiesImported += nCookiesImportedThisTime;
-    doSearch();
-    return;
 }
 
 const setEvents = () => {
